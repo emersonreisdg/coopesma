@@ -1,0 +1,14 @@
+{% extends 'global/base.html' %}
+
+{% block title %}  {{ page_title }} | {% endblock title %}
+
+{% include "global/partials/head.html" %}
+
+{% block content %}
+    <div class="main-content main-content-list container">
+        <div class="manager-container">
+            <h1>Resultados de Pesquisa</h1>
+            {% include "global/partials/search.html" %}
+        </div>
+    </div>
+{% endblock content %}

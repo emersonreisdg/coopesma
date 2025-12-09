@@ -1,0 +1,44 @@
+#filterButton {
+    margin-top: 20px;
+}
+
+.control-group {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os elementos form-group */
+    flex: 1; /* Para que os elementos form-group se expandam uniformemente */
+    margin-right: 10px;
+}
+
+.form-group {
+    font-size: 20px; /* Tamanho da fonte para o label */
+    display: flex; /* Alinha o label e o checkbox horizontalmente */
+    align-items: center; /* Alinha o checkbox e o texto verticalmente */
+    margin-right: 10px;
+
+}
+
+.form-group select {
+    font-size: 16px;
+}
+
+#clearFiltersButton {
+    background-color: #4CAF50; /* Cor de fundo verde elegante */
+    color: white; /* Texto branco */
+    padding: 10px 20px; /* Espaçamento interno para torná-lo maior */
+    border: none; /* Remove a borda */
+    border-radius: 25px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de mão para mostrar que é clicável */
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Texto em negrito */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Suaviza transições */
+}
+
+#clearFiltersButton:hover {
+    background-color: #45a049; /* Cor de fundo um pouco mais escura ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+#clearFiltersButton:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 10px rgba(72, 219, 251, 0.5); /* Sombra ao focar no botão */
+}

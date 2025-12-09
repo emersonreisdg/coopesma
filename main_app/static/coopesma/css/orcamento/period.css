@@ -1,0 +1,21 @@
+.form-group.period-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-group.period-control label {
+    font-size: 1.4rem;
+    color: #555;
+    white-space: nowrap;
+}
+
+.form-group.period-control select {
+    padding: 4px 8px;
+    font-size: 1.4rem;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    min-width: 120px;
+}

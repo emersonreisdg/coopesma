@@ -1,0 +1,27 @@
+@import url('colors.css');
+
+.serie-control {
+    display: flex;
+    align-items: start;
+    margin-right: 20px;
+    font-size: 24px; 
+}
+
+.serie-control select {
+    width: 120px;
+    height: auto;
+    max-height: 150px; /* Define a altura máxima do dropdown */
+    overflow-y: auto;  /* Adiciona rolagem vertical */
+    font-size: 20px;
+}
+
+.serie-control option:checked {
+    background-color: var(--color-selectbackground); /* Fundo azul-claro */
+    color: var(--color-select); /* Texto azul */
+    font-weight: bold;
+}
+
+.serie-control option:checked::before {
+    content: "✔ "; /* Check na frente do texto */
+    color:  var(--color-select);
+}

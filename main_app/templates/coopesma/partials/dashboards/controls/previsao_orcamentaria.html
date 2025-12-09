@@ -1,0 +1,81 @@
+<div class="dash-controls dash-controls-container">
+    <div class="control-group period-control">
+        <div class="form-group period-control">
+            <label for="year_selector">Ano:</label>
+            <select id="year_selector" name="year_selector">
+                {% for year in years %}
+                    <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group period-control">
+            <label for="mesSelector">Mês:</label>
+            <select id="mesSelector" class="form-control">
+                <option value="">Todos</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        {% include "coopesma/partials/search.html" %}
+    </div>
+    
+</div>
+
+<div class="dash-controls">
+    <div class="control-group period-control">
+        <div class="form-group period-control">
+            <label for="tipoSelector">Tipo:</label>
+            <select id="tipoSelector" class="form-control">
+                <option value="all">Todos</option>
+                {% for tipo in tipos %}
+                    <option value="{{ tipo }}">{{ tipo }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group period-control">
+            <label for="subtipoSelector">Subtipo:</label>
+            <select id="subtipoSelector" class="form-control">
+                <option value="all">Todos</option>
+                {% for subtipo in subtipos %}
+                    <option value="{{ subtipo }}">{{ subtipo }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group period-control">
+            <label for="categoriaSelector">Categoria:</label>
+            <select id="categoriaSelector" class="form-control">
+                <option value="all">Todas</option>
+                {% for categoria in categorias %}
+                    <option value="{{ categoria }}">{{ categoria }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group period-control">
+            <label for="itemSelector">Item:</label>
+            <select id="itemSelector" class="form-control">
+                <option value="all">Todos</option>
+                {% for item in itens %}
+                    <option value="{{ item }}">{{ item }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+    </div>
+
+    <form id="report_form">
+        {% csrf_token %}
+        <!-- Botão para limpar filtros -->
+        <div class="form-group">
+            <button type="button" id="clearFiltersButton">Limpar Filtros</button>
+        </div>
+    </form>
+
+
+    
+</div>
+

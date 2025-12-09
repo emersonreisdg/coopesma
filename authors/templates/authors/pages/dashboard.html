@@ -1,0 +1,38 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Dashboard ({{ user }}) | {% endblock title %}
+
+{% block content %}
+  <div class="main-content center container">
+    <h2>Dashboard ({{ user }})</h2>
+    {% include 'authors/partials/login_message.html' %}
+    {% include 'global/partials/messages.html' %}
+
+    <div class="authors-dashboard-container">
+      <h3>Your Setups</h3>
+
+      <ul>
+        {% for setup in setups %}
+          <li>
+            {% comment %} <a href="{% url 'authors:dashboard_setup_edit' setup.id %}">{{ setup.grade }}</a> {% endcomment %}
+            <form 
+            class="inline-form form-delete" 
+            action="{% url 'authors:dashboard_setup_delete' %}" 
+            method='POST'
+            >
+              {% csrf_token %}
+              <input type="hidden" name="id" value="{{ setup.id }}">
+              <button class="plaintext-button" type="submit">❌</button>
+            </form>
+          ]</li>
+        {% empty %}
+          <li>
+            <p>You do not have setup, please create one.</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div> 
+
+  </div>
+
+  {% endblock content %}

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ html_language }}">
+
+<head>
+    {% include "global/partials/head.html" %}
+    <title>{% block title %}{% endblock title %} Coopesma </title>
+
+    <link rel="icon" href="{% static 'global/favicon/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+</head>
+
+<body>
+    {% if request.path != '/' %}
+        {% include 'global/partials/menu.html' %}
+    {% endif %}
+
+    {% include "global/partials/header.html" %}
+
+    <main class="main-content-container min-height">
+        {% block content %}{% endblock content %}
+        {% include "global/partials/pagination.html" %}
+    </main>
+
+    {% include "global/partials/footer.html" %}
+
+    <script src="{% static 'global/js/scripts.js' %}"></script>
+
+    
+</body>
+</html>
+

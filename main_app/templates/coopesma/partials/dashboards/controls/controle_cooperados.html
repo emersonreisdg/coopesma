@@ -1,0 +1,14 @@
+<div class="dash-controls">
+  <div class="form-group period-control">
+    <label for="year_selector">Ano:</label>
+    <select id="year_selector" name="year_selector">
+      {% for year in years %}
+        <option value="{{ year }}">{{ year }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="search-container">
+    {% include "coopesma/partials/search.html" %}
+  </div>
+</div>

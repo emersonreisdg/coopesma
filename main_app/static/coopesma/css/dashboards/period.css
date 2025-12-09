@@ -1,0 +1,14 @@
+@import url('colors.css');
+
+.period-control {
+    font-size: 24px; /* Tamanho da fonte para o label */
+    display: flex; /* Alinha o label e o checkbox horizontalmente */
+    align-items: center; /* Alinha o checkbox e o texto verticalmente */
+    margin-right: 10px;
+
+}
+
+.period-control select {
+    font-size: 20px;
+    width: 120px;
+}

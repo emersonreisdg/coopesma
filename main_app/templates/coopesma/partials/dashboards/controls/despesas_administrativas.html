@@ -1,0 +1,21 @@
+<div class="dash-controls">
+    <div class="period-control">
+        <label for="year_selector">Ano:</label>
+        <select id="year_selector" name="year_selector">
+            {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="adm-cost-control">
+        <label for="adm_cost_selector">Despesa:</label>
+        <select id="adm_cost_selector" name="adm_cost_selector" >
+            {% for gasto in gastos %}
+                <option value="{{ gasto }}">{{ gasto }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+
+

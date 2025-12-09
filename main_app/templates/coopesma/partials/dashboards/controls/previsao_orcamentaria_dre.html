@@ -1,0 +1,40 @@
+<div class="dash-controls dash-controls-container">
+    <div class="control-group period-control">
+        <div class="form-group period-control">
+            <label for="year_selector">Ano:</label>
+            <select id="year_selector" name="year_selector">
+                {% for year in years %}
+                    <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group period-control">
+            <label for="nivelSelector">Formato DRE:</label>
+            <select id="nivelSelector" class="multinivel-selector">
+                <option value="completo" data-nivel="0">Completo</option>
+                <option value="resumido" data-nivel="1">Resumido</option>
+                <option value="mais_resumido" data-nivel="2">Mais Resumido</option>
+                <option value="ainda_mais_resumido" data-nivel="3">Ainda Mais Resumido</option>
+            </select>
+        </div>
+    </div>
+
+    
+
+    <div class="form-group">
+        {% include "coopesma/partials/search.html" %}
+
+        <form id="report_form">
+            {% csrf_token %}
+            <!-- Botão para limpar filtros -->
+            <div class="form-group">
+                <button type="button" id="clearFiltersButton">Limpar Filtros</button>
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+
+

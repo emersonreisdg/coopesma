@@ -1,0 +1,108 @@
+@import url('../inputs.css');
+@import url('../dash.css');
+@import url('../table.css');
+@import url('../buttons.css');
+
+.dash-controls{
+    margin-left: auto !important; 
+    margin-right: auto !important;
+}
+
+.charts-container {
+    display: flex;
+    gap: var(--spacing-gutter-medium);
+    padding: var(--spacing-gutter-medium);
+    width: 100%;
+}
+
+.chart-container {
+    flex: 1;
+    background: var(--color-white);
+    border-radius: 1.2rem;
+    box-shadow: 0 0.4rem 1.2rem var(--color-black);
+    transition: transform 0.3s ease;
+    padding: 2rem;
+    min-width: 0;
+    font-family: var(--font-primary);
+}
+
+.left {
+    flex: 3; /* O gráfico ocupa 3 partes do espaço */
+    position: relative; /* Necessário para o canvas se ajustar */
+}
+
+.right {
+    flex: 1; /* O card ocupa 1 parte do espaço */
+    min-width: 25rem; /* Largura mínima para o card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para o canvas do gráfico */
+#combinedChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.saldo-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 1.2rem;
+    box-shadow: 0 0.4rem 1.2rem var(--color-black);
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.saldo-card.positive {
+    background-color: rgba(0, 200, 83, 0.1);
+    border: 1px solid rgba(0, 200, 83, 0.3);
+}
+
+.saldo-card.negative {
+    background-color: rgba(255, 99, 132, 0.1);
+    border: 1px solid rgba(255, 99, 132, 0.3);
+}
+
+.saldo-card h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.saldo-value {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.saldo-value.positive {
+    color: #00c853;
+}
+
+.saldo-value.negative {
+    color: #ff1744;
+}
+
+.arrow {
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.positive .arrow {
+    color: #00c853;
+}
+
+.negative .arrow {
+    color: #ff1744;
+}
+
+.saldo-details {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.saldo-details div {
+    margin: 5px 0;
+}
+

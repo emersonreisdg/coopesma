@@ -1,0 +1,36 @@
+{% extends 'global/base.html' %}
+
+{% block title %}Login | {% endblock title %}
+
+{% block content %}
+  {% comment %} <div class="main-content center container">
+    {% if request.user.is_authenticated %}
+      <div class="main-content container">
+        <div class="custom-form-wrapper">
+          <div class="custom-form-card">
+            <h3>
+              Olá, 
+              {{ request.user.first_name }}. 
+            </h3>
+             <h4>
+              Você está acessando o ambiente de gestão da Coopesma como  {{  group.name }}.
+            </h4> 
+             
+            <div class="form-group">  
+              <form class="inline-form" action="{% url 'colaborador:logout' %}" method='POST'>
+                {% csrf_token %}
+                <input type="hidden" name="username" value="{{ request.user.username }}">
+                <button class="plaintext-button" type="submit">Sair</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div> {% endcomment %}
+
+  {% include 'global/partials/messages.html' %}
+  {% if not user.is_authenticated %}
+    {% include 'global/partials/form.html' %}
+  {% endif %}
+{% endblock content %}

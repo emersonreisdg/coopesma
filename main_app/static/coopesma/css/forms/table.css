@@ -1,0 +1,111 @@
+.table-container {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;  /* Scroll horizontal */
+    overflow-y: auto;  /* Scroll vertical */
+    max-height: 500px; /* Definir uma altura máxima para o scroll vertical */
+    max-width: 100%;  /* Opcional: ajusta a largura máxima */
+    margin-top: 20px;
+}
+
+#dynamicTable {
+    width: 100%; /* Certifique-se de que a tabela tenha uma largura maior que o contêiner, se necessário */
+    border-collapse: collapse; /* Remove espaços entre as bordas das células */
+}
+
+/* .table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; 
+} */
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+    table-layout: auto; /* Para permitir o redimensionamento adequado das colunas */
+}
+
+/* .table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa; 
+    z-index: 1;
+} */
+
+.table thead th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    padding: 0.75rem;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table th, .table td {
+    font-size: 20px;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    /*vertical-align: top; /* Alinhamento vertical ao topo para garantir que o conteúdo preencha a célula corretamente */
+    /*white-space: normal; /* Permite que o conteúdo quebre em várias linhas, se necessário */
+    /*word-wrap: break-word; /* Garante que palavras longas sejam quebradas corretamente */
+    /*height: auto; /* Deixa que a altura seja automática e ajustada pelo conteúdo */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Cor para linhas alternadas */
+}
+
+.table tbody tr {
+    border-top: 1px solid #dee2e6;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* Estiliza o rodapé da tabela */
+table tfoot td {
+    font-weight: bold;  /* Negrito no rodapé */
+    background-color: #f1f1f1; /* Cor de fundo opcional */
+    padding: 10px; /* Espaçamento opcional para maior clareza */
+    /*vertical-align: top; /* Alinhamento vertical ao topo para garantir que o conteúdo preencha a célula corretamente */
+    /*white-space: normal; /* Permite que o conteúdo quebre em várias linhas, se necessário */
+    /*word-wrap: break-word; /* Garante que palavras longas sejam quebradas corretamente */
+    /*height: auto; /* Deixa que a altura seja automática e ajustada pelo conteúdo */
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 1000;
+    display: none; /* Inicialmente escondido */
+}
+
+.table tbody td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+
+/* Estilo personalizado para DataTables */
+.dataTables_wrapper {
+    font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate {
+    font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
+}

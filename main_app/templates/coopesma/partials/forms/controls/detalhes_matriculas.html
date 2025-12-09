@@ -1,0 +1,22 @@
+<div class="dash-controls">
+    <div class="period-control">
+        <label for="year_selector">Ano:</label>
+        <select id="year_selector" name="year_selector">
+            {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="serie-control">
+        <label for="serie_selector">Série:</label>
+        <select id="serie_selector" name="serie_selector" multiple>
+            <option value="all" selected>Todas</option>
+            {% for serie in series %}
+                <option value="{{ serie }}">{{ serie }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+
+

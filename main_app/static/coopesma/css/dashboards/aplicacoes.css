@@ -1,0 +1,15 @@
+@import url('../report.css');
+@import url('../inputs.css'); 
+@import url('../dash.css'); 
+@import url('../table.css');
+@import url('../buttons.css');
+
+.dash-controls{
+    margin-top: 2rem !important;
+}
+
+/* .table-responsive{
+    max-height: 70rem !important; 
+} */
+
+

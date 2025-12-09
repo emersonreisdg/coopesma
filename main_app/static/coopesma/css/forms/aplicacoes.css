@@ -1,0 +1,99 @@
+
+@import url('dash.css'); 
+@import url('colors.css');
+@import url('report.css');
+
+/* Contêiner do Formulário */
+.form-content-applicacoes {
+    max-width: 600px;
+    margin: 50px auto 20px auto;
+    background-color: hsl(210, 20%, 98%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.form-content-applicacoes:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Título do Formulário */
+.form-content-applicacoes h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Campos do Formulário */
+.form-container-applicacoes label {
+    font-size: 20px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    display: block;
+}
+
+.form-container-applicacoes input[type="text"],
+.form-container-applicacoes select {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #333;
+    border: 1px solid #ccd1d9;
+    border-radius: 6px;
+    margin-bottom: 30px; 
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.form-container-applicacoes input[type="text"]:focus,
+.form-container-applicacoes select:focus {
+    border-color: #5dade2;
+    box-shadow: 0 0 6px rgba(93, 173, 226, 0.3);
+    outline: none;
+}
+
+/* Botões */
+.btn-primary {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--color-primary1);
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary2);
+}
+
+/* Placeholder */
+.form-container-applicacoes input::placeholder,
+.form-container-applicacoes select::placeholder {
+    color: #aab7c4;
+}
+
+/* Estilo para Select */
+.form-container-applicacoes select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23495b6e'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .form-content-applicacoes {
+        padding: 20px;
+    }
+}

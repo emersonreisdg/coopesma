@@ -1,0 +1,43 @@
+.report-type-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: var(--background-color);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.report-type {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-left: 20px;
+    font-family: var(--font-family);
+    color: var(--text-color);
+}
+
+.report-type label {
+    flex-shrink: 0;
+}
+
+.report-type select {
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--color-white);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    min-width: 300px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.report-type select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-primary-light-hover);
+}

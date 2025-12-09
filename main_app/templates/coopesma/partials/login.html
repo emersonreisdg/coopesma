@@ -1,0 +1,22 @@
+{% load static %}
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form class="login-form" action="/login" method="post">
+        <div class="logo-coopesma">
+            <img  src={% static 'coopesma/img/logo-coopesma-1.png' %}  alt="" style="max-width: 100%; height: auto;">
+        </div>
+        <div>
+            <input type="text" id="username" name="username" placeholder="Usuário" required>
+        </div>
+        <div>
+            <input type="password" id="password" name="password" placeholder="Senha" required>
+        </div>
+        <div class="forgot-password">
+            <a href="#">Esqueci minha senha</a>
+        </div>
+        <div class='login-submit-button'>
+            <input type="submit" value="Entrar">
+        </div>
+    </form>
+</div>

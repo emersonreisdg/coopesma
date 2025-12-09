@@ -1,0 +1,27 @@
+{% comment %} 
+<div class="chart-grid">
+    <!-- Gráfico de Receita -->
+    <div class="chart-container">
+        <h3>Receita</h3>
+        <div class="chart-wrapper">
+            <canvas id="receitaChart" style="display: block; box-sizing: border-box;"></canvas>
+        </div>
+    </div>
+    
+    <!-- Gráfico de Despesa -->
+    <div class="chart-container">
+        <h3>Despesa</h3>
+        <div class="chart-wrapper">
+            <canvas id="despesaChart" style="display: block; box-sizing: border-box;"></canvas>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+<div class="charts-container">
+    <div class="chart-container left">
+        <canvas id="combinedChart"></canvas>
+    </div>
+    <div class="saldo-container right" id="saldoCard">
+        <!-- O card de saldo será gerado dinamicamente pelo JavaScript -->
+    </div>
+</div> 

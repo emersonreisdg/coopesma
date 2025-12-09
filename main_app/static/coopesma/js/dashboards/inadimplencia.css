@@ -1,0 +1,46 @@
+@import url('colors.css');
+@import url('report.css');
+@import url('dash.css');
+@import url('cards.css');
+@import url('canvas.css');
+@import url('range_years.css');
+
+.toggle-control {
+    margin-left: 2rem; /* Garante que o elemento esteja na margem esquerda */
+}
+
+#toggle-button {
+    background-color: var(--color-highlight1);
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#toggle-button:hover {
+    background-color: var(--color-highlight2);
+    transform: scale(1.05);
+}
+
+#toggle-button:active {
+    background-color: var(--color-highlight2);
+    transform: scale(0.95);
+}
+
+.canvas-container {
+    flex: 1 1 calc(50.0% - 2rem); 
+    min-width: 300px;
+    max-width: None; /* Limita a largura mesmo que só haja 1 gráfico */
+}
+
+.canvas-grid canvas {
+    width: 100% !important;
+    height: 40rem !important;
+ }

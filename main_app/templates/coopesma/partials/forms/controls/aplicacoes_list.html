@@ -1,0 +1,27 @@
+{% comment %} <div class="new-data">
+    <h1>Lista de Aplicações</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Banco</th>
+          <th>Conta</th>
+          <th>Aplicação</th>
+          <th>Valor</th>
+          <th>Origem</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for aplicacao in aplicacoes %}
+        <tr>
+          <td>{{ aplicacao.data }}</td>
+          <td>{{ aplicacao.banco }}</td>
+          <td>{{ aplicacao.conta }}</td>
+          <td>{{ aplicacao.aplicacao }}</td>
+          <td>{{ aplicacao.valor }}</td>
+          <td>{{ aplicacao.origem }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div> {% endcomment %}

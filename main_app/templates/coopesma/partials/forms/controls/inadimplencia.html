@@ -1,0 +1,19 @@
+<div class="dash-controls">
+    <div class="toggle-control">
+        <button id="toggle-button" type="button">%</button>
+    </div>
+
+    <div class="year-controls">
+        <div class="year-control">
+            <label for="min_year">Ano Mínimo:</label>
+            <input type="range" id="min_year" name="min_year" min="{{ min_year }}" max="{{ max_year }}" value="{{ min_year }}">
+            <span id="min_year_value">{{ min_year }}</span>
+        </div>
+
+        <div class="year-control">
+            <label for="max_year">Ano Máximo:</label>
+            <input type="range" id="max_year" name="max_year" min="{{ min_year }}" max="{{ max_year }}" value="{{ max_year }}">
+            <span id="max_year_value">{{ max_year }}</span>
+        </div>
+    </div>
+</div>

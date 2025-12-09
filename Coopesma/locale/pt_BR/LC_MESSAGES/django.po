@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-15 15:01-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: .\colaborador\forms\login.py:10
+#: .\tests\functional_tests\authors\test_authors_login.py:23
+#: .\tests\functional_tests\authors\test_authors_login.py:60
+#: .\tests\functional_tests\authors\test_authors_login.py:82
+msgid "Type your username"
+msgstr "Digite seu nome de usuário"
+
+#: .\authors\forms\login.py:11
+#: .\tests\functional_tests\authors\test_authors_login.py:24
+#: .\tests\functional_tests\authors\test_authors_login.py:61
+#: .\tests\functional_tests\authors\test_authors_login.py:83
+msgid "Type your password"
+msgstr "Digite sua senha"
+
+#: .\authors\forms\login.py:13
+msgid "Username"
+msgstr "Usuário"
+
+#: .\authors\forms\login.py:16
+msgid "Password"
+msgstr "Senha"
+
+#: .\base_templates\global\partials\form.html:50
+msgid "Send"
+msgstr "Enviar"
+
+#: .\base_templates\global\partials\menu.html:5
+msgid "Show menu"
+msgstr "Mostrar menu"
+
+#: .\base_templates\global\partials\menu.html:11
+msgid "Close menu"
+msgstr "Fechar menu"
+
+#: .\base_templates\global\partials\menu.html:20
+#: .\base_templates\global\partials\menu.html:26
+msgid "Home"
+msgstr "Início"
+
+#: .\base_templates\global\partials\menu.html:21
+msgid "New Setup"
+msgstr "Novo Setup"
+
+#: .\base_templates\global\partials\menu.html:22
+msgid "Dashboards"
+msgstr "Relatórios"
+
+#: .\base_templates\global\partials\menu.html:23
+msgid "Logout"
+msgstr "Sair"
+
+#: .\main_app\__models.py:42
+msgid "Grade"
+msgstr "Série"
+
+#: .\main_app\models.py:23
+msgid "Investiment"
+msgstr "Aplicação"
+
+#: .\main_app\models.py:24
+msgid "Investiments"
+msgstr "Aplicações"
+
+#: .\main_app\templates\coopesma\pages\home.html:17
+#: .\main_app\templates\coopesma\partials\go.html:8
+msgid "Login"
+msgstr "Entrar"
+
+#: .\main_app\templates\coopesma\views\site.py:108
+msgid "Category"
+msgstr "Categoria"

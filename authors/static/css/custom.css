@@ -1,0 +1,142 @@
+.custom-form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--color-white);
+  padding: 2rem;
+}
+
+.custom-form-card {
+  background-color: var(--color-white);
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--color-black);
+  width: 100%;
+  max-width: 800px;
+}
+
+.custom-form-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-black);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  color: var(--color-black);
+  font-size: 2.2rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 1.4rem;
+  border: 1px solid var(--color-gray-5);
+  border-radius: 6px;
+  font-size: 2.0rem;
+  transition: border 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: var(--color-primary-dark-hover);
+  outline: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  border: none;
+   margin-top: 4.5rem;
+  padding: 2.0rem;
+  font-size: 2.0rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--color-primary-dark-hover)
+}
+
+.error {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 1.4rem;
+  color: #dc2626;
+}
+
+.tooltip-container {
+  position: relative;
+  display: block;
+}
+
+.tooltip-container input {
+  width: 100%;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 0.6rem;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  font-size: 1.8rem;
+  margin-top: 0.3rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text,
+.tooltip-container:focus-within .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.info-message {
+  background-color: #fff3cd;
+  border-left: 5px solid #ffc107;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: #856404;
+  border-radius: 4px;
+  font-size: 1.8rem;
+}
+
+.form-footer {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.link-button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.link-button:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+
+

@@ -1,0 +1,72 @@
+@import url('colors.css');
+@import url('report.css');
+@import url('dash.css');
+@import url('period.css');
+@import url('cards.css');
+@import url('canvas.css');
+@import url('table.css');
+@import url('serie.css');
+@import url('clear_button.css');
+
+.serie-control-container {
+    display: flex;
+}
+
+.serie-control {
+    display: flex;
+    align-items: start;
+    margin-right: 20px;
+    font-size: 24px; 
+}
+
+.serie-control select {
+    width: 120px;
+    height: auto;
+    max-height: 40px; /* Define a altura inicial */
+    overflow-y: hidden; /* Esconde o conteúdo que ultrapassa a altura inicial */
+    font-size: 16px;
+    padding: 5px 10px; /* Adiciona espaçamento interno nas laterais e no topo/inferior */
+    transition: max-height 0.3s ease; /* Anima a expansão da altura */
+}
+
+.serie-control select:focus {
+    max-height: 150px; /* Define a altura máxima ao focar (clicar) */
+    overflow-y: auto;  /* Habilita rolagem quando expandido */
+}
+
+.total-cooperados {
+    border-left: 5px solid var(--color-primary1);
+}
+
+.total-alunos {
+    border-left: 5px solid var(--color-secondary2); 
+}
+
+.rateio-mensal-bruto {
+    border-left: 5px solid var(--color-accent1); 
+}
+
+.rateio-mensal-liquido {
+    border-left: 5px solid var(--color-highlight2);
+}
+
+.cooperar-plus {
+    border-left: 5px solid var(--color-highlight1); 
+}
+
+.value-container {
+    display: flex; /* Alinhar os valores em linha */
+    justify-content: space-between; /* Espaçamento entre os valores */
+    font-size: 1.5em; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+}
+
+#percentage-value {
+    color: #28a745; /* Cor verde para o percentual */
+    margin-left: 10px; /* Espaçamento entre os valores */
+}
+
+
+
+
+

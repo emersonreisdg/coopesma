@@ -1,0 +1,32 @@
+{% comment %} <div class="search-container">
+    <div class="container">
+        <form action="{% url 'coopesma:search' %}" method="GET" class="search-form">
+            <input 
+                type="search" class="search-input" 
+                name="q" value="{{ search_term }}" required 
+                placeholder="Search for something"
+            >
+            <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+        </form>
+</div>
+
+<div class="search-results">
+    {% if setups %}
+        <h2>Resultados para "{{ search_term }}":</h2>
+        <ul>
+            {% for setup in setups %}
+                <li>
+                    <strong>{{ setup.grade }}</strong> - {{ setup.year }}
+                    <ul>
+                        <li>Estudantes Ideais por Turma: {{ setup.ideal_students_per_class }}</li>
+                        <li>Máximo de Estudantes por Turma: {{ setup.max_students_per_class }}</li>
+                        <li>Turmas Ideais por Série: {{ setup.ideal_classes_per_grade }}</li>
+                        <li>Máximo de Turmas por Série: {{ setup.max_classes_per_grade }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>Nenhum resultado encontrado para "{{ search_term }}".</h2>
+    {% endif %}
+</div> {% endcomment %}

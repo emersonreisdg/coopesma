@@ -1,0 +1,20 @@
+/* controles de relatórios */
+.report-type-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.report-type {
+    flex: 1;
+    text-align: left;
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.report-type select {
+    font-size: 24px;
+    padding: 5px 10px;
+}
+

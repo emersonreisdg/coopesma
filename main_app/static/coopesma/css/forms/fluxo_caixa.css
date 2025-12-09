@@ -1,0 +1,247 @@
+
+@import url('dash.css'); 
+@import url('colors.css');
+@import url('report.css');
+@import url('table.css');
+
+/* Contêiner do Formulário */
+.form-container {
+    /* margin-top: 10px; */
+    width: 100%;
+    border-radius: 10px;
+    /* background-color: hsl(210, 20%, 98%); */
+    overflow: hidden;
+}
+
+.form-content-fluxo-caixa {
+    max-width: auto;
+    margin: 50px auto 20px auto;
+    background-color: hsl(240, 5%, 92%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.form-content-fluxo-caixa:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Título do Formulário */
+.form-content-fluxo-caixa h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Campos do Formulário */
+.form-container-fluxo-caixa label {
+    font-size: 20px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    display: block;
+}
+
+.form-container-fluxo-caixa input[type="text"],
+.form-container-fluxo-caixa select {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #333;
+    border: 1px solid #ccd1d9;
+    border-radius: 6px;
+    margin-bottom: 30px; 
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.form-container-fluxo-caixa input[type="text"]:focus,
+.form-container-fluxo-caixa select:focus {
+    border-color: #5dade2;
+    box-shadow: 0 0 6px rgba(93, 173, 226, 0.3);
+    outline: none;
+}
+
+/* Seletor de arquivo */
+.file-upload-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: var(--color-primary1);
+    border: 2px solid var(--color-primary1);
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.file-upload-label:hover {
+    background-color: var(--color-primary2);
+    border-color: var(--color-primary2);
+    color: rgba(255, 255, 255, 0.499);
+}
+
+.file-upload-button {
+    margin-right: 10px;
+}
+
+.file-upload-name {
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-upload-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.file-upload-label::after {
+    content: attr(data-title);
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.file-upload-label:hover::after {
+    display: block;
+    opacity: 1;
+}
+
+
+/* Botões */
+.btn {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+    background-color: var(--color-primary1);
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+}
+
+.btn:hover {
+    background-color: var(--color-primary2);
+}
+
+/* Contêiner do botão */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-group {
+    background-color: var(--color-highlight1); 
+}
+
+.btn-group:hover {
+    background-color: var(--color-highlight2);
+}
+
+.btn-ungroup {
+    background-color: var(--color-accent1); 
+    margin-right: 20px;
+}
+
+.btn-ungroup:hover {
+    background-color: var(--color-accent2);
+}
+
+.btn-send {
+    background-color: var(--color-primary1); 
+}
+
+.btn-send:hover {
+    background-color: var(--color-primary2);
+}
+
+/* Placeholder */
+.form-container-fluxo-caixa input::placeholder,
+.form-containerfluxo-caixa select::placeholder {
+    color: #aab7c4;
+}
+
+/* Estilo para Select */
+.form-container-fluxo-caixa select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23495b6e'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .form-content-controle-cooperados {
+        padding: 20px;
+    }
+}
+
+/* Contêiner do Preview*/
+.preview-container {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+    /* background-color: hsl(210, 20%, 98%); */
+    overflow: hidden;
+}
+
+.preview-content {
+    max-width: auto;
+    margin: 10px auto 20px auto;
+    background-color: hsl(240, 5%, 92%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.preview-content:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Título do Preview */
+.preview-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+

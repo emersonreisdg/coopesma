@@ -1,0 +1,95 @@
+<!-- Lista suspensa para selecionar o formulário -->
+<div class="report-type-container">
+    <div class="report-type">
+        <label for="form_type">Formulário:</label>
+        <select id="form_type" name="form_type">
+
+            {% if group.name == 'Administrador' %}
+                <!-- TODOS OS FORMULÁRIOS -->
+                <option selected disabled>Selecione um formulário</option>
+                <option value="/formulario/aplicacoes/">Saldo em Aplicação</option>
+                <option value="/formulario/avaliacao/">Avaliação (Zenilza)*</option>
+                <option value="/formulario/cargos_salarios/">Colaborador*</option>
+                <option value="/formulario/controle/cooperados/">Cooperado</option>
+                <option value="/formulario/detalhes_matriculas/">Matrícula*</option>
+                <option value="/formulario/historico_matriculas/">Meta de Matrícula*</option>
+                <option value="/formulario/ifes/">Aprovados no IFES*</option>
+                <option value="/formulario/indicacao/">Indicação</option>
+                <option value="/formulario/planos_descontos/">Planos e Descontos*</option>
+                <option value="/formulario/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/formulario/reajustes/">Reajuste Salarial*</option>
+                <option value="/formulario/tercerizado/">Seviço/Fornecedor (Tatiane)*</option>
+
+            {% elif group.name == 'Financeiro' %}
+                <!-- APENAS FORMULÁRIOS FINANCEIROS -->
+                <option selected disabled>Selecione um formulário</option>
+                <option value="/formulario/aplicacoes/">Saldo em Aplicação</option>
+                <option value="/formulario/cargos_salarios/">Colaborador*</option>
+                <option value="/formulario/controle/cooperados/">Cooperado</option>
+                <option value="/formulario/planos_descontos/">Planos e Descontos*</option>
+                <option value="/formulario/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/formulario/reajustes/">Reajuste Salarial*</option>
+
+            {% elif group.name == 'Secretaria' %}
+                <!-- APENAS PARA SECRETARIA -->
+                <option selected disabled>Selecione um formulário</option>
+                <option value="/formulario/detalhes_matriculas/">Matrícula*</option>
+                <option value="/formulario/ifes/">Aprovados no IFES*</option>
+                <option value="/formulario/indicacao/">Indicação</option>
+
+            {% elif group.name == 'Pedagógico' %}
+                <!-- APENAS PARA O PEDAGÓGICO -->
+                <option selected disabled>Selecione um formulário</option>
+            
+            {% elif group.name == 'Compras' %}
+                <!-- APENAS PARA COMPRAS -->
+                <option selected disabled>Selecione um formulário</option>
+                <option value="/formulario/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/formulario/tercerizado/">Seviço/Fornecedor (Tatiane)*</option>
+            
+            {% elif group.name == 'Direção' %}
+                <!-- APENAS PARA DIREÇÃO -->
+                <option selected disabled>Selecione um formulário</option>
+                <option value="/formulario/avaliacao/">Avaliação (Zenilza)*</option>
+                <option value="/formulario/cargos_salarios/">Colaborador*</option>
+                <option value="/formulario/controle/cooperados/">Cooperado</option>
+                <option value="/formulario/detalhes_matriculas/">Matrícula*</option>
+                <option value="/formulario/historico_matriculas/">Meta de Matrícula*</option>
+                <option value="/formulario/ifes/">Aprovados no IFES*</option>
+                <option value="/formulario/indicacao/">Indicação</option>
+                <option value="/formulario/planos_descontos/">Planos e Descontos*</option>
+                <option value="/formulario/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/formulario/reajustes/">Reajuste Salarial*</option>
+                <option value="/formulario/tercerizado/">Seviço/Fornecedor (Tatiane)*</option>
+            
+            {% elif group.name == 'Conselho de Administração' %}
+                <!-- APENAS PARA O CONSELHO DE ADMINISTRAÇÃO -->
+                 <option selected disabled>Selecione um formulário</option>
+
+            {% elif group.name == 'Conselho Fiscal' %}
+                <!-- APENAS PARA O CONSELHO FISCAL -->
+                <option selected disabled>Selecione um formulário</option>
+
+
+            {% elif group.name == 'Conselho de Pais e Mestres' %}
+                <!-- APENAS PARA O CONSELHO DE PAIS E MESTRES -->
+                <option selected disabled>Selecione um formulário</option>
+
+
+            {% elif group.name == 'Comissão de Ética' %}
+                <!-- APENAS PARA COMISSÃO DE ÉTICA -->
+                <option selected disabled>Selecione um formulário</option>
+
+
+            {% else %}
+                <!-- GRUPO NÃO RECONHECIDO -->
+                <option disabled>Nenhum relatório disponível para seu perfil.</option>
+            {% endif %}
+
+        </select>
+    </div>
+</div>
+
+{% comment %} {% for group in user.groups.all %}
+  <p>Grupo: {{ group.name }}</p>
+{% endfor %} {% endcomment %}

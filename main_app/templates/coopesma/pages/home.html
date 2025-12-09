@@ -1,0 +1,14 @@
+{% extends 'global/base.html' %}
+
+{% load i18n %}
+
+{% block title %} Login | {% endblock title %}
+
+{% include "global/partials/head.html" %}
+
+{% block content %}
+    <div class="main-content main-content-list container">
+        {% comment %} {% include "coopesma/partials/login.html" %} {% endcomment %}
+        {% include "coopesma/partials/go.html" %}          
+    </div>
+{% endblock content %}

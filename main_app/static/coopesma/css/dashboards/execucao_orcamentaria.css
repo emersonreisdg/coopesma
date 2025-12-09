@@ -1,0 +1,19 @@
+@import url('colors.css');
+@import url('report.css');
+@import url('dash.css');
+@import url('period.css');
+@import url('cards.css');
+@import url('canvas.css');
+
+.total-receitas {
+    border-left: 5px solid var(--color-primary1); /* Cor indicativa para receitas */
+}
+
+.total-despesas {
+    border-left: 5px solid var(--color-accent1); /* Cor indicativa para despesas */
+}
+
+.saldo-orcamentario {
+    border-left: 5px solid var(--color-highlight1); /* Cor indicativa para saldo orçamentário */
+}
+

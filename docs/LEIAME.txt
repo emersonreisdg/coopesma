@@ -1,0 +1,9 @@
+PARA ATUALIZAR A DOCUMENTAÇÃO FAÇA:
+
+dentro de COOPESMA execute:
+
+    sphinx-apidoc -o docs/source ./ -f -e -M
+
+dentro de COOPESMA/docs execute:
+
+    .\make.bat html

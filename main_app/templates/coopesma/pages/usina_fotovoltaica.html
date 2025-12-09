@@ -1,0 +1,79 @@
+{% extends 'global/base.html' %}
+
+{% block title %} {{ title }} | {% endblock title %}
+
+{% load static %}
+
+{% include "global/partials/head.html" %}
+
+{% block content %}
+    
+    <div class="main-content main-content-list container">
+        <div class="container text-center">
+            <div class="container">
+                <h1>{{ title }}</h1>
+
+                <div class="button-container">
+                    <form id="report_form" method="post" >
+                        {% csrf_token %}
+                        <!-- Botão Monitoramento -->
+                        {% comment %} <button class="btn btn-monitoramento" id="monitoramento-button" data-url="/usina_fotovoltaica/monitoramento/"> {% endcomment %}
+                        <button type="submit" class="btn btn-monitoramento" id="monitoramento-button" data-url="{% url 'coopesma:monitoramento' %}">    
+                            Monitoramento
+                        </button>
+                        <!-- Botão Alerta -->
+                        <button type="submit" class="btn btn-alerta" onclick="exibirAlerta()">
+                            Alerta
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            {% if controles_ambiente %}                 
+                {% include "coopesma/partials/usina/controls/"|add:ambiente %}
+            {% endif %}
+
+            {% if tem_cards %}
+                {% include "coopesma/partials/usina/cards/"|add:ambiente %}
+            {% endif %}
+                
+           <!-- jQuery -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+            <!-- Select2 CSS e JS -->
+            <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+            <!-- Flatpickr CSS e JS -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+            <!-- Inclua o JS do autoNumeric -->
+            <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+
+ 
+            <script id="data-json" type="application/json">{{ data|safe }}</script>
+            <script id="formData-json" type="application/json">{{ form_data|safe }}</script>
+            <script> console.log('Dados da sessão:',{{ form_data|safe }})</script>
+            
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+            <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+            
+            {% if controles_ambiente %}
+                <script type="module" src="{% static 'coopesma/js/usina/'|add:controles_ambiente %}"></script>
+            {% endif %}
+
+
+            {% comment %} <script>
+                console.log("Conteúdo de data no template:", {{ data|safe }}); 
+                console.log('controles_ambiente:', {{ controles_ambiente}});
+                console.log('ambiente:', {{ ambiente}});
+            </script> {% endcomment %}
+            
+        </div>
+    </div>
+{% endblock content %}

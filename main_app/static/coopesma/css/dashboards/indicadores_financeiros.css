@@ -1,0 +1,230 @@
+@import url('../dash.css');
+@import url('../canvas.css');
+@import url('../report.css');
+@import url('../inputs.css'); 
+@import url('../cards.css'); 
+@import url('../buttons.css');
+
+
+.dash-controls{
+    margin-top: 2rem !important;
+}
+
+
+/* .dash-controls{
+    margin: 2rem auto !important;
+    gap: 3rem !important;
+} */
+
+
+
+
+/* .period-control{
+    margin-left: 2rem !important;
+} */
+
+/* Controles */
+.index-control {
+    font-size: 24px; /* Tamanho da fonte para o label */
+    display: flex; /* Alinha o label e o checkbox horizontalmente */
+    align-items: center; /* Alinha o checkbox e o texto verticalmente */
+    margin-right: 10px;
+
+}
+
+.index-control select {
+    font-size: 20px;
+}
+
+.comparing-container {
+    display: flex;
+}
+
+.cards-container {
+    gap: 4rem !important; /* Espaçamento entre os cards */
+    margin-left: 2rem;
+    margin-right: 2rem; 
+}
+
+
+.comparing-control {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.comparing-control button {
+    background-color: var(--color-accent1); /* Cor do botão desativado */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comparing-control button i {
+    margin-right: 8px;
+}
+
+.comparing-control button:hover {
+    background-color: var(--color-primary2); /* Efeito de hover no botão */
+    transform: translateY(-2px); /* Leve animação ao passar o mouse */
+}
+
+.comparing-control button.active {
+    background-color: var(--color-primary1); /* Cor do botão quando o modo comparação está ativo */
+    color: white;
+}
+
+.comparing-control button.active i {
+    transform: rotate(90deg); /* Altera o ícone para destacar a ativação */
+}
+
+.toggle-button{
+    width: 12rem !important;
+}
+
+/* Modo responsivo */
+@media (max-width: 768px) {
+    .comparing-control button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+/* cards */
+.card {
+    flex: 1; /* Os cards terão a mesma largura */
+    background-color: #f5f5f5; /* Cor de fundo dos cards */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ao redor dos cards */
+    text-align: center; /* Centraliza o conteúdo dentro dos cards */
+    display: flex;
+    flex-direction: column; /* Garante que o conteúdo seja empilhado verticalmente */
+    justify-content: center; /* Centraliza verticalmente o conteúdo */
+    align-items: center; /* Centraliza horizontalmente o conteúdo */
+    transition: transform 0.3s ease; /* Adiciona uma animação suave ao passar o mouse */
+    border-left: 5px solid var(--color-primary1); /* Mover o estilo de borda para .card */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Leve aumento no tamanho */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra mais intensa ao passar o mouse */
+}
+
+.card:hover::before {
+    opacity: 1; /* Leve brilho ao passar o mouse */
+}
+
+.triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: 5px;
+}
+
+.triangle.up {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid green; /* Triângulo verde maior para valores positivos */
+}
+
+.triangle.down {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid red; /* Triângulo vermelho maior para valores negativos */
+}
+
+.line-horizontal {
+    display: inline-block;
+    width: 30px;  /* Aumentar o tamanho da linha conforme desejado */
+    height: 4px;  /* Espessura da linha */
+    background-color: gray;  /* Cor da linha */
+    margin-right: 5px;
+}
+
+
+/* Canvas */
+.canvas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+}
+
+.canvas-container {
+    flex: 1 1 calc(50% - 2rem);
+    min-width: 300px;
+    max-width: 500px;
+    margin-top: 2rem;
+    height: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.canvas-container.small {
+    flex: 1 1 400px;
+    max-width: 400px;
+    min-width: 250px;
+}
+
+.canvas-container.large {
+    flex: 1 1 400px;
+    max-width: 400px;
+    min-width: 250px;
+}
+
+/* Estilo para os dois primeiros gráficos (mais largos) */
+.canvas-container.wide {
+    flex: 1 1 calc(50% - 2rem); /* Ocupa mais espaço */
+    max-width: 800px;
+}
+
+/* Canvas ocupa toda a largura do container */
+.canvas-container canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.canvas-container:hover {
+    transform: scale(1.01);
+}
+
+.canvas-container.hidden {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .canvas-container,
+    .canvas-container.wide {
+        flex: 1 1 calc(50% - 2rem);
+    }
+}
+
+
+
+@media (max-width: 120rem) {
+    .canvas-grid {
+        grid-template-columns: repeat(2, minmax(40rem, 1fr));
+    }
+}
+
+@media (max-width: 80rem) {
+    .canvas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+

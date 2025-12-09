@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>authors.tests.test_register_form &#8212; Documentação Coopesma 0.1</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../_static/documentation_options.js?v=88519e4e"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/translations.js?v=71a39b36"></script>
+    <link rel="index" title="Índice" href="../../../genindex.html" />
+    <link rel="search" title="Buscar" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Código-fonte para authors.tests.test_register_form</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">authors.forms</span><span class="w"> </span><span class="kn">import</span> <span class="n">RegisterForm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.test</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestCase</span> <span class="k">as</span> <span class="n">DjangoTestCase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">unittest</span><span class="w"> </span><span class="kn">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">parameterized</span><span class="w"> </span><span class="kn">import</span> <span class="n">parameterized</span>
+
+
+<div class="viewcode-block" id="AuthorRegisterFormUnitTest">
+<a class="viewcode-back" href="../../../authors.tests.test_register_form.html#authors.tests.test_register_form.AuthorRegisterFormUnitTest">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AuthorRegisterFormUnitTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="nd">@parameterized</span><span class="o">.</span><span class="n">expand</span><span class="p">([</span>
+        <span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Your username&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;Your e-mail&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;Ex.: John&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;last_name&#39;</span><span class="p">,</span> <span class="s1">&#39;Ex.: Doe&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;Type your password&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;password2&#39;</span><span class="p">,</span> <span class="s1">&#39;Repeat your password&#39;</span><span class="p">),</span>
+    <span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_fields_placeholder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">placeholder</span><span class="p">):</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">RegisterForm</span><span class="p">()</span>
+        <span class="n">current_placeholder</span> <span class="o">=</span> <span class="n">form</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">widget</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;placeholder&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">current_placeholder</span><span class="p">,</span> <span class="n">placeholder</span><span class="p">)</span>
+
+    <span class="nd">@parameterized</span><span class="o">.</span><span class="n">expand</span><span class="p">([</span>
+        <span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="p">(</span>
+            <span class="s1">&#39;Username must have letters, numbers or one of those @.+-_. &#39;</span>
+            <span class="s1">&#39;The length should be between 4 and 150 characters.&#39;</span>
+        <span class="p">)),</span>
+        <span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;The e-mail must be valid.&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="p">(</span>
+            <span class="s1">&#39;Password must have at least one uppercase letter, &#39;</span>
+            <span class="s1">&#39;one lowercase letter and one number. The length should be &#39;</span>
+            <span class="s1">&#39;at least 8 characters.&#39;</span>
+        <span class="p">)),</span>
+    <span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_fields_help_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">needed</span><span class="p">):</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">RegisterForm</span><span class="p">()</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">form</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">help_text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">needed</span><span class="p">)</span>
+
+    <span class="nd">@parameterized</span><span class="o">.</span><span class="n">expand</span><span class="p">([</span>
+        <span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;First name&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;last_name&#39;</span><span class="p">,</span> <span class="s1">&#39;Last name&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;E-mail&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;Password&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;password2&#39;</span><span class="p">,</span> <span class="s1">&#39;Password2&#39;</span><span class="p">),</span>
+    <span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_fields_label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">needed</span><span class="p">):</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">RegisterForm</span><span class="p">()</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">form</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="o">.</span><span class="n">label</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="n">needed</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="AuthorRegisterFormIntegrationTest">
+<a class="viewcode-back" href="../../../authors.tests.test_register_form.html#authors.tests.test_register_form.AuthorRegisterFormIntegrationTest">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AuthorRegisterFormIntegrationTest</span><span class="p">(</span><span class="n">DjangoTestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="AuthorRegisterFormIntegrationTest.setUp">
+<a class="viewcode-back" href="../../../authors.tests.test_register_form.html#authors.tests.test_register_form.AuthorRegisterFormIntegrationTest.setUp">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;first_name&#39;</span><span class="p">:</span> <span class="s1">&#39;first&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;last_name&#39;</span><span class="p">:</span> <span class="s1">&#39;last&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="s1">&#39;email@anyemail.com&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;Str0ngP@ssword1&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;password2&#39;</span><span class="p">:</span> <span class="s1">&#39;Str0ngP@ssword1&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">setUp</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+    <span class="nd">@parameterized</span><span class="o">.</span><span class="n">expand</span><span class="p">([</span>
+        <span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;This field must not be empty&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;first_name&#39;</span><span class="p">,</span> <span class="s1">&#39;Write your first name&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;last_name&#39;</span><span class="p">,</span> <span class="s1">&#39;Write your last name&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;Password must not be empty&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;password2&#39;</span><span class="p">,</span> <span class="s1">&#39;Please, repeat your password&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;E-mail is required&#39;</span><span class="p">),</span>
+    <span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_fields_cannot_be_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;colaborador:register_create&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">,</span> <span class="n">follow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="s1">&#39;form&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">field</span><span class="p">))</span>
+
+<div class="viewcode-block" id="AuthorRegisterFormIntegrationTest.test_username_field_min_length_should_be_4">
+<a class="viewcode-back" href="../../../authors.tests.test_register_form.html#authors.tests.test_register_form.AuthorRegisterFormIntegrationTest.test_username_field_min_length_should_be_4">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_username_field_min_length_should_be_4</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;joa&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;colaborador:register_create&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">,</span> <span class="n">follow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Username must have at least 4 characters&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="s1">&#39;form&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="AuthorRegisterFormIntegrationTest.test_username_field_max_length_should_be_150">
+<a class="viewcode-back" href="../../../authors.tests.test_register_form.html#authors.tests.test_register_form.AuthorRegisterFormIntegrationTest.test_username_field_max_length_should_be_150">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_username_field_max_length_should_be_150</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span> <span class="o">*</span> <span class="mi">151</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;colaborador:register_create&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">,</span> <span class="n">follow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Username must have less than 150 characters&#39;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="s1">&#39;form&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="AuthorRegisterFormIntegrationTest.test_password_field_have_lower_upper_case_letters_and_numbers">
+<a class="viewcode-back" href="../../../authors.tests.test_register_form.html#authors.tests.test_register_form.AuthorRegisterFormIntegrationTest.test_password_field_have_lower_upper_case_letters_and_numbers">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_password_field_have_lower_upper_case_letters_and_numbers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;abc123&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;colaborador:register_create&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">,</span> <span class="n">follow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s1">&#39;Password must have at least one uppercase letter, &#39;</span>
+            <span class="s1">&#39;one lowercase letter and one number. The length should be &#39;</span>
+            <span class="s1">&#39;at least 8 characters.&#39;</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="s1">&#39;form&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;@A123abc123&#39;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;colaborador:register_create&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">,</span> <span class="n">follow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertNotIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="s1">&#39;form&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="AuthorRegisterFormIntegrationTest.test_password_and_password_confirmation_are_equal">
+<a class="viewcode-back" href="../../../authors.tests.test_register_form.html#authors.tests.test_register_form.AuthorRegisterFormIntegrationTest.test_password_and_password_confirmation_are_equal">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_password_and_password_confirmation_are_equal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;@A123abc123&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">[</span><span class="s1">&#39;password2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;@A123abc1235&#39;</span>
+
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;colaborador:register_create&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">,</span> <span class="n">follow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Password and password2 must be equal&#39;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="s1">&#39;form&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;@A123abc123&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">[</span><span class="s1">&#39;password2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;@A123abc123&#39;</span>
+
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;colaborador:register_create&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">,</span> <span class="n">follow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertNotIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="AuthorRegisterFormIntegrationTest.test_send_get_request_to_registration_create_view_returns_404">
+<a class="viewcode-back" href="../../../authors.tests.test_register_form.html#authors.tests.test_register_form.AuthorRegisterFormIntegrationTest.test_send_get_request_to_registration_create_view_returns_404">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_send_get_request_to_registration_create_view_returns_404</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;colaborador:register_create&#39;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="AuthorRegisterFormIntegrationTest.test_email_field_must_be_unique">
+<a class="viewcode-back" href="../../../authors.tests.test_register_form.html#authors.tests.test_register_form.AuthorRegisterFormIntegrationTest.test_email_field_must_be_unique">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_email_field_must_be_unique</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;colaborador:register_create&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">,</span> <span class="n">follow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">,</span> <span class="n">follow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;User e-mail is already in use&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">context</span><span class="p">[</span><span class="s1">&#39;form&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="AuthorRegisterFormIntegrationTest.test_author_created_can_login">
+<a class="viewcode-back" href="../../../authors.tests.test_register_form.html#authors.tests.test_register_form.AuthorRegisterFormIntegrationTest.test_author_created_can_login">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">test_author_created_can_login</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;colaborador:register_create&#39;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+            <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;testuser&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="s1">&#39;@Bc123456&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;password2&#39;</span><span class="p">:</span> <span class="s1">&#39;@Bc123456&#39;</span><span class="p">,</span>
+        <span class="p">})</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">,</span> <span class="n">follow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">is_authenticated</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">login</span><span class="p">(</span>
+            <span class="n">username</span><span class="o">=</span><span class="s1">&#39;testuser&#39;</span><span class="p">,</span>
+            <span class="n">password</span><span class="o">=</span><span class="s1">&#39;@Bc123456&#39;</span>
+        <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">is_authenticated</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">Coopesma</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegação</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../instalacao.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../uso.html">Uso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../desenvolvimento.html">Desenvolvimento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">authors</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Código do módulo</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Wanderley Cardoso Celeste.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

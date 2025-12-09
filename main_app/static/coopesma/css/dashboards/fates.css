@@ -1,0 +1,21 @@
+@import url('../canvas.css');
+@import url('../report.css');
+@import url('../inputs.css'); 
+@import url('../dash.css'); 
+
+.dash-controls{
+    margin: 2rem auto !important;
+}
+
+.year-controls{
+    margin-left: 2rem !important;
+}
+
+.canvas-grid {
+    padding: 1rem 2rem !important;
+}
+
+.canvas-container {
+    flex: 1 1 calc(33.33% - 1.5rem) !important;
+    background-color: var(--color-white) !important;
+}

@@ -1,0 +1,139 @@
+<div class="form-content-controle-cooperados">
+    <h2>Novo Registro de Cooperado</h2>
+    <form action="" method="post" class="form-container-controle-cooperados" id="controle-cooperados-form">
+        {% csrf_token %}
+        <div class="form-container-controle-cooperados">
+            <!-- Campo de Data -->
+            <label for="data">Data</label>
+            <input type="text" id="data" name="data" class="date-picker" value="{{ form.data.value|default_if_none:'' }}" />
+            {% if form.data.errors %}
+                <div class="error">{{ form.data.errors }}</div>
+            {% endif %}
+        
+            <!-- Campo de Cooperado -->
+            <label for="cooperado">Cooperado</label>
+            <select id="cooperado" name="cooperado" class="select-add-new" data-placeholder="Selecione ou adicione um novo cooperado" data-selected="{{ form.cooperado.value }}">
+                <option value="" {% if form.cooperado.value == "" %}selected{% endif %}></option>
+                {% for option in cooperados %}
+                    <option value="{{ option }}" {% if form.cooperado.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.cooperado.errors %}
+                <div class="error">{{ form.cooperado.errors }}</div>
+            {% endif %}
+        
+            <!-- Campo de Aluno -->
+            <label for="aluno">Aluno</label>
+            <select id="aluno" name="aluno" class="select-add-new" data-placeholder="Selecione ou adicione um novo aluno" data-selected="{{ form.aluno.value }}">
+                <option value="" {% if form.aluno.value == "" %}selected{% endif %}></option>
+                {% for option in alunos %}
+                    <option value="{{ option }}" {% if form.aluno.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.aluno.errors %}
+                <div class="error">{{ form.aluno.errors }}</div>
+            {% endif %}
+        
+            <!-- Campo de Turma -->
+            <label for="turma">Turma</label>
+            <select id="turma" name="turma" class="select-add-new" data-placeholder="Selecione ou adicione uma nova turma" data-selected="{{ form.turma.value }}">
+                <option value="" {% if form.turma.value == "" %}selected{% endif %}></option>
+                {% for option in turmas %}
+                    <option value="{{ option }}" {% if form.turma.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.turma.errors %}
+                <div class="error">{{ form.turma.errors }}</div>
+            {% endif %}
+
+            <!-- Campo de Cobrança de Receita -->
+            <label for="cobranca_receita">Cobrança de Receita</label>
+            <select id="cobranca_receita" name="cobranca_receita" class="select-add-new" data-placeholder="Selecione ou adicione o tipo de cobrança de receita" data-selected="{{ form.cobranca_receita.value }}">
+                <option value="" {% if form.cobranca_receita.value == "" %}selected{% endif %}></option>
+                {% for option in cobranca_receitas %}
+                    <option value="{{ option }}" {% if form.cobranca_receita.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.cobranca_receita.errors %}
+                <div class="error">{{ form.cobranca_receita.errors }}</div>
+            {% endif %}
+
+            <!-- Campo de Plano de Desconto -->
+            <label for="plano_desconto">Plano de Desconto</label>
+            <select id="plano_desconto" name="plano_desconto" class="select-add-new" data-placeholder="Selecione ou adicione o plano de desconto" data-selected="{{ form.plano_desconto.value }}">
+                <option value="" {% if form.plano_desconto.value == "" %}selected{% endif %}></option>
+                {% for option in plano_descontos %}
+                    <option value="{{ option }}" {% if form.plano_desconto.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.plano_desconto.errors %}
+                <div class="error">{{ form.plano_desconto.errors }}</div>
+            {% endif %}
+
+            <!-- Campo de Plano de Benefícios -->
+            <label for="beneficios">Benefícios</label>
+            <select id="beneficios" name="beneficios" class="select-add-new" data-placeholder="Selecione ou adicione os benefícios concedidos" data-selected="{{ form.beneficios.value }}">
+                <option value="" {% if form.beneficios.value == "" %}selected{% endif %}></option>
+                {% for option in beneficioss %}
+                    <option value="{{ option }}" {% if form.beneficios.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.beneficios.errors %}
+                <div class="error">{{ form.beneficios.errors }}</div>
+            {% endif %}
+
+            <!-- Campo de Rateio -->
+            <label for="rateio">Rateio</label>
+            <input type="text" id="rateio" name="rateio" class="form-control" autocomplete="off" placeholder="Digite o valor bruto do rateio" value="{{ form.rateio.value|default_if_none:'' }}" />
+            {% if form.rateio.errors %}
+                <div class="error">{{ form.rateio.errors }}</div>
+            {% endif %}
+
+            <!-- Campo de Desconto Percentual -->
+            <label for="desconto_percentual">Desconto %</label>
+            <input type="text" id="desconto_percentual" name="desconto_percentual" class="form-control" autocomplete="off" placeholder="Digite o desconto percentual concedido" value="{{ form.desconto_percentual.value|default_if_none:'' }}" />
+            {% if form.desconto_percentual.errors %}
+                <div class="error">{{ form.desconto_percentual.errors }}</div>
+            {% endif %}
+
+            <!-- Campo de Livros -->
+            <label for="livros">Livros</label>
+            <input type="text" id="livros" name="livros" class="form-control" autocomplete="off" placeholder="Digite o valor integral dos livros" value="{{ form.livros.value|default_if_none:'' }}" />
+            {% if form.livros.errors %}
+                <div class="error">{{ form.livros.errors }}</div>
+            {% endif %}
+
+            <!-- Campo de Número de Parcelas  -->
+            <label for="numero_parcelas">Nº Parcelas de Livros</label>
+            <input type="text" id="numero_parcelas" name="numero_parcelas" class="form-control" autocomplete="off" placeholder="Número de parcelas de livros" value="{{ form.numero_parcelas.value|default_if_none:'' }}" />
+            {% if form.numero_parcelas.errors %}
+                <div class="error">{{ form.numero_parcelas.errors }}</div>
+            {% endif %}
+
+            <!-- Campo de Indicados -->
+            {% comment %} <label for="indicado">Indicado</label>
+            <select id="indicado" name="indicado" class="select-add-new" data-placeholder="Selecione ou adicione o indicado" data-selected="{{ form.indicado.value }}">
+                <option value="" {% if form.indicado.value == "" %}selected{% endif %}></option>
+                {% for option in indicados %}
+                    <option value="{{ option }}" {% if form.indicado.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.indicado.errors %}
+                <div class="error">{{ form.indicado.errors }}</div>
+            {% endif %} {% endcomment %}
+
+              <!-- Campo de Indicou -->
+            <label for="indicou">Indicou</label>
+            <select id="indicou" name="indicou" class="select-add-new" data-placeholder="Selecione ou adicione quem indicou" data-selected="{{ form.indicou.value }}">
+                <option value="" {% if form.indicou.value == "" %}selected{% endif %}></option>
+                {% for option in indicaram %}
+                    <option value="{{ option }}" {% if form.indicou.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.indicou.errors %}
+                <div class="error">{{ form.indicou.errors }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" id="submit-button" class="btn btn-primary">Enviar</button>
+    </form>
+</div>

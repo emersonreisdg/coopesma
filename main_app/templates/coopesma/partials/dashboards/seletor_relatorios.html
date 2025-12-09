@@ -1,0 +1,177 @@
+<div class="report-type-container">
+    <div class="report-type">
+        <label for="report_type">Relatório:</label>
+        <select id="report_type" name="report_type">
+            <option selected disabled>Selecione um relatório</option>
+
+            {% if group.name == 'Administrador' %}
+                <!-- TODOS OS RELATÓRIOS -->
+                <option value="/relatorio/aplicacoes/">Aplicações</option>
+                <option value="/formulario/avaliacao/">Avaliação (Zenilza)*</option>
+                <option value="/relatorio/cargos_salarios/">Cargos e Salários*</option>
+                <option value="/relatorio/controle_cooperados/">Controle de Cooperados</option>
+                <option value="/relatorio/detalhes_matriculas/">Detalhes de Matrículas</option>
+                <option value="/relatorio/receitas_despesas/">Receitas e Despesas</option>
+                <option value="/relatorio/fates/">FATES</option>
+                <option value="/relatorio/historico_matriculas/">Histórico de Matrículas</option>
+                <option value="/relatorio/reajustes/">Histórico de Reajustes*</option>
+                <option value="/relatorio/ifes/">IFES*</option>
+                <option value="/relatorio/inadimplencia/">Inadimplência</option>
+                <option value="/relatorio/indicadores_financeiros/">Indicadores Financeiros</option>
+                <option value="/relatorio/planos_descontos/">Planos e Descontos</option>
+                <option value="/relatorio/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/relatorio/previsao_orcamentaria/formato_dre/">Previsão Orçamentária em Formato de DRE</option>
+                <option value="/relatorio/fates/projecao">Projeção FATES</option>
+                <option value="/relatorio/resultado_matriculas/">Resultado de Matrículas</option>
+                <option value="/formulario/tercerizado/">Serviço/Fornecedor (Tatiane)*</option>
+
+            {% elif group.name == 'Financeiro' %}
+                <!-- APENAS RELATÓRIOS FINANCEIROS -->
+                <option value="/relatorio/aplicacoes/">Aplicações</option>
+                <option value="/relatorio/cargos_salarios/">Cargos e Salários*</option>
+                <option value="/relatorio/controle_cooperados/">Controle de Cooperados</option>
+                <option value="/relatorio/fates/">FATES</option>
+                <option value="/relatorio/reajustes/">Histórico de Reajustes*</option>
+                <option value="/relatorio/inadimplencia/">Inadimplência</option>
+                <option value="/relatorio/indicadores_financeiros/">Indicadores Financeiros</option>
+                 <option value="/relatorio/planos_descontos/">Planos e Descontos</option>
+                <option value="/relatorio/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/relatorio/previsao_orcamentaria/formato_dre/">Previsão Orçamentária em Formato de DRE</option>
+                <option value="/relatorio/fates/projecao">Projeção FATES</option>
+                <option value="/relatorio/receitas_despesas/">Receitas e Despesas</option>
+                <option value="/relatorio/resultado_matriculas/">Resultado de Matrículas</option>
+
+            {% elif group.name == 'Secretaria' %}
+                <!-- APENAS PARA SECRETARIA -->
+                <option value="/relatorio/controle_cooperados/">Controle de Cooperados</option>
+                <option value="/relatorio/detalhes_matriculas/">Detalhes de Matrículas</option>
+                <option value="/relatorio/historico_matriculas/">Histórico de Matrículas</option>
+                <option value="/relatorio/ifes/">IFES*</option>
+                <option value="/relatorio/resultado_matriculas/">Resultado de Matrículas</option>
+
+            {% elif group.name == 'Pedagógico' %}
+                <!-- APENAS PARA O PEDAGÓGICO -->
+                <option value="/relatorio/detalhes_matriculas/">Detalhes de Matrículas</option>
+                <option value="/relatorio/historico_matriculas/">Histórico de Matrículas</option>
+                <option value="/relatorio/ifes/">IFES*</option>
+                <option value="/relatorio/resultado_matriculas/">Resultado de Matrículas</option>
+            
+            {% elif group.name == 'Compras' %}
+                <!-- APENAS PARA COMPRAS -->
+                <option value="/relatorio/aplicacoes/">Aplicações</option>
+                <option value="/relatorio/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/relatorio/previsao_orcamentaria/formato_dre/">Previsão Orçamentária em Formato de DRE</option>
+                <option value="/formulario/tercerizado/">Serviço/Fornecedor (Tatiane)*</option>
+            
+            {% elif group.name == 'Direção' %}
+                <!-- APENAS PARA DIREÇÃO -->
+                <option value="/relatorio/aplicacoes/">Aplicações</option>
+                <option value="/formulario/avaliacao/">Avaliação (Zenilza)*</option>
+                <option value="/relatorio/cargos_salarios/">Cargos e Salários*</option>
+                <option value="/relatorio/controle_cooperados/">Controle de Cooperados</option>
+                <option value="/relatorio/detalhes_matriculas/">Detalhes de Matrículas</option>
+                <option value="/relatorio/receitas_despesas/">Receitas e Despesas</option>
+                <option value="/relatorio/fates/">FATES</option>
+                <option value="/relatorio/historico_matriculas/">Histórico de Matrículas</option>
+                <option value="/relatorio/reajustes/">Histórico de Reajustes*</option>
+                <option value="/relatorio/ifes/">IFES*</option>
+                <option value="/relatorio/inadimplencia/">Inadimplência</option>
+                <option value="/relatorio/indicadores_financeiros/">Indicadores Financeiros</option>
+                <option value="/relatorio/planos_descontos/">Planos e Descontos</option>
+                <option value="/relatorio/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/relatorio/previsao_orcamentaria/formato_dre/">Previsão Orçamentária em Formato de DRE</option>
+                <option value="/relatorio/fates/projecao">Projeção FATES</option>
+                <option value="/relatorio/resultado_matriculas/">Resultado de Matrículas</option>
+                <option value="/formulario/tercerizado/">Serviço/Fornecedor (Tatiane)*</option>
+            
+            {% elif group.name == 'Conselho de Administração' %}
+                <!-- APENAS PARA O CONSELHO DE ADMINISTRAÇÃO -->
+                <option value="/relatorio/aplicacoes/">Aplicações</option>
+                <option value="/formulario/avaliacao/">Avaliação (Zenilza)*</option>
+                <option value="/relatorio/cargos_salarios/">Cargos e Salários*</option>
+                <option value="/relatorio/controle_cooperados/">Controle de Cooperados</option>
+                <option value="/relatorio/detalhes_matriculas/">Detalhes de Matrículas</option>
+                <option value="/relatorio/receitas_despesas/">Receitas e Despesas</option>
+                <option value="/relatorio/fates/">FATES</option>
+                <option value="/relatorio/historico_matriculas/">Histórico de Matrículas</option>
+                <option value="/relatorio/reajustes/">Histórico de Reajustes*</option>
+                <option value="/relatorio/ifes/">IFES*</option>
+                <option value="/relatorio/inadimplencia/">Inadimplência</option>
+                <option value="/relatorio/indicadores_financeiros/">Indicadores Financeiros</option>
+                <option value="/relatorio/planos_descontos/">Planos e Descontos</option>
+                <option value="/relatorio/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/relatorio/previsao_orcamentaria/formato_dre/">Previsão Orçamentária em Formato de DRE</option>
+                <option value="/relatorio/fates/projecao">Projeção FATES</option>
+                <option value="/relatorio/resultado_matriculas/">Resultado de Matrículas</option>
+                <option value="/formulario/tercerizado/">Serviço/Fornecedor (Tatiane)*</option>
+
+            {% elif group.name == 'Conselho Fiscal' %}
+                <!-- APENAS PARA O CONSELHO FISCAL -->
+                <option value="/relatorio/aplicacoes/">Aplicações</option>
+                <option value="/formulario/avaliacao/">Avaliação (Zenilza)*</option>
+                <option value="/relatorio/cargos_salarios/">Cargos e Salários*</option>
+                <option value="/relatorio/controle_cooperados/">Controle de Cooperados</option>
+                <option value="/relatorio/detalhes_matriculas/">Detalhes de Matrículas</option>
+                <option value="/relatorio/receitas_despesas/">Receitas e Despesas</option>
+                <option value="/relatorio/fates/">FATES</option>
+                <option value="/relatorio/historico_matriculas/">Histórico de Matrículas</option>
+                <option value="/relatorio/reajustes/">Histórico de Reajustes*</option>
+                <option value="/relatorio/ifes/">IFES*</option>
+                <option value="/relatorio/inadimplencia/">Inadimplência</option>
+                <option value="/relatorio/indicadores_financeiros/">Indicadores Financeiros</option>
+                <option value="/relatorio/planos_descontos/">Planos e Descontos</option>
+                <option value="/relatorio/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/relatorio/previsao_orcamentaria/formato_dre/">Previsão Orçamentária em Formato de DRE</option>
+                <option value="/relatorio/fates/projecao">Projeção FATES</option>
+                <option value="/relatorio/resultado_matriculas/">Resultado de Matrículas</option>
+                <option value="/formulario/tercerizado/">Serviço/Fornecedor (Tatiane)*</option>
+
+            {% elif group.name == 'Conselho de Pais e Mestres' %}
+                <!-- APENAS PARA O CONSELHO DE PAIS E MESTRES -->
+                <option value="/relatorio/detalhes_matriculas/">Detalhes de Matrículas</option>
+                <option value="/relatorio/receitas_despesas/">Receitas e Despesas</option>
+                <option value="/relatorio/fates/">FATES</option>
+                <option value="/relatorio/historico_matriculas/">Histórico de Matrículas</option>
+                <option value="/relatorio/ifes/">IFES*</option>
+                <option value="/relatorio/inadimplencia/">Inadimplência</option>
+                <option value="/relatorio/indicadores_financeiros/">Indicadores Financeiros</option>
+                <option value="/relatorio/planos_descontos/">Planos e Descontos</option>
+                <option value="/relatorio/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/relatorio/previsao_orcamentaria/formato_dre/">Previsão Orçamentária em Formato de DRE</option>
+                <option value="/relatorio/fates/projecao">Projeção FATES</option>
+                <option value="/relatorio/resultado_matriculas/">Resultado de Matrículas</option>
+
+            {% elif group.name == 'Comissão de Ética' %}
+                <!-- APENAS PARA COMISSÃO DE ÉTICA -->
+                <option value="/relatorio/aplicacoes/">Aplicações</option>
+                <option value="/formulario/avaliacao/">Avaliação (Zenilza)*</option>
+                <option value="/relatorio/cargos_salarios/">Cargos e Salários*</option>
+                <option value="/relatorio/controle_cooperados/">Controle de Cooperados</option>
+                <option value="/relatorio/detalhes_matriculas/">Detalhes de Matrículas</option>
+                <option value="/relatorio/receitas_despesas/">Receitas e Despesas</option>
+                <option value="/relatorio/fates/">FATES</option>
+                <option value="/relatorio/historico_matriculas/">Histórico de Matrículas</option>
+                <option value="/relatorio/reajustes/">Histórico de Reajustes*</option>
+                <option value="/relatorio/ifes/">IFES*</option>
+                <option value="/relatorio/inadimplencia/">Inadimplência</option>
+                <option value="/relatorio/indicadores_financeiros/">Indicadores Financeiros</option>
+                <option value="/relatorio/planos_descontos/">Planos e Descontos</option>
+                <option value="/relatorio/previsao_orcamentaria/">Previsão Orçamentária</option>
+                <option value="/relatorio/previsao_orcamentaria/formato_dre/">Previsão Orçamentária em Formato de DRE</option>
+                <option value="/relatorio/fates/projecao">Projeção FATES</option>
+                <option value="/relatorio/resultado_matriculas/">Resultado de Matrículas</option>
+                <option value="/formulario/tercerizado/">Serviço/Fornecedor (Tatiane)*</option>
+
+            {% else %}
+                <!-- GRUPO NÃO RECONHECIDO -->
+                <option disabled>Nenhum relatório disponível para seu perfil.</option>
+            {% endif %}
+
+        </select>
+    </div>
+</div>
+
+{% comment %} 
+{% for group in user.groups.all %}
+  <p>Grupo: {{ group.name }}</p>
+{% endfor %}  {% endcomment %}

@@ -1,0 +1,97 @@
+{% extends 'global/base.html' %}
+
+{% block title %} {{ title }} | {% endblock title %}
+
+{% load static %}
+
+{% include "global/partials/head.html" %}
+
+{% block content %}
+    <div class="main-content main-content-list container">
+        <div class="dashboard-container">
+            <form id="report_form" method="post">
+                {% csrf_token %}
+
+                {% include "coopesma/partials/dashboards/seletor_relatorios.html" %}
+
+                {% if controles_ambiente %}                 
+                    {% include "coopesma/partials/dashboards/controls/"|add:ambiente %}
+                {% endif %}
+            </form>
+
+            {% if tem_cards %}
+                {% include "coopesma/partials/dashboards/cards/"|add:ambiente %}
+            {% endif %}
+
+            <!-- Adicione a tabela aqui -->
+            {% if tipo_ambiente == 'dashboard' %}
+                {% include "coopesma/partials/canvas.html" %}
+                {% include "coopesma/partials/table.html" %}
+            {% endif %}
+
+            <!-- Scripts do Chart.js e plugins -->
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"></script>
+
+            {% if usar_gauge %}
+                <script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/chartjs-gauge@0.3.0/dist/chartjs-gauge.min.js"></script>
+            {% endif %}
+
+            <!-- jQuery e DataTables -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+            <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+            {% comment %} <!-- Combo Tree Plugin -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/indrimuska/jquery-combo-tree/jquery.comboTree.css">
+            <script src="https://cdn.jsdelivr.net/gh/indrimuska/jquery-combo-tree/jquery.comboTree.js"></script> {% endcomment %}
+
+
+
+
+            <!-- CSS do Select2 -->
+            <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+            <!-- JSON data -->
+            <script id="data-json" type="application/json">{{ data|safe }}</script>
+            <script id="dataHierarchy-json" type="application/json">{{ dataHierarchy |safe }}</script>
+            <script id="monthsByYear-json" type="application/json">{{ months_by_year |safe }}</script>
+            <script id="contasPorBanco-json" type="application/json">{{ contas_por_banco |safe }}</script>
+            <script id="aplicacoesPorBanco-json" type="application/json">{{ aplicacoes_por_banco |safe }}</script>
+            <script id="subtipoPorTipo-json" type="application/json">{{ subtipo_por_tipo |safe }}</script>
+            <script id="categoriaPorSubtipo-json" type="application/json">{{ categoria_por_subtipo |safe }}</script>
+            <script id="itemPorTipo-json" type="application/json">{{ item_por_tipo |safe }}</script>
+            <script id="itemPorSubtipo-json" type="application/json">{{ item_por_subtipo |safe }}</script>
+            <script id="itemPorCategoria-json" type="application/json">{{ item_por_categoria |safe }}</script>
+            <script id="itensContabeis-json" type="application/json">{{ i_contabeis | safe }}</script>
+            <script id="indicadores-json" type="application/json">{{ indicadores_financeiros | safe }}</script>
+
+            <script> console.log('Dados do contexto:',{{ data|safe }})</script>
+            
+
+
+            <!-- JavaScript do Select2 -->
+            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+            <!-- Seu script principal -->
+            <script type="module" src="{% static 'coopesma/js/chartConfig.js' %}"></script>
+
+            <!-- Estilos do comboTree -->
+            <link rel="stylesheet" href="{% static 'coopesma/css/comboTree.css' %}">
+
+            <!-- javascript do comboTree -->
+            <script type="module"  src="{% static 'coopesma/js/comboTree.js' %}"></script>
+
+            {% comment %} <!-- javascript do multiselect-dropdown -->
+            <script type="module"  src="{% static 'coopesma/js/multiselect-dropdown.js' %}"></script> {% endcomment %}
+
+
+            {% if controles_ambiente %}
+                <script type="module" src="{% static 'coopesma/js/dashboards/'|add:controles_ambiente %}"></script>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

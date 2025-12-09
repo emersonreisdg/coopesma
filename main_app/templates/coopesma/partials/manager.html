@@ -1,0 +1,11 @@
+{% load static %}
+
+<div class="go_container">
+    <div class="go-button-container">
+        {% for functionality, url_name in functionalities %}
+            <form action="{% url url_name %}" method="get">
+                <button type="submit" class="functionality-button">{{ functionality }}</button>
+            </form>
+        {% endfor %}
+    </div>
+</div>

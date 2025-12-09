@@ -1,0 +1,34 @@
+@import url('colors.css');
+
+.serie-control {
+    display: flex;
+    align-items: start;
+    margin-right: 20px;
+    font-size: 18px; 
+    gap: 4px;
+}
+
+.serie-control label {
+    font-size: 16px; /* menor tamanho para o rótulo */
+    margin-bottom: 2px;
+}
+
+.serie-control select {
+    width: 120px;
+    height: auto;
+    max-height: 40px; /* Define a altura máxima do dropdown */
+    overflow-y: auto;  /* Adiciona rolagem vertical */
+    font-size: 16px;
+    padding: 4px; /* reduz espaço interno */
+}
+
+.serie-control option:checked {
+    background-color: var(--color-selectbackground); /* Fundo azul-claro */
+    color: var(--color-select); /* Texto azul */
+    font-weight: bold;
+}
+
+.serie-control option:checked::before {
+    content: "✔ "; /* Check na frente do texto */
+    color:  var(--color-select);
+}

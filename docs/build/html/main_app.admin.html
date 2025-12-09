@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>main_app.admin module &#8212; Documentação Coopesma 0.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=88519e4e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=71a39b36"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="next" title="main_app.apps module" href="main_app.apps.html" />
+    <link rel="prev" title="main_app.views.site.orcamento.orcamento module" href="main_app.views.site.orcamento.orcamento.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-main_app.admin">
+<span id="main-app-admin-module"></span><h1>main_app.admin module<a class="headerlink" href="#module-main_app.admin" title="Link para este cabeçalho">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.AplicacoesAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">AplicacoesAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#AplicacoesAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.AplicacoesAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.AplicacoesAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'banco',</span> <span class="pre">'conta',</span> <span class="pre">'aplicacao',</span> <span class="pre">'valor',</span> <span class="pre">'origem']</span></em><a class="headerlink" href="#main_app.admin.AplicacoesAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.AplicacoesAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.AplicacoesAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.AplicacoesAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',</span> <span class="pre">'banco',</span> <span class="pre">'conta',</span> <span class="pre">'aplicacao',</span> <span class="pre">'origem')</span></em><a class="headerlink" href="#main_app.admin.AplicacoesAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.AplicacoesAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.AplicacoesAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.AplicacoesAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.AplicacoesAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.AplicacoesAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('-data',)</span></em><a class="headerlink" href="#main_app.admin.AplicacoesAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.AplicacoesAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('banco',</span> <span class="pre">'conta',</span> <span class="pre">'aplicacao',</span> <span class="pre">'origem')</span></em><a class="headerlink" href="#main_app.admin.AplicacoesAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.CargosESalariosAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">CargosESalariosAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#CargosESalariosAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.CargosESalariosAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.CargosESalariosAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['cargo',</span> <span class="pre">'numero_funcionarios',</span> <span class="pre">'carga_horaria',</span> <span class="pre">'salario']</span></em><a class="headerlink" href="#main_app.admin.CargosESalariosAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.CargosESalariosAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('cargo',)</span></em><a class="headerlink" href="#main_app.admin.CargosESalariosAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.CargosESalariosAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('cargo',)</span></em><a class="headerlink" href="#main_app.admin.CargosESalariosAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.CargosESalariosAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.CargosESalariosAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.CargosESalariosAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.CargosESalariosAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.CargosESalariosAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['cargo']</span></em><a class="headerlink" href="#main_app.admin.CargosESalariosAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.CargosESalariosAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('cargo',)</span></em><a class="headerlink" href="#main_app.admin.CargosESalariosAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.ControleAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">ControleAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#ControleAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.ControleAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ControleAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'numero_cooperado',</span> <span class="pre">'cooperado',</span> <span class="pre">'aluno',</span> <span class="pre">'turma',</span> <span class="pre">'cobranca_receita',</span> <span class="pre">'plano_desconto',</span> <span class="pre">'beneficios',</span> <span class="pre">'rateio',</span> <span class="pre">'desconto_percentual',</span> <span class="pre">'desconto',</span> <span class="pre">'valor_liquido',</span> <span class="pre">'livros',</span> <span class="pre">'numero_parcelas',</span> <span class="pre">'soma_livros',</span> <span class="pre">'indicou']</span></em><a class="headerlink" href="#main_app.admin.ControleAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ControleAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('numero_cooperado',</span> <span class="pre">'cooperado')</span></em><a class="headerlink" href="#main_app.admin.ControleAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ControleAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('cooperado',</span> <span class="pre">'aluno',</span> <span class="pre">'turma')</span></em><a class="headerlink" href="#main_app.admin.ControleAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ControleAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.ControleAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.ControleAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.ControleAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ControleAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['cooperado']</span></em><a class="headerlink" href="#main_app.admin.ControleAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ControleAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('numero_cooperado',</span> <span class="pre">'cooperado',</span> <span class="pre">'aluno',</span> <span class="pre">'turma')</span></em><a class="headerlink" href="#main_app.admin.ControleAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.DespesaReceitaAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">DespesaReceitaAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#DespesaReceitaAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.DespesaReceitaAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesaReceitaAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['delete_selected']</span></em><a class="headerlink" href="#main_app.admin.DespesaReceitaAdmin.actions" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesaReceitaAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'plano_de_contas',</span> <span class="pre">'valor',</span> <span class="pre">'tipo',</span> <span class="pre">'subtipo',</span> <span class="pre">'categoria']</span></em><a class="headerlink" href="#main_app.admin.DespesaReceitaAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesaReceitaAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',</span> <span class="pre">'plano_de_contas',</span> <span class="pre">'tipo',</span> <span class="pre">'subtipo')</span></em><a class="headerlink" href="#main_app.admin.DespesaReceitaAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesaReceitaAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',</span> <span class="pre">'plano_de_contas')</span></em><a class="headerlink" href="#main_app.admin.DespesaReceitaAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesaReceitaAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.DespesaReceitaAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.DespesaReceitaAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.DespesaReceitaAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesaReceitaAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.DespesaReceitaAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesaReceitaAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',</span> <span class="pre">'plano_de_contas',</span> <span class="pre">'tipo',</span> <span class="pre">'subtipo',</span> <span class="pre">'categoria')</span></em><a class="headerlink" href="#main_app.admin.DespesaReceitaAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.DespesasAdministrativasAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">DespesasAdministrativasAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#DespesasAdministrativasAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.DespesasAdministrativasAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesasAdministrativasAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'descricao',</span> <span class="pre">'valor']</span></em><a class="headerlink" href="#main_app.admin.DespesasAdministrativasAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesasAdministrativasAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('descricao',)</span></em><a class="headerlink" href="#main_app.admin.DespesasAdministrativasAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesasAdministrativasAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('descricao',)</span></em><a class="headerlink" href="#main_app.admin.DespesasAdministrativasAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesasAdministrativasAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.DespesasAdministrativasAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.DespesasAdministrativasAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.DespesasAdministrativasAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesasAdministrativasAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.DespesasAdministrativasAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.DespesasAdministrativasAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('descricao',)</span></em><a class="headerlink" href="#main_app.admin.DespesasAdministrativasAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.ExecucaoOrcamentariaAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">ExecucaoOrcamentariaAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#ExecucaoOrcamentariaAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.ExecucaoOrcamentariaAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ExecucaoOrcamentariaAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'receitas',</span> <span class="pre">'mensalidade',</span> <span class="pre">'receitas_financeiras',</span> <span class="pre">'capital_social',</span> <span class="pre">'acordo_judicial',</span> <span class="pre">'outras_receitas',</span> <span class="pre">'aluguel_cantina_e_outros',</span> <span class="pre">'livros',</span> <span class="pre">'despesas',</span> <span class="pre">'despesas_administrativas',</span> <span class="pre">'ordenados_e_salarios',</span> <span class="pre">'ordenados_salarios_docentes',</span> <span class="pre">'ordenados_salarios_adm_apoio',</span> <span class="pre">'despesas_ensino',</span> <span class="pre">'material_didativo',</span> <span class="pre">'devolucao_mensalidade',</span> <span class="pre">'beneficios',</span> <span class="pre">'plano_saude',</span> <span class="pre">'vale_transporte',</span> <span class="pre">'vale_alimentacao',</span> <span class="pre">'material_lanche_agua_cafe',</span> <span class="pre">'seguro_funcionarios',</span> <span class="pre">'seguro_funcionarios',</span> <span class="pre">'impostos',</span> <span class="pre">'darf',</span> <span class="pre">'dua',</span> <span class="pre">'encargos_trabalhistas',</span> <span class="pre">'fgts',</span> <span class="pre">'inss',</span> <span class="pre">'manutencao_instalacoes',</span> <span class="pre">'material_construcao',</span> <span class="pre">'marketing',</span> <span class="pre">'despesas_servicos',</span> <span class="pre">'percentual_despesas_servicos',</span> <span class="pre">'despesas_operacionais',</span> <span class="pre">'percentual_despesas_operacionais',</span> <span class="pre">'depesas_financeiras',</span> <span class="pre">'percentual_despesas_financeiras']</span></em><a class="headerlink" href="#main_app.admin.ExecucaoOrcamentariaAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ExecucaoOrcamentariaAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.ExecucaoOrcamentariaAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ExecucaoOrcamentariaAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.ExecucaoOrcamentariaAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ExecucaoOrcamentariaAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.ExecucaoOrcamentariaAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.ExecucaoOrcamentariaAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.ExecucaoOrcamentariaAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ExecucaoOrcamentariaAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.ExecucaoOrcamentariaAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ExecucaoOrcamentariaAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.ExecucaoOrcamentariaAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.FluxosDeCaixaAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">FluxosDeCaixaAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#FluxosDeCaixaAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.FluxosDeCaixaAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.FluxosDeCaixaAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'plano_de_contas',</span> <span class="pre">'valor']</span></em><a class="headerlink" href="#main_app.admin.FluxosDeCaixaAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.FluxosDeCaixaAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',</span> <span class="pre">'plano_de_contas')</span></em><a class="headerlink" href="#main_app.admin.FluxosDeCaixaAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.FluxosDeCaixaAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',</span> <span class="pre">'plano_de_contas')</span></em><a class="headerlink" href="#main_app.admin.FluxosDeCaixaAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.FluxosDeCaixaAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.FluxosDeCaixaAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.FluxosDeCaixaAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.FluxosDeCaixaAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.FluxosDeCaixaAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.FluxosDeCaixaAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.FluxosDeCaixaAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',</span> <span class="pre">'plano_de_contas')</span></em><a class="headerlink" href="#main_app.admin.FluxosDeCaixaAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoDeReajustesAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">HistoricoDeReajustesAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#HistoricoDeReajustesAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.HistoricoDeReajustesAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoDeReajustesAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'professores',</span> <span class="pre">'professores_acumulado',</span> <span class="pre">'adm_apoio',</span> <span class="pre">'acumulado_adm_apoio',</span> <span class="pre">'total',</span> <span class="pre">'total_acumulado',</span> <span class="pre">'inpc',</span> <span class="pre">'inpc_acumulado',</span> <span class="pre">'ipca',</span> <span class="pre">'ipca_acumulado',</span> <span class="pre">'plano_saude_professores',</span> <span class="pre">'ticket_alimentacao_professores',</span> <span class="pre">'vale_transporte_professores',</span> <span class="pre">'plano_saude_adm_apoio',</span> <span class="pre">'ticket_alimentacao_adm_apoio',</span> <span class="pre">'vale_transporte_adm_apoio']</span></em><a class="headerlink" href="#main_app.admin.HistoricoDeReajustesAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoDeReajustesAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoDeReajustesAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoDeReajustesAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoDeReajustesAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoDeReajustesAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.HistoricoDeReajustesAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoDeReajustesAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.HistoricoDeReajustesAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoDeReajustesAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.HistoricoDeReajustesAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoDeReajustesAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoDeReajustesAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoIndicesFinanceirosAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">HistoricoIndicesFinanceirosAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#HistoricoIndicesFinanceirosAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.HistoricoIndicesFinanceirosAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoIndicesFinanceirosAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'ativo_circulante',</span> <span class="pre">'realizavel_a_longo_prazo',</span> <span class="pre">'investimento_imobilizado',</span> <span class="pre">'total_ativo',</span> <span class="pre">'passivo_circulante',</span> <span class="pre">'exigivel_a_longo_prazo',</span> <span class="pre">'patrimonio_liquido',</span> <span class="pre">'receita_liquida_total',</span> <span class="pre">'lucro_liquido',</span> <span class="pre">'depreciacao',</span> <span class="pre">'resultado_operacional',</span> <span class="pre">'contas_a_receber',</span> <span class="pre">'diponivel',</span> <span class="pre">'sobra_bruta',</span> <span class="pre">'indice_liquidez_geral',</span> <span class="pre">'indice_solvencia_geral',</span> <span class="pre">'indice_liquidez_corrente',</span> <span class="pre">'indice_endividamento_total',</span> <span class="pre">'grau_imobilizacao',</span> <span class="pre">'ebitda',</span> <span class="pre">'margem_lucro_liquida',</span> <span class="pre">'margem_contribuicao']</span></em><a class="headerlink" href="#main_app.admin.HistoricoIndicesFinanceirosAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoIndicesFinanceirosAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoIndicesFinanceirosAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoIndicesFinanceirosAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoIndicesFinanceirosAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoIndicesFinanceirosAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.HistoricoIndicesFinanceirosAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoIndicesFinanceirosAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.HistoricoIndicesFinanceirosAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoIndicesFinanceirosAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.HistoricoIndicesFinanceirosAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoIndicesFinanceirosAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoIndicesFinanceirosAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoMatriculasAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">HistoricoMatriculasAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#HistoricoMatriculasAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.HistoricoMatriculasAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoMatriculasAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'numero_matriculas',</span> <span class="pre">'meta']</span></em><a class="headerlink" href="#main_app.admin.HistoricoMatriculasAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoMatriculasAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoMatriculasAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoMatriculasAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoMatriculasAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoMatriculasAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.HistoricoMatriculasAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoMatriculasAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.HistoricoMatriculasAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoMatriculasAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.HistoricoMatriculasAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoMatriculasAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoMatriculasAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoOrcamentarioAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">HistoricoOrcamentarioAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#HistoricoOrcamentarioAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.HistoricoOrcamentarioAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoOrcamentarioAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'receita_ato_cooperado',</span> <span class="pre">'despesa_servicos',</span> <span class="pre">'despesas_operacionais',</span> <span class="pre">'despesas_financeiras',</span> <span class="pre">'despesas_totais',</span> <span class="pre">'resultado_liquido',</span> <span class="pre">'receita_ato_nao_cooperado',</span> <span class="pre">'receitas_totais',</span> <span class="pre">'fates_5_porcento',</span> <span class="pre">'fates_destinacao_sobras',</span> <span class="pre">'fates_destinacao_sobras',</span> <span class="pre">'fates_entrada_total',</span> <span class="pre">'fates_reversao_legal',</span> <span class="pre">'fates_reversao_descontos',</span> <span class="pre">'fates_reversao_total',</span> <span class="pre">'saldo_fates',</span> <span class="pre">'capital_social_novas_integralizacoes',</span> <span class="pre">'capital_social_reversao',</span> <span class="pre">'capital_social_integralizado',</span> <span class="pre">'reserva_legal_10_porcento',</span> <span class="pre">'reserva_legal_total',</span> <span class="pre">'destinacao_sobras_perdas_a_outras_reservas_estatutarias',</span> <span class="pre">'reversao_outras_reservas_estatutarias',</span> <span class="pre">'outras_reservas_estatutarias',</span> <span class="pre">'destinacao_sobras_perdas_exercicio_anterior',</span> <span class="pre">'reversao_reservas',</span> <span class="pre">'sobra_perda_exercicio',</span> <span class="pre">'constituicao_reservas',</span> <span class="pre">'reserva_lucro',</span> <span class="pre">'reversao_reserva_investimento',</span> <span class="pre">'saldo_reserva_investimento',</span> <span class="pre">'reversao_fundo_despesas_correntes',</span> <span class="pre">'saldo_fundo_despesas_correntes',</span> <span class="pre">'patrimonio_liquido_sobra_perda_exercicio',</span> <span class="pre">'patrimonio_liquido_constituicao_reserva',</span> <span class="pre">'patrimonio_liquido_reserva_incentivos_fiscais',</span> <span class="pre">'patrimonio_liquido',</span> <span class="pre">'sobras_perdas_a_disposicao_ago_ato_cooperado',</span> <span class="pre">'sobras_perdas_a_disposicao_ago_ato_nao_cooperado',</span> <span class="pre">'sobras_perdas_a_disposicao_ago_total',</span> <span class="pre">'inadimplencia_quitada',</span> <span class="pre">'percentual_inadimplencia_quitada',</span> <span class="pre">'inadimplencia_adquirida',</span> <span class="pre">'percentual_inadimplencia_adquirida',</span> <span class="pre">'inadimplencia_acumulada',</span> <span class="pre">'percentual_inadimplencia_acumulada']</span></em><a class="headerlink" href="#main_app.admin.HistoricoOrcamentarioAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoOrcamentarioAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoOrcamentarioAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoOrcamentarioAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoOrcamentarioAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoOrcamentarioAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.HistoricoOrcamentarioAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoOrcamentarioAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.HistoricoOrcamentarioAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoOrcamentarioAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.HistoricoOrcamentarioAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.HistoricoOrcamentarioAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.HistoricoOrcamentarioAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.IfesAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">IfesAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#IfesAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.IfesAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IfesAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'aprovados_ifes']</span></em><a class="headerlink" href="#main_app.admin.IfesAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IfesAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.IfesAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IfesAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.IfesAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IfesAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.IfesAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.IfesAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.IfesAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IfesAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.IfesAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IfesAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.IfesAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.IndicacaoAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">IndicacaoAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#IndicacaoAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.IndicacaoAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IndicacaoAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'numero_cooperado',</span> <span class="pre">'cooperado',</span> <span class="pre">'numero_cooperado_indicado',</span> <span class="pre">'cooperado_indicado']</span></em><a class="headerlink" href="#main_app.admin.IndicacaoAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IndicacaoAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('numero_cooperado',</span> <span class="pre">'cooperado')</span></em><a class="headerlink" href="#main_app.admin.IndicacaoAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IndicacaoAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('cooperado',</span> <span class="pre">'cooperado_indicado')</span></em><a class="headerlink" href="#main_app.admin.IndicacaoAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IndicacaoAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.IndicacaoAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.IndicacaoAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.IndicacaoAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IndicacaoAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['cooperado']</span></em><a class="headerlink" href="#main_app.admin.IndicacaoAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.IndicacaoAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('cooperado',</span> <span class="pre">'cooperado_indicado')</span></em><a class="headerlink" href="#main_app.admin.IndicacaoAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.MatriculasAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">MatriculasAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#MatriculasAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.MatriculasAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.MatriculasAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'serie',</span> <span class="pre">'alunos',</span> <span class="pre">'rematriculados',</span> <span class="pre">'nao_rematriculados',</span> <span class="pre">'novos',</span> <span class="pre">'particular',</span> <span class="pre">'publica',</span> <span class="pre">'migrantes',</span> <span class="pre">'iniciantes',</span> <span class="pre">'capacidade_ideal_alunos',</span> <span class="pre">'saldo_oocupacao_ideal',</span> <span class="pre">'vagas_ofertadas',</span> <span class="pre">'vagas_ofertadas',</span> <span class="pre">'vagas_ociosas',</span> <span class="pre">'capacidade_maxima_alunos',</span> <span class="pre">'saldo_ocupacao_maxima',</span> <span class="pre">'aprovados_ifes']</span></em><a class="headerlink" href="#main_app.admin.MatriculasAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.MatriculasAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.MatriculasAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.MatriculasAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.MatriculasAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.MatriculasAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.MatriculasAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.MatriculasAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.MatriculasAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.MatriculasAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.MatriculasAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.MatriculasAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.MatriculasAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.OfertasAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">OfertasAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#OfertasAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.OfertasAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.OfertasAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['ano',</span> <span class="pre">'turmas_ofertadas',</span> <span class="pre">'vagas_ofertadas']</span></em><a class="headerlink" href="#main_app.admin.OfertasAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.OfertasAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('ano',)</span></em><a class="headerlink" href="#main_app.admin.OfertasAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.OfertasAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('ano',)</span></em><a class="headerlink" href="#main_app.admin.OfertasAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.OfertasAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.OfertasAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.OfertasAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.OfertasAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.OfertasAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-ano']</span></em><a class="headerlink" href="#main_app.admin.OfertasAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.OfertasAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('ano',)</span></em><a class="headerlink" href="#main_app.admin.OfertasAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.ParametrosAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">ParametrosAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#ParametrosAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.ParametrosAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ParametrosAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['ano',</span> <span class="pre">'serie',</span> <span class="pre">'numero_ideal_alunos',</span> <span class="pre">'numero_maximo_alunos',</span> <span class="pre">'numero_ideal_turmas',</span> <span class="pre">'numero_maximo_turmas',</span> <span class="pre">'capacidade_ideal_alunos',</span> <span class="pre">'capacidade_maxima_alunos']</span></em><a class="headerlink" href="#main_app.admin.ParametrosAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ParametrosAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('ano',</span> <span class="pre">'serie')</span></em><a class="headerlink" href="#main_app.admin.ParametrosAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ParametrosAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('ano',</span> <span class="pre">'serie')</span></em><a class="headerlink" href="#main_app.admin.ParametrosAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ParametrosAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.ParametrosAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.ParametrosAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.ParametrosAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ParametrosAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-ano']</span></em><a class="headerlink" href="#main_app.admin.ParametrosAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ParametrosAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('ano',</span> <span class="pre">'serie')</span></em><a class="headerlink" href="#main_app.admin.ParametrosAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.PrevisaoOrcamentariaAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">PrevisaoOrcamentariaAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#PrevisaoOrcamentariaAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.PrevisaoOrcamentariaAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.PrevisaoOrcamentariaAdmin.actions">
+<span class="sig-name descname"><span class="pre">actions</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;function</span> <span class="pre">clonar_modelo&gt;]</span></em><a class="headerlink" href="#main_app.admin.PrevisaoOrcamentariaAdmin.actions" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.PrevisaoOrcamentariaAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'tipo',</span> <span class="pre">'subtipo',</span> <span class="pre">'categoria',</span> <span class="pre">'item',</span> <span class="pre">'valor',</span> <span class="pre">'observacao']</span></em><a class="headerlink" href="#main_app.admin.PrevisaoOrcamentariaAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.PrevisaoOrcamentariaAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',</span> <span class="pre">'tipo',</span> <span class="pre">'subtipo',</span> <span class="pre">'categoria',</span> <span class="pre">'item')</span></em><a class="headerlink" href="#main_app.admin.PrevisaoOrcamentariaAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.PrevisaoOrcamentariaAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',</span> <span class="pre">'tipo',</span> <span class="pre">'subtipo',</span> <span class="pre">'categoria',</span> <span class="pre">'item')</span></em><a class="headerlink" href="#main_app.admin.PrevisaoOrcamentariaAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.PrevisaoOrcamentariaAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.PrevisaoOrcamentariaAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.PrevisaoOrcamentariaAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.PrevisaoOrcamentariaAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.PrevisaoOrcamentariaAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.PrevisaoOrcamentariaAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.PrevisaoOrcamentariaAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',</span> <span class="pre">'tipo',</span> <span class="pre">'subtipo',</span> <span class="pre">'categoria',</span> <span class="pre">'item')</span></em><a class="headerlink" href="#main_app.admin.PrevisaoOrcamentariaAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.admin.ProjecaoFatesAdmin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">ProjecaoFatesAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#ProjecaoFatesAdmin"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.ProjecaoFatesAdmin" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ProjecaoFatesAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['data',</span> <span class="pre">'projecao_fates']</span></em><a class="headerlink" href="#main_app.admin.ProjecaoFatesAdmin.list_display" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ProjecaoFatesAdmin.list_display_links">
+<span class="sig-name descname"><span class="pre">list_display_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.ProjecaoFatesAdmin.list_display_links" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ProjecaoFatesAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.ProjecaoFatesAdmin.list_filter" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ProjecaoFatesAdmin.list_per_page">
+<span class="sig-name descname"><span class="pre">list_per_page</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#main_app.admin.ProjecaoFatesAdmin.list_per_page" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="main_app.admin.ProjecaoFatesAdmin.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#main_app.admin.ProjecaoFatesAdmin.media" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ProjecaoFatesAdmin.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.admin.ProjecaoFatesAdmin.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.admin.ProjecaoFatesAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('data',)</span></em><a class="headerlink" href="#main_app.admin.ProjecaoFatesAdmin.search_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="main_app.admin.clonar_modelo">
+<span class="sig-prename descclassname"><span class="pre">main_app.admin.</span></span><span class="sig-name descname"><span class="pre">clonar_modelo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modeladmin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/admin.html#clonar_modelo"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.admin.clonar_modelo" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Coopesma</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegação</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instalacao.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uso.html">Uso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="desenvolvimento.html">Desenvolvimento</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">COOPESMA</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Coopesma.html">Coopesma package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authors.html">authors package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="main_app.html">main_app package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tag.html">tag package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">COOPESMA</a><ul>
+  <li><a href="main_app.html">main_app package</a><ul>
+      <li>Previous: <a href="main_app.views.site.orcamento.orcamento.html" title="capítulo anterior">main_app.views.site.orcamento.orcamento module</a></li>
+      <li>Next: <a href="main_app.apps.html" title="próximo capítulo">main_app.apps module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Wanderley Cardoso Celeste.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/main_app.admin.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

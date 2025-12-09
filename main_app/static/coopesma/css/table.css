@@ -1,0 +1,103 @@
+.table-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 1rem;
+}
+
+.table-responsive {
+    display: inline-block;
+    overflow-x: auto;  /* Scroll horizontal */
+    overflow-y: auto;  /* Scroll vertical */
+    max-height: 70rem;
+     /*max-height: 500px; /* Definir uma altura máxima para o scroll vertical */
+    /*max-width: 100%;  /* Opcional: ajusta a largura máxima */
+    /* padding:0 2rem; */
+    background-color: var(--color-white);
+    border-radius: 1.2rem;
+    box-shadow: 0 0.4rem 1.2rem var(--color-black);
+    transition: transform 0.3s ease;
+    margin: 1rem auto; /* Centraliza*/
+}
+
+#dynamicTable {
+    min-width: 100rem; /* Adicionado: força a tabela a exceder o container se necessário */
+    width: max-content; /* Permite a largura natural baseada no conteúdo */
+    border-collapse: collapse; /* Remove espaços entre as bordas das células */
+    font-family: var(--font-primary);
+    color: var(--color-dark-text);
+}
+
+.table {
+    width: auto !important; /* força desconsiderar 100% herdado */
+    border-collapse: collapse;
+    table-layout: auto; /* Para permitir o redimensionamento adequado das colunas */
+    font-family: var(--font-primary);
+    color: var(--color-dark-text);
+}
+
+.table {
+    width: auto;
+    border-collapse: collapse;
+    table-layout: auto;
+    font-family: var(--font-primary);
+    color: var(--color-dark-text);
+}
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    font-family: var(--font-headings);
+    font-size: 1.4rem;
+    padding: 1rem;
+    z-index: 1;
+    border-bottom: 2px solid var(--color-primary-dark);
+    text-align: center;
+}
+
+.table th,
+.table td {
+    font-size: 1.4rem;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-gray-2);
+    vertical-align: middle;
+    word-break: break-word;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: var(--color-gray-0);
+}
+
+.table tbody tr:hover {
+    background-color: var(--color-primary-light-hover);
+}
+
+table tfoot td {
+    font-weight: bold;
+    background-color: var(--color-gray-1);
+    color: var(--color-primary-dark);
+    padding: 1rem;
+    text-align: center;
+    font-family: var(--font-primary);
+    border-top: 2px solid var(--color-primary);
+}
+
+.tooltip {
+    position: absolute;
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    z-index: 1000;
+    display: none;
+    font-size: 1.2rem;
+    font-family: var(--font-primary);
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+}
+
+.table-wrapper {
+    display: inline-block;
+    min-width: fit-content;
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>authors.views.all module &#8212; Documentação Coopesma 0.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=88519e4e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=71a39b36"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="next" title="authors.views.dashboard_setup module" href="authors.views.dashboard_setup.html" />
+    <link rel="prev" title="authors.views package" href="authors.views.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-authors.views.all">
+<span id="authors-views-all-module"></span><h1>authors.views.all module<a class="headerlink" href="#module-authors.views.all" title="Link para este cabeçalho">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="authors.views.all.CustomSetPasswordForm">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">authors.views.all.</span></span><span class="sig-name descname"><span class="pre">CustomSetPasswordForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/authors/views/all.html#CustomSetPasswordForm"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#authors.views.all.CustomSetPasswordForm" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">SetPasswordForm</span></code></p>
+<p>Formulário personalizado para redefinição de senha,
+com mensagens e labels customizados.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="authors.views.all.CustomSetPasswordForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'new_password1':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'new_password2':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#authors.views.all.CustomSetPasswordForm.base_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="authors.views.all.CustomSetPasswordForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'new_password1':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'new_password2':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#authors.views.all.CustomSetPasswordForm.declared_fields" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="authors.views.all.CustomSetPasswordForm.error_messages_custom">
+<span class="sig-name descname"><span class="pre">error_messages_custom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/authors/views/all.html#CustomSetPasswordForm.error_messages_custom"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#authors.views.all.CustomSetPasswordForm.error_messages_custom" title="Link para esta definição">¶</a></dt>
+<dd><p>Atualiza mensagens de erro padrão do formulário.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="authors.views.all.CustomSetPasswordForm.media">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#authors.views.all.CustomSetPasswordForm.media" title="Link para esta definição">¶</a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="authors.views.all.ForcePasswordChangeView">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">authors.views.all.</span></span><span class="sig-name descname"><span class="pre">ForcePasswordChangeView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/authors/views/all.html#ForcePasswordChangeView"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#authors.views.all.ForcePasswordChangeView" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordChangeView</span></code></p>
+<p>View baseada em classe que força a troca de senha ao detectar
+que o usuário está usando a senha padrão.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="authors.views.all.ForcePasswordChangeView.success_url">
+<span class="sig-name descname"><span class="pre">success_url</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'/colaborador/login/'</span></em><a class="headerlink" href="#authors.views.all.ForcePasswordChangeView.success_url" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="authors.views.all.ForcePasswordChangeView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'authors/pages/force_password_change.html'</span></em><a class="headerlink" href="#authors.views.all.ForcePasswordChangeView.template_name" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="authors.views.all.ForcePasswordChangeView.title">
+<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Alterar</span> <span class="pre">senha</span> <span class="pre">obrigatória'</span></em><a class="headerlink" href="#authors.views.all.ForcePasswordChangeView.title" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="authors.views.all.force_password_change_view">
+<span class="sig-prename descclassname"><span class="pre">authors.views.all.</span></span><span class="sig-name descname"><span class="pre">force_password_change_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/authors/views/all.html#force_password_change_view"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#authors.views.all.force_password_change_view" title="Link para esta definição">¶</a></dt>
+<dd><p>View que força o usuário a trocar a senha padrão ao fazer login.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parâmetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – Requisição HTTP.</p>
+</dd>
+<dt class="field-even">Retorna<span class="colon">:</span></dt>
+<dd class="field-even"><p>Página de troca de senha ou redirecionamento.</p>
+</dd>
+<dt class="field-odd">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="authors.views.all.login_create">
+<span class="sig-prename descclassname"><span class="pre">authors.views.all.</span></span><span class="sig-name descname"><span class="pre">login_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/authors/views/all.html#login_create"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#authors.views.all.login_create" title="Link para esta definição">¶</a></dt>
+<dd><p>Realiza autenticação do usuário.</p>
+<p>Retorna erro se as credenciais forem inválidas ou se
+o formulário for submetido incorretamente.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Retorna<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Redireciona para dashboard ou alteração de senha.</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>HttpResponseRedirect</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="authors.views.all.login_view">
+<span class="sig-prename descclassname"><span class="pre">authors.views.all.</span></span><span class="sig-name descname"><span class="pre">login_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/authors/views/all.html#login_view"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#authors.views.all.login_view" title="Link para esta definição">¶</a></dt>
+<dd><p>Renderiza a página de login.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Retorna<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Página com formulário de login.</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="authors.views.all.logout_and_redirect_to_login">
+<span class="sig-prename descclassname"><span class="pre">authors.views.all.</span></span><span class="sig-name descname"><span class="pre">logout_and_redirect_to_login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/authors/views/all.html#logout_and_redirect_to_login"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#authors.views.all.logout_and_redirect_to_login" title="Link para esta definição">¶</a></dt>
+<dd><p>Encerra a sessão do usuário e redireciona para a tela de login.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Retorna<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Redireciona para a página de login.</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>HttpResponseRedirect</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="authors.views.all.logout_view">
+<span class="sig-prename descclassname"><span class="pre">authors.views.all.</span></span><span class="sig-name descname"><span class="pre">logout_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/authors/views/all.html#logout_view"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#authors.views.all.logout_view" title="Link para esta definição">¶</a></dt>
+<dd><p>Encerra a sessão do usuário autenticado.</p>
+<p>Valida se a requisição foi feita via POST e pelo usuário correto.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Retorna<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Redireciona para login após logout.</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>HttpResponseRedirect</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="authors.views.all.register_create">
+<span class="sig-prename descclassname"><span class="pre">authors.views.all.</span></span><span class="sig-name descname"><span class="pre">register_create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/authors/views/all.html#register_create"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#authors.views.all.register_create" title="Link para esta definição">¶</a></dt>
+<dd><p>Cria um novo usuário com os dados do formulário de registro.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Retorna<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Redireciona para login em caso de sucesso.</p>
+</dd>
+<dt class="field-even">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-even"><p>HttpResponseRedirect</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="authors.views.all.register_view">
+<span class="sig-prename descclassname"><span class="pre">authors.views.all.</span></span><span class="sig-name descname"><span class="pre">register_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/authors/views/all.html#register_view"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#authors.views.all.register_view" title="Link para esta definição">¶</a></dt>
+<dd><p>Renderiza a página de cadastro de usuários.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parâmetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>request</strong> (<em>HttpRequest</em>) – Requisição HTTP.</p>
+</dd>
+<dt class="field-even">Retorna<span class="colon">:</span></dt>
+<dd class="field-even"><p>Página de cadastro com o formulário.</p>
+</dd>
+<dt class="field-odd">Tipo de retorno<span class="colon">:</span></dt>
+<dd class="field-odd"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Coopesma</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegação</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instalacao.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uso.html">Uso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="desenvolvimento.html">Desenvolvimento</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">COOPESMA</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Coopesma.html">Coopesma package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="authors.html">authors package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main_app.html">main_app package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tag.html">tag package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">COOPESMA</a><ul>
+  <li><a href="authors.html">authors package</a><ul>
+  <li><a href="authors.views.html">authors.views package</a><ul>
+      <li>Previous: <a href="authors.views.html" title="capítulo anterior">authors.views package</a></li>
+      <li>Next: <a href="authors.views.dashboard_setup.html" title="próximo capítulo">authors.views.dashboard_setup module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Wanderley Cardoso Celeste.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/authors.views.all.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

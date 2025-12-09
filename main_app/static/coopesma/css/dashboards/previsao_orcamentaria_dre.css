@@ -1,0 +1,150 @@
+@import url('colors.css');
+@import url('report.css');
+@import url('dash.css');
+@import url('period.css');
+@import url('cards.css');
+@import url('canvas.css');
+@import url('table.css');
+@import url('search.css');
+@import url('clear_button.css');
+
+.dash-controls {
+    margin-top: 0px;
+    border-radius: 0px;
+}
+
+.dash-controls-container {
+    margin-top: 20px;
+}
+
+.total-receita {
+    border-left: 5px solid var(--color-primary1);
+}
+
+.total-despesa {
+    border-left: 5px solid var(--color-accent1); 
+}
+
+.control-group {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os elementos form-group */
+    flex: 1; /* Para que os elementos form-group se expandam uniformemente */
+    margin-right: 10px;
+}
+
+/* cards */
+.card {
+    flex: 1; /* Os cards terão a mesma largura */
+    background-color: #f5f5f5; /* Cor de fundo dos cards */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ao redor dos cards */
+    text-align: center; /* Centraliza o conteúdo dentro dos cards */
+    display: flex;
+    flex-direction: column; /* Garante que o conteúdo seja empilhado verticalmente */
+    justify-content: center; /* Centraliza verticalmente o conteúdo */
+    align-items: center; /* Centraliza horizontalmente o conteúdo */
+    transition: transform 0.3s ease; /* Adiciona uma animação suave ao passar o mouse */
+    border-left: 5px solid var(--color-primary1); /* Mover o estilo de borda para .card */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Leve aumento no tamanho */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra mais intensa ao passar o mouse */
+}
+
+.card:hover::before {
+    opacity: 1; /* Leve brilho ao passar o mouse */
+}
+
+.triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.triangle.up {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid red; 
+}
+
+.reajuste-rateio-value {
+    display: flex;
+    flex-direction: column; /* Alinhar elementos verticalmente */
+    justify-content: center; /* Centralizar verticalmente */
+    align-items: center; /* Centralizar horizontalmente */
+    font-size: 1.5em; /* Tamanho da fonte */
+    color: 25px solid red;  /* Cor do texto */
+    gap: 10px; /* Espaçamento entre percentual e valor absoluto */
+}
+
+#percentage-reajuste-rateio {
+    color: red; 
+    font-size: 1.8em;
+    margin-left: 10px; /* Espaçamento entre os valores */
+    display: flex;
+    align-items: center; /* Alinha o triângulo com o percentual */
+}
+
+#absolute-reajuste-rateio {
+    font-size: 1.8rem; /* Tamanho do valor absoluto */
+}
+
+/* Alinhamento e espaçamento no container */
+.reajuste-rateio-value > div {
+    text-align: center;
+}
+
+/* Estilo para a linha Receita Bruta */
+.receita-bruta {
+    font-weight: bold;      /* Negrito */
+    text-transform: uppercase; /* Caixa alta */
+    color: var(--color-primary2);
+}
+
+.despesa-bruta {
+    font-weight: bold;      /* Negrito */
+    text-transform: uppercase; /* Caixa alta */
+    color: var(--color-accent2);
+}
+
+.despesa-subtipo {
+    font-weight: bold;      /* Negrito */
+    color: var(--color-accent1);
+
+}
+
+.despesa-categoria {
+    font-weight: bold;      /* Negrito */
+    font-style: italic;
+}
+
+/* Estilo para centralizar o texto nas células */
+.center-text {
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaços entre células */
+} */
+
+th, td {
+    border: 1px solid #ddd; /* Exemplo de borda */
+    text-align: center; /* Certifica que todo o conteúdo das células fique centralizado */
+}
+
+
+
+
+

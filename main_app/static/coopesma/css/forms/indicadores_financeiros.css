@@ -1,0 +1,123 @@
+@import url('colors.css');
+@import url('report.css');
+@import url('dash.css');
+@import url('period.css');
+@import url('cards.css');
+@import url('canvas.css');
+
+/* Controles */
+.index-control {
+    font-size: 24px; /* Tamanho da fonte para o label */
+    display: flex; /* Alinha o label e o checkbox horizontalmente */
+    align-items: center; /* Alinha o checkbox e o texto verticalmente */
+    margin-right: 10px;
+
+}
+
+.index-control select {
+    font-size: 20px;
+}
+
+.comparing-container {
+    display: flex;
+}
+
+.comparing-control {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.comparing-control button {
+    background-color: var(--color-accent1); /* Cor do botão desativado */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comparing-control button i {
+    margin-right: 8px;
+}
+
+.comparing-control button:hover {
+    background-color: var(--color-primary2); /* Efeito de hover no botão */
+    transform: translateY(-2px); /* Leve animação ao passar o mouse */
+}
+
+.comparing-control button.active {
+    background-color: var(--color-primary1); /* Cor do botão quando o modo comparação está ativo */
+    color: white;
+}
+
+.comparing-control button.active i {
+    transform: rotate(90deg); /* Altera o ícone para destacar a ativação */
+}
+
+/* Modo responsivo */
+@media (max-width: 768px) {
+    .comparing-control button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+/* cards */
+.card {
+    flex: 1; /* Os cards terão a mesma largura */
+    background-color: #f5f5f5; /* Cor de fundo dos cards */
+    border-radius: 8px; /* Cantos arredondados */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ao redor dos cards */
+    text-align: center; /* Centraliza o conteúdo dentro dos cards */
+    display: flex;
+    flex-direction: column; /* Garante que o conteúdo seja empilhado verticalmente */
+    justify-content: center; /* Centraliza verticalmente o conteúdo */
+    align-items: center; /* Centraliza horizontalmente o conteúdo */
+    transition: transform 0.3s ease; /* Adiciona uma animação suave ao passar o mouse */
+    border-left: 5px solid var(--color-primary1); /* Mover o estilo de borda para .card */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Leve aumento no tamanho */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra mais intensa ao passar o mouse */
+}
+
+.card:hover::before {
+    opacity: 1; /* Leve brilho ao passar o mouse */
+}
+
+.triangle {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: 5px;
+}
+
+.triangle.up {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid green; /* Triângulo verde maior para valores positivos */
+}
+
+.triangle.down {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid red; /* Triângulo vermelho maior para valores negativos */
+}
+
+.line-horizontal {
+    display: inline-block;
+    width: 30px;  /* Aumentar o tamanho da linha conforme desejado */
+    height: 4px;  /* Espessura da linha */
+    background-color: gray;  /* Cor da linha */
+    margin-right: 5px;
+}
+
+
+

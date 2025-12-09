@@ -1,0 +1,22 @@
+@import url('colors.css');
+@import url('report.css');
+@import url('dash.css');
+@import url('cards.css');
+@import url('canvas.css');
+@import url('range_years.css');
+
+/* Estiliza a div check-box-container */
+.check-box-container {
+    font-size: 24px; /* Tamanho da fonte para o label */
+    display: flex; /* Alinha o label e o checkbox horizontalmente */
+    align-items: center; /* Alinha o checkbox e o texto verticalmente */
+}
+
+/* Estiliza o checkbox */
+.check-box-container input[type="checkbox"] {
+    width: 24px; /* Tamanho maior do checkbox */
+    height: 24px; /* Tamanho maior do checkbox */
+    margin-right: 10px; /* Espaço entre o checkbox e o label */
+    cursor: pointer; /* Muda o cursor para pointer quando sobre o checkbox */
+    accent-color: var(--color-highlight1); /* Define a cor de seleção para a mesma cor usada no gráfico */
+}

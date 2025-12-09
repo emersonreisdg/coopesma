@@ -1,0 +1,41 @@
+<div class="dash-controls">
+    <div class="period-control">
+        <label for="year_selector">Ano:</label>
+        <select id="year_selector" name="year_selector">
+            {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="serie-control-container">
+        <div class="serie-control form-group">
+            <label for="serie_selector">Série:</label>
+            <select id="serie_selector" name="serie_selector" multiple>
+                <option value="all" selected>TODAS</option>
+                {% for serie in series %}
+                    <option value="{{ serie }}">{{ serie }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    
+        <div class="serie-control form-group" >
+            <label for="serie_selector">Turma:</label>
+            <select id="turma_selector" name="turma_selector" multiple>
+                <option value="all" selected>TODAS</option>
+                {% for serie in series %}
+                    <option value="{{ serie }}">{{ serie }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <form id="report_form">
+            {% csrf_token %}
+            <!-- Botão para limpar filtros -->
+            <div class="form-group">
+                <button type="button" id="clearFiltersButton">Limpar Filtros</button>
+            </div>
+        </form>
+    </div>
+    
+</div>

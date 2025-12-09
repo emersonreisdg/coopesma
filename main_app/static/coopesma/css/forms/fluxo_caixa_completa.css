@@ -1,0 +1,140 @@
+
+@import url('dash.css'); 
+@import url('colors.css');
+@import url('report.css');
+@import url('table.css');
+
+/* Estilo geral do formulário */
+.form-content-fluxo-completa {
+    background-color: #ffffff; /* Fundo branco */
+    border-radius: 12px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto; /* Centralizar */
+    font-family: 'Roboto', sans-serif; /* Fonte moderna */
+    max-height: 80vh; /* Altura máxima de 80% da altura da viewport */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical */
+}
+
+.form-content-fluxo-completa h2 {
+    text-align: center;
+    color: var(--color-black);
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Estilo do formulário */
+.form-container-fluxo-completa {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espaçamento entre os campos */
+}
+
+/* Estilo das linhas do formulário */
+.form-row {
+    display: flex;
+    flex-direction: column; /* Campos empilhados */
+    gap: 0.5rem;
+}
+
+/* Labels */
+.form-row label {
+    font-size: 1.2rem; /* Tamanho maior */
+    color: var(--color-black);
+    font-weight: 600;
+}
+
+/* Selectores */
+.select-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.select-input {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.select-input:focus {
+    border-color: #007bff; /* Azul suave */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Efeito ao foco */
+    outline: none;
+}
+
+/* Inputs de texto */
+input[type="text"] {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.form-container-fluxo-completa {
+    margin-bottom: 30px; /* Ajuste o valor conforme necessário */
+}
+
+/* Botão de envio */
+.btn {
+    width: 100%;
+    /* max-width: 300px; */
+    padding: 20px;
+    background-color: var(--color-primary1);
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+    display: block; /* Garante que o botão seja tratado como um bloco */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
+
+.btn:hover {
+    background-color: var(--color-primary2);
+}
+
+.btn:active {
+    transform: translateY(0); /* Volta ao normal ao clicar */
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .form-content-fluxo-completa {
+        padding: 1.5rem;
+    }
+
+    .form-container-fluxo-completa {
+        gap: 1rem;
+    }
+
+    .form-row {
+        gap: 0.75rem;
+    }
+}
+
+

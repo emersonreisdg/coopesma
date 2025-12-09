@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>main_app.views.site.dashboards.inadimplencia module &#8212; Documentação Coopesma 0.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=88519e4e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=71a39b36"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="next" title="main_app.views.site.dashboards.indicadores_financeiros module" href="main_app.views.site.dashboards.indicadores_financeiros.html" />
+    <link rel="prev" title="main_app.views.site.dashboards.ifes module" href="main_app.views.site.dashboards.ifes.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-main_app.views.site.dashboards.inadimplencia">
+<span id="main-app-views-site-dashboards-inadimplencia-module"></span><h1>main_app.views.site.dashboards.inadimplencia module<a class="headerlink" href="#module-main_app.views.site.dashboards.inadimplencia" title="Link para este cabeçalho">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">main_app.views.site.dashboards.inadimplencia.</span></span><span class="sig-name descname"><span class="pre">DashboardHistoricoInadimplenciaView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/views/site/dashboards/inadimplencia.html#DashboardHistoricoInadimplenciaView"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView" title="Link para esta definição">¶</a></dt>
+<dd><p>Base: <a class="reference internal" href="main_app.views.site.dashboards.dashboard_base.html#main_app.views.site.dashboards.dashboard_base.DashboardViewBase" title="main_app.views.site.dashboards.dashboard_base.DashboardViewBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">DashboardViewBase</span></code></a></p>
+<p>View para exibição do dashboard de histórico de inadimplência.</p>
+<dl class="simple">
+<dt>Esta view herda de DashboardViewBase e utiliza o modelo</dt><dd><p>HistoricoOrcamentario</p>
+</dd>
+</dl>
+<p>para consultar dados relacionados à inadimplência de cooperados.</p>
+<p>Acesso restrito a usuários autenticados.</p>
+<dl>
+<dt>Atributos:</dt><dd><p>model: Modelo utilizado para consulta dos dados.
+context_object_name: Nome do contexto para template.
+ordering: Ordenação padrão dos registros (decrescente por data).
+template_name: Template HTML para renderização do dashboard.
+tipo_ambiente, ambiente, controles_ambiente, estilo_ambiente:</p>
+<blockquote>
+<div><p>Configurações visuais e funcionais do dashboard.</p>
+</div></blockquote>
+<p>tem_cards: Define se o dashboard apresenta cards (False neste caso).</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.ambiente">
+<span class="sig-name descname"><span class="pre">ambiente</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'inadimplencia.html'</span></em><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.ambiente" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.context_object_name">
+<span class="sig-name descname"><span class="pre">context_object_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'inadimplencia'</span></em><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.context_object_name" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.controles_ambiente">
+<span class="sig-name descname"><span class="pre">controles_ambiente</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'inadimplencia.js'</span></em><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.controles_ambiente" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.dispatch">
+<span class="sig-name descname"><span class="pre">dispatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.dispatch" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.estilo_ambiente">
+<span class="sig-name descname"><span class="pre">estilo_ambiente</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'dashboards/inadimplencia.css'</span></em><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.estilo_ambiente" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/views/site/dashboards/inadimplencia.html#DashboardHistoricoInadimplenciaView.get_queryset"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.get_queryset" title="Link para esta definição">¶</a></dt>
+<dd><dl class="simple">
+<dt>Obtém o queryset de dados para o dashboard, usando cache para otimizar</dt><dd><p>desempenho.</p>
+</dd>
+<dt>Retorna:</dt><dd><p>QuerySet: Conjunto de registros do modelo HistoricoOrcamentario.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.model" title="Link para esta definição">¶</a></dt>
+<dd><p>apelido de <a class="reference internal" href="main_app.models.html#main_app.models.HistoricoOrcamentario" title="main_app.models.HistoricoOrcamentario"><code class="xref py py-class docutils literal notranslate"><span class="pre">HistoricoOrcamentario</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.ordering">
+<span class="sig-name descname"><span class="pre">ordering</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['-data']</span></em><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.ordering" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.tem_cards">
+<span class="sig-name descname"><span class="pre">tem_cards</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.tem_cards" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'coopesma/pages/dashboard.html'</span></em><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.template_name" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.tipo_ambiente">
+<span class="sig-name descname"><span class="pre">tipo_ambiente</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'dashboard'</span></em><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.tipo_ambiente" title="Link para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.update_context">
+<span class="sig-name descname"><span class="pre">update_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/main_app/views/site/dashboards/inadimplencia.html#DashboardHistoricoInadimplenciaView.update_context"><span class="viewcode-link"><span class="pre">[código-fonte]</span></span></a><a class="headerlink" href="#main_app.views.site.dashboards.inadimplencia.DashboardHistoricoInadimplenciaView.update_context" title="Link para esta definição">¶</a></dt>
+<dd><p>Atualiza o contexto do template com dados para renderização.</p>
+<p>Inclui intervalo de anos disponíveis e os dados da inadimplência
+convertidos para JSON, usando um encoder customizado para garantir
+a serialização correta dos tipos de dados.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parâmetros<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ctx</strong> (<em>dict</em>) – Contexto atual do template.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Retorna:</dt><dd><dl class="simple">
+<dt>dict: Contexto atualizado com informações adicionais para o</dt><dd><p>template.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Coopesma</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegação</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instalacao.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uso.html">Uso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="desenvolvimento.html">Desenvolvimento</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">COOPESMA</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Coopesma.html">Coopesma package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authors.html">authors package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="main_app.html">main_app package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tag.html">tag package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">COOPESMA</a><ul>
+  <li><a href="main_app.html">main_app package</a><ul>
+  <li><a href="main_app.views.html">main_app.views package</a><ul>
+  <li><a href="main_app.views.site.html">main_app.views.site package</a><ul>
+  <li><a href="main_app.views.site.dashboards.html">main_app.views.site.dashboards package</a><ul>
+      <li>Previous: <a href="main_app.views.site.dashboards.ifes.html" title="capítulo anterior">main_app.views.site.dashboards.ifes module</a></li>
+      <li>Next: <a href="main_app.views.site.dashboards.indicadores_financeiros.html" title="próximo capítulo">main_app.views.site.dashboards.indicadores_financeiros module</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Wanderley Cardoso Celeste.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/main_app.views.site.dashboards.inadimplencia.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

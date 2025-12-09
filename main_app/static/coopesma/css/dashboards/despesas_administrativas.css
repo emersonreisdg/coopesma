@@ -1,0 +1,29 @@
+@import url('colors.css');
+@import url('report.css');
+@import url('dash.css');
+@import url('period.css');
+@import url('cards.css');
+@import url('canvas.css');
+
+/* Controles */
+.adm-cost-control {
+    margin-right: 20px;
+    font-size: 24px; 
+}
+
+.adm-cost-control select {
+    font-size: 14px;
+}
+
+/* Cards */
+.gasto-adm-total {
+    border-left: 5px solid var(--color-secondary1);
+}
+
+.gasto-adm {
+    border-left: 5px solid var(--color-accent2);
+}
+
+.gasto-adm-relativo {
+    border-left: 5px solid var(--color-highlight2); 
+}

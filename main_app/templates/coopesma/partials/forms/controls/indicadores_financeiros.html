@@ -1,0 +1,29 @@
+<div class="dash-controls">
+    <div class="comparing-container">
+        <div class="period-control">
+            <label for="year_selector">Exercício:</label>
+            <select id="year_selector" name="year_selector">
+                {% for year in years %}
+                    <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    
+        <!-- Botão para alternar entre a renderização atual e a nova -->
+        <div class="comparing-control">
+            <button id="toggleRenderButton">
+                <i class="fas fa-balance-scale"></i> Comparar Resultados
+            </button>
+        </div>
+    </div>
+
+    <div class="index-control">
+        <label for="index_selector">Indicador Financeiro:</label>
+        <select id="index_selector" name="indicadores">
+            {% for indicador in ind_financeiros %}
+                <option value="{{ indicador.nome }}">{{ indicador.nome }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+</div>

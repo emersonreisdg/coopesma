@@ -1,0 +1,50 @@
+.canvas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    margin-inline: auto;
+    max-width: 160rem; /* opcional: para limitar o total em telas ultralargas */
+}
+
+.canvas-container {
+    flex: 1; /*Personalizar para cada caso*/
+    min-width: 300px;
+    max-width: 500px; /* Limita a largura mesmo que só haja 1 gráfico */
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    background-color: var(--collor-white);
+    border-radius: 1.2rem;
+    box-shadow: 0 0.4rem 1.2rem var(--color-black);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Canvas ocupa toda a largura do container */
+.canvas-container canvas {
+    width: 100%;
+    height: auto;
+}
+
+/* Hover leve */
+.canvas-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Telas médias: 2 gráficos por linha */
+@media (max-width: 1200px) {
+    .canvas-container {
+        flex: 1 1 calc(50% - 2rem);
+    }
+}
+
+/* Telas pequenas: 1 gráfico por linha */
+@media (max-width: 768px) {
+    .canvas-container {
+        flex: 1 1 100%;
+    }
+}

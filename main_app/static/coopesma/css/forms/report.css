@@ -1,0 +1,26 @@
+.report-type-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem; /* Espaçamento geral superior */
+}
+
+.report-type {
+    display: flex; /* Habilita flexbox */
+    align-items: center; /* Alinha verticalmente os elementos ao centro */
+    gap: 10px; /* Espaço entre o label e o select */
+    font-size: 24px;
+    margin-left: 20px; /* Espaçamento à esquerda */
+    margin-top: 10px; /* Espaçamento superior */
+    font-weight: bold; /* Adiciona negrito à fonte */
+}
+
+.report-type label {
+    flex-shrink: 0; /* Evita que o label diminua em tamanho */
+}
+
+.report-type select {
+    /* flex: 1; Permite que o select ocupe o restante do espaço disponível */
+    font-size: 20px;
+    padding: 5px 10px;
+}

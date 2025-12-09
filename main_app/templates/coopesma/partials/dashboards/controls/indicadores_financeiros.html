@@ -1,0 +1,32 @@
+<div class="dash-controls">
+    <div class="control-group-left period-control">
+        <div class="form-group period-control">
+            <label for="year_selector">Exercício:</label>
+            <select id="year_selector" name="year_selector">
+                {% for year in years %}
+                    <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group period-control">
+            <label for="index_selector">Indicador Financeiro:</label>
+            <select id="index_selector" name="indicadores">
+                {% for indicador in ind_financeiros %}
+                    <option value="{{ indicador.nome }}">{{ indicador.nome }}</option>
+                {% endfor %}
+            </select>
+       </div>
+    </div>
+ 
+    <div class="control-group-right period-control">
+
+        <div class="form-group check-box-container period-control">
+            <label for="compararResultados">Comparar:</label>
+            <input type="checkbox" id="compararResultados" name="comparar_resultados" checked>
+        </div>
+        <div class="form-group toggle-control">
+            <button id="toggleModeBtn"  class="toggle-button" type="button">Modo Slide</button>
+        </div>
+    </div>
+</div>

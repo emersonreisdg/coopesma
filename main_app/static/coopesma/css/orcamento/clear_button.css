@@ -1,0 +1,34 @@
+/* Ajustes para o botão de limpar filtros */
+/* #clearFiltersButton {
+    padding: 4px 12px;
+    font-size: 1.4rem;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#clearFiltersButton:hover {
+    background-color: #e9ecef;
+} */
+
+#clearFiltersButton {
+    display: inline-block;
+    width: 150px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    background-color: var(--color-accent-orange-dark);
+    color: var(--color-white); /* Texto branco */
+    font-size: 1.6rem; /* Tamanho da fonte */
+    text-align: center;
+    text-decoration: none; /* Remove sublinhado */
+    border: none; /* Remove bordas */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse */
+#clearFiltersButton:hover {
+    background-color: var(--color-accent-orange); 
+}

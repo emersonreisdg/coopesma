@@ -1,0 +1,48 @@
+<div class="form-content-indicacao">
+    <h2>Novo Registro de Indicação de Cooperado</h2>
+    <form action="" method="post" class="form-container-indicacao" id="indicacao-form">
+        {% csrf_token %}
+        <div class="form-container-indicacao">
+            <!-- Campo de Data -->
+            <label for="data">Data</label>
+            <input type="text" id="data" name="data" class="date-picker" value="{{ form.data.value|default_if_none:'' }}" />
+            {% if form.data.errors %}
+                <div class="error">{{ form.data.errors }}</div>
+            {% endif %}
+        
+            <!-- Campo de Número do Cooperado -->
+            <label for="numero_cooperado">Número do Cooperado</label>
+            <input type="text" id="numero_cooperado" name="numero_cooperado" class="numero-cooperado" value="{{ form.numero_cooperado.value|default_if_none:'' }}" />
+            {% if form.numero_cooperado.errors %}
+                <div class="error">{{ form.numero_cooperado.errors }}</div>
+            {% endif %}
+        
+            <!-- Campo de Cooperado -->
+            <label for="cooperado">Cooperado</label>
+            <select id="cooperado" name="cooperado" class="select-add-new" data-placeholder="Selecione ou adicione um cooperado" data-selected="{{ form.cooperado.value }}">
+                <option value="" {% if form.cooperado.value == "" %}selected{% endif %}></option>
+                {% for option in cooperados %}
+                    <option value="{{ option }}" {% if form.cooperado.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.cooperado.errors %}
+                <div class="error">{{ form.cooperado.errors }}</div>
+            {% endif %}
+
+            <!-- Campo de Número do Cooperado Indicado -->
+            <label for="numero_cooperado_indicado">Número do Cooperado Indicado</label>
+            <input type="text" id="numero_cooperado_indicado" name="numero_cooperado_indicado" class="numero-cooperado-indicado" value="{{ form.numero_cooperado_indicado.value|default_if_none:'' }}" />
+            {% if form.numero_cooperado_indicado.errors %}
+                <div class="error">{{ form.numero_cooperado_indicado.errors }}</div>
+            {% endif %}
+        
+            <!-- Campo de Cooperado Indicado -->
+            <label for="cooperado_indicado">Cooperado Indicado</label>
+            <input type="text" id="cooperado_indicado" name="cooperado_indicado" class="cooperado-indicado" value="{{ form.cooperado_indicado.value|default_if_none:'' }}" />
+            {% if form.cooperado_indicado.errors %}
+                <div class="error">{{ form.cooperado_indicado.errors }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" id="submit-button" class="btn btn-primary">Enviar</button>
+    </form>
+</div>

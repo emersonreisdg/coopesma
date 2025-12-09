@@ -1,0 +1,37 @@
+<!-- Lista suspensa para selecionar o relatório -->
+<div class="report-type-container">
+    <div class="report-type">
+        <label for="report_type">Relatório:</label>
+        <select id="report_type" name="report_type">
+            <option selected disabled>Selecione um relatório</option>
+            <option value="/relatorio/aplicacoes/">Aplicações</option>
+            <option value="/formulario/avaliacao/">Avaliação (Zenilza)*</option>
+            <option value="/relatorio/cargos_salarios/">Cargos e Salários*</option>
+            <option value="/relatorio/controle_cooperados/">Controle de Cooperados</option>
+            {% comment %} <option value="/relatorio/despesas_administrativas/">Despesas Administrativas</option> {% endcomment %}
+            <option value="/relatorio/detalhes_matriculas/">Detalhes de Matrículas</option>
+            {% comment %} <option value="/relatorio/execucao_orcamentaria/">Execução Orçamentária</option> {% endcomment %}
+            <option value="/relatorio/receitas_despesas/">Receitas e Despesas</option>
+            <option value="/relatorio/fates/">FATES</option>
+            <option value="/relatorio/historico_matriculas/">Histórico de Matrículas</option>
+            <option value="/relatorio/reajustes/">Histórico de Reajustes*</option>
+            <option value="/relatorio/ifes/">IFES*</option>
+            <option value="/relatorio/inadimplencia/">Inadimplência</option>
+            {% comment %} <option value="/relatorio/indicacao/">Indicação</option> {% endcomment %}
+            <option value="/relatorio/indicadores_financeiros/">Indicadores Financeiros</option>
+            {% comment %} <option value="/relatorio/ofertas_vagas/">Ofertas de Vagas</option> {% endcomment %}
+            {% comment %} <option value="/relatorio/parametros_funcionamento/">Parâmetros de Funcionamento</option> {% endcomment %}
+            <option value="/relatorio/planos_descontos/">Planos e Descontos</option>
+            <option value="/relatorio/previsao_orcamentaria/">Previsão Orçamentária</option>
+            <option value="/relatorio/previsao_orcamentaria/formato_dre/">Previsão Orçamentária em Formato de DRE</option>
+            <option value="/relatorio/fates/projecao">Projeção FATES</option>
+            <option value="/relatorio/resultado_matriculas/">Resultado de Matrículas</option>
+            <option value="/formulario/tercerizado/">Serviço/Fornecedor (Tatiane)*</option>
+        </select>
+    </div>
+</div>
+
+     {% comment %} {% if group.name == 'Administrador' %}
+              <a href="{% url 'admin:index' %}" target="_blank"> Administração </a>
+            {% endif %} {% endcomment %}
+        

@@ -1,0 +1,15 @@
+{% extends 'global/base.html' %}
+
+{% block title %} Gestão | {% endblock title %}
+
+{% include "global/partials/head.html" %}
+
+{% block content %}
+    <div class="main-content main-content-list container">
+        <div class="manager-container">
+            <h1>Olá, {{ user_first_name }}. Bem-vindo ao Sistema de Gestão da Coopesma! </h1>
+            <p> Você é do grupo {{  user_groups.name }}. </p>
+            {% include "coopesma/partials/manager.html" %}
+        </div>
+    </div>
+{% endblock content %}

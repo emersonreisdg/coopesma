@@ -1,0 +1,126 @@
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite
+media
+
+# Backup files #
+*.bak
+
+# When using Pycharm "
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictioaries
+.idea/**dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/gradle.xml
+.idea/**/libraries
+*.iws /out/
+
+# Python #
+*.py[cod]
+*$py.class
+
+# Distribution / packaging #
+.Python build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs
+lib/
+lib/
+parts/
+sdist/
+var/
+wheels
+*.egg-info/
+.installed.cfg
+*.egg*.manifest
+*.spec
+
+# Installer logs #
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports #
+htmlcov/
+.tox/
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook #
+.ipynb_checkpoints
+
+# pyenv #
+.python-version
+
+# celery #
+celeybeat-schedule.*
+
+# SageMath parsed files #
+*.sage.py
+
+# Environments #
+.env 
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# mkdocs documetation #
+/site
+
+# mypy #
+.mypy_cache/
+
+# Sublime Text #
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache*.sublime-workspace
+*.sublime-project
+
+# sftp configuration file #
+sftp-config.json
+
+# package control specific files package #
+control.last-run
+control.ca-list
+control.ca-bunble
+control.system-ca-bunble
+GitHub.sublime-settings
+
+# Visual Studio Code #
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/extensions.json
+.history
+
+# Personal Additions #
+__pycache__/
+*.pyc
+__localcode
+venv
+env.DS_Store
+local_settings.py
+_local_settings.py
+#static/
+
+
+# Add again for course purpose #
+!db .sqlite3  

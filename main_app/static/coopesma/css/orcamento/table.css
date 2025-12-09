@@ -1,0 +1,65 @@
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;  /* Scroll horizontal */
+    overflow-y: auto;  /* Scroll vertical */
+    max-height: 500px; /* Definir uma altura máxima para o scroll vertical */
+    max-width: 100%;  /* Opcional: ajusta a largura máxima */
+    /* margin-top: 20px; */
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+}
+
+#dynamicTable {
+    width: 100%; /* Certifique-se de que a tabela tenha uma largura maior que o contêiner, se necessário */
+    border-collapse: collapse; /* Remove espaços entre as bordas das células */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; /* Para permitir o redimensionamento adequado das colunas */
+}
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa; /* Cor do fundo para o cabeçalho fixo */
+    z-index: 1;
+}
+
+.table th, .table td {
+    font-size: 14px;
+    padding: 8px 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    /*vertical-align: top; /* Alinhamento vertical ao topo para garantir que o conteúdo preencha a célula corretamente */
+    /*white-space: normal; /* Permite que o conteúdo quebre em várias linhas, se necessário */
+    /*word-wrap: break-word; /* Garante que palavras longas sejam quebradas corretamente */
+    /*height: auto; /* Deixa que a altura seja automática e ajustada pelo conteúdo */
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Cor para linhas alternadas */
+}
+
+/* Estiliza o rodapé da tabela */
+table tfoot td {
+    font-weight: bold;  /* Negrito no rodapé */
+    background-color: #f1f1f1; /* Cor de fundo opcional */
+    padding: 10px; /* Espaçamento opcional para maior clareza */
+    /*vertical-align: top; /* Alinhamento vertical ao topo para garantir que o conteúdo preencha a célula corretamente */
+    /*white-space: normal; /* Permite que o conteúdo quebre em várias linhas, se necessário */
+    /*word-wrap: break-word; /* Garante que palavras longas sejam quebradas corretamente */
+    /*height: auto; /* Deixa que a altura seja automática e ajustada pelo conteúdo */
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 1000;
+    display: none; /* Inicialmente escondido */
+}

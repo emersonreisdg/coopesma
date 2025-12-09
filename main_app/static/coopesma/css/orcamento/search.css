@@ -1,0 +1,40 @@
+/* Ajustes para a busca */
+.search-container {
+    display: flex;
+    align-items: center; /* Isso alinha verticalmente com os outros controles */
+    height: 3rem;  /* Mesma altura dos outros controles */
+    padding-left: 3rem;
+}
+
+.search-form {
+    height: 3rem; 
+    width: 100%;
+    border: 1px solid #ddd;  /* Borda similar aos selects */
+    border-radius: 4px;  /* Mesmo border-radius dos outros controles */
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+    height: 100%; 
+    padding: 0 2.5rem 0 1rem;
+    font-size: 1.4rem;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    font-size: 1.4rem;  /* Mesmo tamanho de fonte dos outros controles */
+    color: #555;  /* Cor similar aos outros */
+    background-color: white; 
+    box-sizing: border-box;
+    margin: 0;  /* Remove margens que podem afetar o posicionamento */
+    line-height: 1.5;
+
+}
+
+.search-input::placeholder {
+    font-size: 1.2rem;
+}

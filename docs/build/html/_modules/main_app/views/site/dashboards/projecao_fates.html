@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main_app.views.site.dashboards.projecao_fates &#8212; Documentação Coopesma 0.1</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../../../_static/documentation_options.js?v=88519e4e"></script>
+    <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/translations.js?v=71a39b36"></script>
+    <link rel="index" title="Índice" href="../../../../../genindex.html" />
+    <link rel="search" title="Buscar" href="../../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Código-fonte para main_app.views.site.dashboards.projecao_fates</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">.dashboard_base</span><span class="w"> </span><span class="kn">import</span> <span class="n">DashboardViewBase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.core.cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">cache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">....models</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProjecaoFates</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.utils.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">method_decorator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.auth.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">login_required</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils.coopesma.json_encoder_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">JSONEncoderCustom</span>
+
+
+<div class="viewcode-block" id="DashboardProjecaoFATESView">
+<a class="viewcode-back" href="../../../../../main_app.views.site.dashboards.projecao_fates.html#main_app.views.site.dashboards.projecao_fates.DashboardProjecaoFATESView">[documentos]</a>
+<span class="nd">@method_decorator</span><span class="p">(</span>
+    <span class="n">login_required</span><span class="p">(</span><span class="n">login_url</span><span class="o">=</span><span class="s1">&#39;colaborador:login&#39;</span><span class="p">,</span> <span class="n">redirect_field_name</span><span class="o">=</span><span class="s1">&#39;next&#39;</span><span class="p">),</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dispatch&#39;</span>
+<span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DashboardProjecaoFATESView</span><span class="p">(</span><span class="n">DashboardViewBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    View para exibir o dashboard de Projeção FATES.</span>
+
+<span class="sd">    Esta view apresenta dados da projeção FATES, carregados do modelo</span>
+<span class="sd">    ProjecaoFates, com suporte a cache para otimização da performance.</span>
+
+<span class="sd">    O acesso é restrito a usuários autenticados.</span>
+
+<span class="sd">    Atributos:</span>
+<span class="sd">        model (Model): Modelo ProjecaoFates usado para as consultas.</span>
+<span class="sd">        context_object_name (str): Nome da variável de contexto para o</span>
+<span class="sd">          template.</span>
+<span class="sd">        ordering (list): Ordenação padrão dos objetos, pela data decrescente.</span>
+<span class="sd">        template_name (str): Caminho do template HTML para renderização.</span>
+<span class="sd">        tipo_ambiente (str): Tipo do ambiente para lógica interna.</span>
+<span class="sd">        ambiente (str): Nome do template específico do ambiente.</span>
+<span class="sd">        controles_ambiente (str): Arquivo JavaScript para esta view.</span>
+<span class="sd">        estilo_ambiente (str): Arquivo CSS específico para esta view.</span>
+<span class="sd">        tem_cards (bool): Indica se o dashboard utiliza cards para exibição.</span>
+
+<span class="sd">    Métodos:</span>
+<span class="sd">        get_queryset(*args, **kwargs):</span>
+<span class="sd">            Retorna o queryset com todos os objetos do modelo,</span>
+<span class="sd">            utilizando cache para reduzir acessos ao banco de dados.</span>
+
+<span class="sd">        update_context(ctx):</span>
+<span class="sd">            Atualiza o contexto do template, convertendo os dados</span>
+<span class="sd">            em JSON com suporte para serialização customizada,</span>
+<span class="sd">            facilitando o consumo via JavaScript no front-end.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">ProjecaoFates</span>
+    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s1">&#39;projecao_fates&#39;</span>
+    <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;-data&#39;</span><span class="p">]</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;coopesma/pages/dashboard.html&#39;</span>
+    <span class="n">tipo_ambiente</span> <span class="o">=</span> <span class="s1">&#39;dashboard&#39;</span>
+    <span class="n">ambiente</span> <span class="o">=</span> <span class="s1">&#39;projecao_fates.html&#39;</span>
+    <span class="n">controles_ambiente</span> <span class="o">=</span> <span class="s1">&#39;projecao_fates.js&#39;</span>
+    <span class="n">estilo_ambiente</span> <span class="o">=</span> <span class="s1">&#39;dashboards/projecao_fates.css&#39;</span>
+    <span class="n">tem_cards</span> <span class="o">=</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="DashboardProjecaoFATESView.get_queryset">
+<a class="viewcode-back" href="../../../../../main_app.views.site.dashboards.projecao_fates.html#main_app.views.site.dashboards.projecao_fates.DashboardProjecaoFATESView.get_queryset">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Obtém o queryset completo de ProjecaoFates.</span>
+
+<span class="sd">        Utiliza cache para evitar múltiplas consultas ao banco de dados,</span>
+<span class="sd">        armazenando o resultado por 15 minutos.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            *args: Argumentos posicionais opcionais.</span>
+<span class="sd">            **kwargs: Argumentos nomeados opcionais.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            QuerySet: Conjunto de objetos ProjecaoFates.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cache_key</span> <span class="o">=</span> <span class="s1">&#39;projecao_fates_queryset&#39;</span>
+        <span class="n">queryset</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cache_key</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">queryset</span><span class="p">:</span>
+            <span class="n">queryset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+            <span class="c1"># Cache por 15 minutos</span>
+            <span class="n">cache</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cache_key</span><span class="p">,</span> <span class="n">queryset</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="o">*</span><span class="mi">15</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">queryset</span></div>
+
+
+<div class="viewcode-block" id="DashboardProjecaoFATESView.update_context">
+<a class="viewcode-back" href="../../../../../main_app.views.site.dashboards.projecao_fates.html#main_app.views.site.dashboards.projecao_fates.DashboardProjecaoFATESView.update_context">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Atualiza o contexto do template com os dados da projeção FATES.</span>
+
+<span class="sd">        Converte os dados do queryset em JSON para uso no front-end.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ctx (dict): Contexto inicial recebido da superclasse.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: Contexto atualizado com a chave &#39;data&#39; contendo</span>
+<span class="sd">                  os dados JSON serializados da projeção FATES.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ctx</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">update_context</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span>
+
+        <span class="n">qs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span>
+
+        <span class="c1"># Convertendo datas para strings no formato ISO 8601</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">qs</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;projecao_fates&#39;</span><span class="p">))</span>
+
+        <span class="n">ctx</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">JSONEncoderCustom</span><span class="p">),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">ctx</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">Coopesma</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegação</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../instalacao.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../uso.html">Uso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../desenvolvimento.html">Desenvolvimento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">COOPESMA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../authors.html">authors package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Coopesma.html">Coopesma package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../index.html">Código do módulo</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Wanderley Cardoso Celeste.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

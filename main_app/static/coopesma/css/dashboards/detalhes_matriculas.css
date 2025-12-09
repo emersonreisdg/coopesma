@@ -1,0 +1,71 @@
+@import url('../canvas.css');
+@import url('../report.css');
+@import url('../inputs.css'); 
+@import url('../cards.css'); 
+@import url('../dash.css'); 
+
+
+.serie-control option:checked::before {
+    content: "✔ "; /* Check na frente do texto */
+    color:  var(--color-primary);
+}
+
+.canvas-grid {
+    padding: 1rem 0.5rem !important;
+    gap: 2rem !important;
+}
+
+.canvas-grid.second-row {
+    justify-content: center;
+}
+
+.canvas-container {
+    flex: 1 1 calc(33.33% - 0.5rem) !important;
+    background-color: var(--color-white) !important;
+}
+
+
+.canvas-container.small {
+    flex: 1;
+    min-width: 30rem;
+}
+
+.canvas-container.large {
+    flex: 2; /* Mais largo */
+    min-width: 50rem;
+}
+
+.canvas-container.medium {
+    flex: 1; /* Um pouco menor */
+    min-width: 30rem;
+}
+
+/* Estilo para os dois primeiros gráficos (mais largos) */
+.canvas-container.wide {
+    flex: 1 1 calc(50% - 2rem); /* Ocupa mais espaço */
+    max-width: 800px;
+}
+
+/* Canvas ocupa toda a largura do container */
+.canvas-container canvas {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.canvas-container:hover {
+    transform: scale(1.01);
+}
+
+@media (max-width: 1200px) {
+    .canvas-container,
+    .canvas-container.wide {
+        flex: 1 1 calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .canvas-container,
+    .canvas-container.wide {
+        flex: 1 1 100%;
+    }
+}

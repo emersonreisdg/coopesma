@@ -1,0 +1,21 @@
+{% load static %}
+
+<header class="main-header-container">
+    <div class="main-header container">
+        <div class="main-logo-container">
+            <a class="main-logo" href="{% url 'coopesma:home' %}">
+                {% comment %} <img  class="main-logo-icon" width="146" height="92" src={% static 'coopesma/img/logo-coopesma-1.png' %} alt=""> {% endcomment %}
+                {% comment %} <span class="main-logo-text"> Coopesma </span> {% endcomment %} 
+                
+                {% comment %} <img  class="main-logo-icon" width="864" height="864" src={% static 'global/img/logo-alternativa.png' %} alt="Logo Escola Alternativa"> {% endcomment %}
+                <div class="main-logo-icon-container">
+                    <img class="main-logo-icon" src="{% static 'global/img/logo-alternativa-474x444.png' %}" alt="Logo Escola Alternativa">
+                </div>
+                <div class="main-logo-text">
+                    <h5 class="logo-title-small">Escola</h5>
+                    <h3 class="logo-title-large">Alternativa</h3>
+                </div>
+            </a>               
+        </div>
+    </div>
+</header>

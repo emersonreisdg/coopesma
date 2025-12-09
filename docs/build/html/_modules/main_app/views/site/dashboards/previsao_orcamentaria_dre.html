@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main_app.views.site.dashboards.previsao_orcamentaria_dre &#8212; Documentação Coopesma 0.1</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../../../_static/documentation_options.js?v=88519e4e"></script>
+    <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/translations.js?v=71a39b36"></script>
+    <link rel="index" title="Índice" href="../../../../../genindex.html" />
+    <link rel="search" title="Buscar" href="../../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Código-fonte para main_app.views.site.dashboards.previsao_orcamentaria_dre</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">.dashboard_base</span><span class="w"> </span><span class="kn">import</span> <span class="n">DashboardViewBase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">....models</span><span class="w"> </span><span class="kn">import</span> <span class="n">PrevisaoOrcamentaria</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.core.cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">cache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.db.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Min</span><span class="p">,</span> <span class="n">Max</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.utils.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">method_decorator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.auth.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">login_required</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils.coopesma.json_encoder_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">JSONEncoderCustom</span>
+
+
+<div class="viewcode-block" id="DashboardPrevisaoOrcamentariaDreView">
+<a class="viewcode-back" href="../../../../../main_app.views.site.dashboards.previsao_orcamentaria_dre.html#main_app.views.site.dashboards.previsao_orcamentaria_dre.DashboardPrevisaoOrcamentariaDreView">[documentos]</a>
+<span class="nd">@method_decorator</span><span class="p">(</span>
+    <span class="n">login_required</span><span class="p">(</span><span class="n">login_url</span><span class="o">=</span><span class="s1">&#39;colaborador:login&#39;</span><span class="p">,</span> <span class="n">redirect_field_name</span><span class="o">=</span><span class="s1">&#39;next&#39;</span><span class="p">),</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dispatch&#39;</span>
+<span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">DashboardPrevisaoOrcamentariaDreView</span><span class="p">(</span><span class="n">DashboardViewBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    View para exibir o dashboard de Previsão Orçamentária no formato DRE.</span>
+
+<span class="sd">    Esta view herda de DashboardViewBase e gerencia a exibição dos dados</span>
+<span class="sd">    orçamentários agrupados por tipo, subtipo, categoria e item, com</span>
+<span class="sd">    suporte a cache para otimização.</span>
+
+<span class="sd">    A view também prepara o contexto para o template, incluindo o intervalo de</span>
+<span class="sd">    anos, meses disponíveis por ano e as hierarquias de agrupamento dos dados.</span>
+
+<span class="sd">    Acesso restrito a usuários autenticados.</span>
+
+<span class="sd">    Atributos:</span>
+<span class="sd">        model (Model): Modelo PrevisaoOrcamentaria usado para consultas.</span>
+<span class="sd">        title (str): Título para a página/dash.</span>
+<span class="sd">        context_object_name (str): Nome do objeto no contexto do template.</span>
+<span class="sd">        template_name (str): Caminho para o template HTML usado.</span>
+<span class="sd">        tipo_ambiente (str): Tipo de ambiente para uso interno.</span>
+<span class="sd">        ambiente (str): Nome do template específico do ambiente.</span>
+<span class="sd">        controles_ambiente (str): Arquivo JS com controles específicos do</span>
+<span class="sd">         ambiente.</span>
+<span class="sd">        estilo_ambiente (str): Arquivo CSS específico do ambiente.</span>
+<span class="sd">        tem_cards (bool): Indicador para uso de cards no dashboard.</span>
+
+<span class="sd">    Métodos:</span>
+<span class="sd">        get_queryset(*args, **kwargs):</span>
+<span class="sd">            Retorna o queryset do modelo, utilizando cache com timeout de 15</span>
+<span class="sd">              minutos.</span>
+
+<span class="sd">        update_context(ctx):</span>
+<span class="sd">            Atualiza o contexto do template com dados formatados para exibição,</span>
+<span class="sd">            incluindo anos disponíveis, meses por ano e a estrutura hierárquica</span>
+<span class="sd">            dos dados agrupados por tipo, subtipo, categoria e item.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">PrevisaoOrcamentaria</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Previsão Orçamentária | Formato DRE&#39;</span>
+    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s1">&#39;previsao_orcamentaria_dre&#39;</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;coopesma/pages/dashboard.html&#39;</span>
+    <span class="n">tipo_ambiente</span> <span class="o">=</span> <span class="s1">&#39;dashboard&#39;</span>
+    <span class="n">ambiente</span> <span class="o">=</span> <span class="s1">&#39;previsao_orcamentaria_dre.html&#39;</span>
+    <span class="n">controles_ambiente</span> <span class="o">=</span> <span class="s1">&#39;previsao_orcamentaria_dre.js&#39;</span>
+    <span class="n">estilo_ambiente</span> <span class="o">=</span> <span class="s1">&#39;dashboards/previsao_orcamentaria_dre.css&#39;</span>
+    <span class="n">tem_cards</span> <span class="o">=</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="DashboardPrevisaoOrcamentariaDreView.get_queryset">
+<a class="viewcode-back" href="../../../../../main_app.views.site.dashboards.previsao_orcamentaria_dre.html#main_app.views.site.dashboards.previsao_orcamentaria_dre.DashboardPrevisaoOrcamentariaDreView.get_queryset">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Obtém o queryset completo de PrevisaoOrcamentaria.</span>
+
+<span class="sd">        Utiliza cache para evitar consultas repetidas ao banco de dados,</span>
+<span class="sd">        armazenando os resultados por 15 minutos.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            *args: Argumentos posicionais opcionais.</span>
+<span class="sd">            **kwargs: Argumentos nomeados opcionais.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            QuerySet: Conjunto de registros do modelo PrevisaoOrcamentaria.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">cache_key</span> <span class="o">=</span> <span class="s1">&#39;previsao_orcamentaria_dre_queryset&#39;</span>
+        <span class="n">queryset</span> <span class="o">=</span> <span class="n">cache</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cache_key</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">queryset</span><span class="p">:</span>
+            <span class="n">queryset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+            <span class="n">cache</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">cache_key</span><span class="p">,</span> <span class="n">queryset</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="o">*</span><span class="mi">15</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">queryset</span></div>
+
+
+<div class="viewcode-block" id="DashboardPrevisaoOrcamentariaDreView.update_context">
+<a class="viewcode-back" href="../../../../../main_app.views.site.dashboards.previsao_orcamentaria_dre.html#main_app.views.site.dashboards.previsao_orcamentaria_dre.DashboardPrevisaoOrcamentariaDreView.update_context">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Atualiza o contexto passado para o template com dados específicos para</span>
+<span class="sd">         o dashboard.</span>
+
+<span class="sd">        Executa as seguintes operações:</span>
+<span class="sd">        - Obtém o intervalo de anos disponíveis nos dados.</span>
+<span class="sd">        - Agrupa os meses disponíveis por ano.</span>
+<span class="sd">        - Converte os dados para JSON para facilitar o uso no frontend.</span>
+<span class="sd">        - Cria uma estrutura hierárquica de agrupamentos</span>
+<span class="sd">          (tipo &gt; subtipo &gt; categoria &gt; item).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            ctx (dict): Contexto inicial que pode conter dados padrão da</span>
+<span class="sd">              superclasse.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: Contexto atualizado contendo:</span>
+<span class="sd">                - &#39;min_year&#39; (int): Ano mínimo disponível nos dados.</span>
+<span class="sd">                - &#39;max_year&#39; (int): Ano máximo disponível nos dados.</span>
+<span class="sd">                - &#39;years&#39; (list[int]): Lista dos anos disponíveis.</span>
+<span class="sd">                - &#39;months_by_year&#39; (str): JSON contendo meses disponíveis por</span>
+<span class="sd">                  ano.</span>
+<span class="sd">                - &#39;data&#39; (str): JSON dos dados brutos para o dashboard.</span>
+<span class="sd">                - &#39;subtipo_por_tipo&#39; (str): JSON mapeando subtipos para cada</span>
+<span class="sd">                  tipo.</span>
+<span class="sd">                - &#39;categoria_por_subtipo&#39; (str): JSON mapeando categorias para</span>
+<span class="sd">                  cada subtipo.</span>
+<span class="sd">                - &#39;item_por_categoria&#39; (str): JSON mapeando itens para cada</span>
+<span class="sd">                  categoria.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ctx</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">update_context</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span>
+
+        <span class="n">qs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span>
+        <span class="n">years_range</span> <span class="o">=</span> <span class="n">qs</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">min_year</span><span class="o">=</span><span class="n">Min</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">),</span> <span class="n">max_year</span><span class="o">=</span><span class="n">Max</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">))</span>
+        <span class="n">min_year</span> <span class="o">=</span> <span class="n">years_range</span><span class="p">[</span><span class="s1">&#39;min_year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">year</span>
+        <span class="n">max_year</span> <span class="o">=</span> <span class="n">years_range</span><span class="p">[</span><span class="s1">&#39;max_year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">year</span>
+        <span class="n">years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">min_year</span><span class="p">,</span> <span class="n">max_year</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># Agrupando meses por ano</span>
+        <span class="n">previsoes_orcamentarias</span> <span class="o">=</span> <span class="n">PrevisaoOrcamentaria</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="n">months_by_year</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">previsao_orcamentaria</span> <span class="ow">in</span> <span class="n">previsoes_orcamentarias</span><span class="p">:</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="n">previsao_orcamentaria</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">year</span>
+            <span class="n">month</span> <span class="o">=</span> <span class="n">previsao_orcamentaria</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">month</span>
+            <span class="k">if</span> <span class="n">month</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">months_by_year</span><span class="p">[</span><span class="n">year</span><span class="p">]:</span>
+                <span class="n">months_by_year</span><span class="p">[</span><span class="n">year</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">month</span><span class="p">)</span>
+
+        <span class="c1"># Organiza os meses em ordem crescente</span>
+        <span class="n">months_by_year</span> <span class="o">=</span> <span class="p">{</span><span class="n">year</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">months</span><span class="p">)</span>
+                          <span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">months</span> <span class="ow">in</span> <span class="n">months_by_year</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+
+        <span class="c1"># Convertendo datas para strings no formato ISO 8601</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">qs</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;tipo&#39;</span><span class="p">,</span> <span class="s1">&#39;subtipo&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;categoria&#39;</span><span class="p">,</span> <span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;valor&#39;</span><span class="p">,</span>
+                              <span class="s1">&#39;observacao&#39;</span><span class="p">))</span>
+
+        <span class="c1"># Agrupar subtipo por tipo e categoria por subtipo</span>
+        <span class="n">subtipo_por_tipo</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="n">categoria_por_subtipo</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">))</span>
+        <span class="n">item_por_categoria</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span>
+            <span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)))</span>
+
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="n">tipo</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;tipo&#39;</span><span class="p">]</span>
+            <span class="n">subtipo</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;subtipo&#39;</span><span class="p">]</span>
+            <span class="n">categoria</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;categoria&#39;</span><span class="p">]</span>
+            <span class="c1"># Renomear para evitar conflito com a variável &quot;item&quot;</span>
+            <span class="n">nome_item</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;item&#39;</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="n">subtipo</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">subtipo_por_tipo</span><span class="p">[</span><span class="n">tipo</span><span class="p">]:</span>
+                <span class="n">subtipo_por_tipo</span><span class="p">[</span><span class="n">tipo</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subtipo</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">categoria</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">categoria_por_subtipo</span><span class="p">[</span><span class="n">tipo</span><span class="p">][</span><span class="n">subtipo</span><span class="p">]:</span>
+                <span class="n">categoria_por_subtipo</span><span class="p">[</span><span class="n">tipo</span><span class="p">][</span><span class="n">subtipo</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">categoria</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">nome_item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">item_por_categoria</span><span class="p">[</span><span class="n">tipo</span><span class="p">][</span><span class="n">subtipo</span><span class="p">][</span><span class="n">categoria</span><span class="p">]:</span>
+                <span class="n">item_por_categoria</span><span class="p">[</span><span class="n">tipo</span><span class="p">][</span><span class="n">subtipo</span><span class="p">][</span><span class="n">categoria</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nome_item</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;item_por_categoria:&#39;</span><span class="p">,</span> <span class="n">item_por_categoria</span><span class="p">)</span>
+
+        <span class="n">ctx</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s1">&#39;min_year&#39;</span><span class="p">:</span> <span class="n">min_year</span><span class="p">,</span>
+                <span class="s1">&#39;max_year&#39;</span><span class="p">:</span> <span class="n">max_year</span><span class="p">,</span>
+                <span class="s1">&#39;years&#39;</span><span class="p">:</span> <span class="n">years</span><span class="p">,</span>
+                <span class="s1">&#39;months_by_year&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">months_by_year</span><span class="p">),</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">JSONEncoderCustom</span><span class="p">),</span>
+                <span class="s1">&#39;subtipo_por_tipo&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">subtipo_por_tipo</span><span class="p">),</span>
+                <span class="s1">&#39;categoria_por_subtipo&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">categoria_por_subtipo</span><span class="p">),</span>
+                <span class="s1">&#39;item_por_categoria&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">item_por_categoria</span><span class="p">),</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">ctx</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">Coopesma</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegação</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../instalacao.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../uso.html">Uso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../desenvolvimento.html">Desenvolvimento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">COOPESMA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../authors.html">authors package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Coopesma.html">Coopesma package</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../index.html">Código do módulo</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Wanderley Cardoso Celeste.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

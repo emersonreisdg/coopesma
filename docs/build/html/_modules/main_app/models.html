@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main_app.models &#8212; Documentação Coopesma 0.1</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=88519e4e"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=71a39b36"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Buscar" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Código-fonte para main_app.models</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">django.db</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.utils.translation</span><span class="w"> </span><span class="kn">import</span> <span class="n">gettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+<span class="c1"># from utils import formatted_date</span>
+
+
+<div class="viewcode-block" id="Aplicacoes">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.Aplicacoes">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Aplicacoes</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">banco</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Banco&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">conta</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Conta&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">aplicacao</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Aplicacao&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">valor</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># valor = models.DecimalField(db_column=&#39;Valor&#39;,</span>
+    <span class="c1">#                             max_digits=10,</span>
+    <span class="c1">#                             decimal_places=2,</span>
+    <span class="c1">#                             blank=True,</span>
+    <span class="c1">#                             null=True)</span>
+    <span class="n">origem</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Origem&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Aplicacoes&#39;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s1">&#39;Investiment&#39;</span><span class="p">)</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s1">&#39;Investiments&#39;</span><span class="p">)</span>
+
+    <span class="c1"># def __str__(self):</span>
+    <span class="c1">#     return self.data.strftime(&#39;%Y-%m-%d&#39;)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="k">else</span> <span class="s1">&#39;No Date&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="CargosESalarios">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.CargosESalarios">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">CargosESalarios</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cargo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Cargo&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_funcionarios</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Funcionarios&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">carga_horaria</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Carga Horaria&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">salario</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Salario&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Cargos e Salarios&#39;</span>
+        <span class="c1"># verbose_name = #_(&#39;Position and Salary&#39;)</span>
+        <span class="c1"># _(&#39;Positions and Salaries&#39;)</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Cargos e Salarios&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="Controle">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.Controle">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Controle</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_cooperado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Cooperado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cooperado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Cooperado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_alunos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Alunos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">aluno</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Aluno&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">turma</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Turma&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cobranca_receita</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Cobranca Receita&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plano_desconto</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Plano Desconto&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cooperar_plus</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;COOPERAR PLUS&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">beneficios</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Beneficios&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">rateio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Rateio&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">desconto_percentual</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Desconto Percentual&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">desconto</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Desconto&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">valor_liquido</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Valor Liquido&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">livros</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Livros&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_parcelas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Parcelas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">soma_livros</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Soma Livros&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">soma_parcela_livros</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Soma Parcela Livros&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># indicado = models.TextField(db_column=&#39;Indicado&#39;, blank=True, null=True)</span>
+    <span class="n">indicou</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Indicou&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Controle&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Controle de Cooperados&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="DespesaReceita">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.DespesaReceita">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DespesaReceita</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plano_de_contas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s2">&quot;Plano de Contas&quot;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">valor</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">tipo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s2">&quot;Tipo&quot;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">subtipo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s2">&quot;Subtipo&quot;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">categoria</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s2">&quot;Categoria&quot;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Despesas e Receitas&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Despesas e Receitas&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="Indicacao">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.Indicacao">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Indicacao</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_cooperado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Cooperado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cooperado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Cooperado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_cooperado_indicado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Cooperado Indicado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cooperado_indicado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Cooperado Indicado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cooperado</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Indicacao&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Indicacoes&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="Controle2022">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.Controle2022">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Controle2022</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">cooperado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Cooperado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_alunos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Alunos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">aluno</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Aluno&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">beneficio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Beneficio&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cooperar_mais_1</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Cooperar Mais 1&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">turma_field</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;TURMA &#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">cobranca</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Cobranca&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">rateio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Rateio&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">desconto_percentual</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Desconto Percentual&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">desconto</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Desconto&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">valor_liquido</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Valor Liquido&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">soma_rateio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Soma Rateio&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">soma_desconto</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Soma Desconto&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">livros</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Livros&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_parcelas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Parcelas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">soma_livros</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Soma Livros&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">soma_parcela_livros</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Soma Parcela Livros&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Controle 2022&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="DespesasAdministrativas">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.DespesasAdministrativas">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DespesasAdministrativas</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">descricao</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Descricao&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">valor</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Despesas Administrativas&#39;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;Despesa Administrativa&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Despesas Administrativas&#39;</span></div>
+
+
+    <span class="c1"># def formatted_date(self):</span>
+    <span class="c1">#     return formatted_date(self.data)</span>
+
+    <span class="c1"># formatted_date.short_description = &#39;Data Formatada&#39;</span>
+
+    <span class="c1"># def __str__(self):</span>
+    <span class="c1">#     return self.formatted_date()</span>
+
+
+<div class="viewcode-block" id="Destinacoes">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.Destinacoes">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Destinacoes</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">recurso</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Recurso&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">valor</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">destino</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Destino&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">valor_destinado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Valor Destinado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">situacao</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Situacao&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Destinacoes&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="ExecucaoOrcamentaria">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.ExecucaoOrcamentaria">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ExecucaoOrcamentaria</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">receitas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Receitas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">receitas_principais</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Receitas Principais&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">mensalidade</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Mensalidade&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">receitas_financeiras</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Receitas Financeiras&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">capital_social</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Capital Social&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">acordo_judicial</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Acordo Judicial&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">outras_receitas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Outras Receitas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">aluguel_cantina_e_outros</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Aluguel Cantina e Outros&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">livros</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Livros&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">despesas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Despesas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">despesas_administrativas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Despesas Administrativas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ordenados_e_salarios</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Ordenados e Salarios&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ordenados_salarios_docentes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Ordenados Salarios Docentes&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ordenados_salarios_adm_apoio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Ordenados Salarios Adm Apoio&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">despesas_ensino</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Despesas Ensino&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">material_didativo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Material Didativo&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">devolucao_mensalidade</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Devolucao Mensalidade&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">beneficios</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Beneficios&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plano_saude</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Plano Saude&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">vale_transporte</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Vale Transporte&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">vale_alimentacao</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Vale Alimentacao&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">material_lanche_agua_cafe</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Material Lanche Agua Cafe&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">seguro_funcionarios</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Seguro Funcionarios&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">consignacao_funcionarios</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Consignacao Funcionarios&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">impostos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Impostos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">darf</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;DARF&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">dua</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;DUA&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">encargos_trabalhistas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Encargos Trabalhistas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">fgts</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;FGTS&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">inss</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;INSS&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">manutencao_instalacoes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Manutencao Instalacoes&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">material_construcao</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Material Construcao&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">marketing</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Marketing&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">despesas_servicos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Despesas Servicos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">percentual_despesas_servicos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Percentual Despesas Servicos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">despesas_operacionais</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Despesas Operacionais&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">percentual_despesas_operacionais</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Percentual Despesas Operacionais&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">depesas_financeiras</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Depesas Financeiras&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">percentual_despesas_financeiras</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Percentual Despesas Financeiras&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Execucao_Orcamentaria&#39;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;Execucao Orcamentaria&#39;</span>  <span class="c1"># _(&#39;Budget Execution&#39;)</span>
+        <span class="c1"># _(&#39;Budget Executions&#39;)</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Execucoes Orcamentarias&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="FluxosDeCaixa">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.FluxosDeCaixa">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FluxosDeCaixa</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">chave</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Chave&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Excluir no futuro</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plano_de_contas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Plano de Contas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">valor</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">percentual</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Percentual&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Excluir no futuro</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Fluxos de Caixa&#39;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;Fluxo de Caixa&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Fluxos de Caixas&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="HistoricoDeReajustes">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.HistoricoDeReajustes">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HistoricoDeReajustes</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">professores</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Professores&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">professores_acumulado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Professores Acumulado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">adm_apoio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Adm Apoio&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">acumulado_adm_apoio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Acumulado Adm Apoio&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Total&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">total_acumulado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Total Acumulado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">inpc</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;INPC&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">inpc_acumulado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;INPC Acumulado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ipca</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;IPCA&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ipca_acumulado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;IPCA Acumulado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plano_saude_professores</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Plano Saude Professores&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ticket_alimentacao_professores</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Ticket Alimentacao Professores&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">vale_transporte_professores</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Vale Transporte Professores&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plano_saude_adm_apoio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Plano Saude Adm Apoio&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ticket_alimentacao_adm_apoio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Ticket Alimentacao Adm Apoio&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">vale_transporte_adm_apoio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Vale Transporte Adm Apoio&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Historico de Reajustes&#39;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;Historico de Reajuste&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Historico de Reajustes&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="HistoricoIndicesFinanceiros">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.HistoricoIndicesFinanceiros">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HistoricoIndicesFinanceiros</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ativo_circulante</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Ativo Circulante&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">realizavel_a_longo_prazo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Realizavel a Longo Prazo&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">investimento_imobilizado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Investimento Imobilizado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">total_ativo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Total Ativo&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">passivo_circulante</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Passivo Circulante&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">exigivel_a_longo_prazo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Exigivel a Longo Prazo&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">patrimonio_liquido</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Patrimonio Liquido&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">receita_liquida_total</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Receita Liquida Total&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">lucro_liquido</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Lucro Liquido&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">depreciacao</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Depreciacao&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">resultado_operacional</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Resultado Operacional&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">contas_a_receber</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Contas a Receber&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">diponivel</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Diponivel&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">sobra_bruta</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Sobra Bruta&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">indice_liquidez_geral</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Indice Liquidez Geral&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">indice_solvencia_geral</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Indice Solvencia Geral&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">indice_liquidez_corrente</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Indice Liquidez Corrente&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">indice_endividamento_total</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Indice Endividamento Total&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">grau_imobilizacao</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Grau Imobilizacao&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ebitda</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;EBITDA&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">margem_lucro_liquida</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Margem Lucro Liquida&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">margem_contribuicao</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Margem Contribuicao&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Historico_Indices_Financeiros&#39;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;Historico de Indices Financeiros&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Historico de Indices Financeiros&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="HistoricoMatriculas">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.HistoricoMatriculas">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HistoricoMatriculas</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_matriculas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Matriculas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">meta</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Meta&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Historico_Matriculas&#39;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;Historico de Matriculas&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Historico de Matriculas&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="HistoricoOrcamentario">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.HistoricoOrcamentario">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">HistoricoOrcamentario</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">receita_ato_cooperado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Receita Ato Cooperado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">despesa_servicos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Despesa Servicos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">despesas_operacionais</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Despesas Operacionais&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">despesas_financeiras</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Despesas Financeiras&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">despesas_totais</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Despesas Totais&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">resultado_liquido</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Resultado Liquido&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">receita_ato_nao_cooperado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Receita Ato Nao Cooperado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">receitas_totais</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Receitas Totais&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">fates_5_porcento</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;FATES 5 Porcento&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">fates_destinacao_sobras</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;FATES Destinacao Sobras&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">fates_entrada_total</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;FATES Entrada Total&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">fates_reversao_legal</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;FATES Reversao Legal&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">fates_reversao_descontos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;FATES Reversao Descontos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">fates_reversao_total</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;FATES Reversao Total&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">saldo_fates</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Saldo FATES&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">capital_social_novas_integralizacoes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Capital Social Novas Integralizacoes&#39;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">capital_social_reversao</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Capital Social Reversao&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">capital_social_integralizado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Capital Social Integralizado&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">reserva_legal_10_porcento</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Reserva Legal 10 Porcento&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">reserva_legal_total</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Reserva Legal Total&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">destinacao_sobras_perdas_a_outras_reservas_estatutarias</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>  <span class="c1"># noqa E503</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Destinacao Sobras Perdas a Outras Reservas Estatutarias&#39;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">reversao_outras_reservas_estatutarias</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Reversao Outras Reservas Estatutarias&#39;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">outras_reservas_estatutarias</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Outras Reservas Estatutarias&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">destinacao_sobras_perdas_exercicio_anterior</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Destinacao Sobras Perdas Exercicio Anterior&#39;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">reversao_reservas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Reversao Reservas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">sobra_perda_exercicio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Sobra Perda Exercicio&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">constituicao_reservas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Constituicao Reservas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">reserva_lucro</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Reserva Lucro&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">reversao_reserva_investimento</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Reversao Reserva Investimento&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">saldo_reserva_investimento</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Saldo Reserva Investimento&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">fundo_de_despesas_correntes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Fundo de Despesas Correntes&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">reversao_fundo_despesas_correntes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Reversao Fundo Despesas Correntes&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">saldo_fundo_despesas_correntes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Saldo Fundo Despesas Correntes&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">patrimonio_liquido_sobra_perda_exercicio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Patrimonio Liquido Sobra Perda Exercicio&#39;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">patrimonio_liquido_constituicao_reserva</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Patrimonio Liquido Constituicao Reserva&#39;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">patrimonio_liquido_reserva_incentivos_fiscais</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Patrimonio Liquido Reserva Incentivos Fiscais&#39;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">patrimonio_liquido</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Patrimonio Liquido&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">sobras_perdas_a_disposicao_ago_ato_cooperado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Sobras Perdas a Disposicao AGO Ato Cooperado&#39;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">sobras_perdas_a_disposicao_ago_ato_nao_cooperado</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Sobras Perdas a Disposicao AGO Ato Nao Cooperado&#39;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">sobras_perdas_a_disposicao_ago_total</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Sobras Perdas a Disposicao AGO Total&#39;</span><span class="p">,</span>
+        <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="n">inadimplencia_quitada</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Inadimplencia Quitada&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">percentual_inadimplencia_quitada</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Percentual Inadimplencia Quitada&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">inadimplencia_adquirida</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Inadimplencia Adquirida&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">percentual_inadimplencia_adquirida</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Percentual Inadimplencia Adquirida&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">inadimplencia_acumulada</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Inadimplencia Acumulada&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">percentual_inadimplencia_acumulada</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Percentual Inadimplencia Acumulada&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Historico_Orcamentario&#39;</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="s1">&#39;Historico Orcamentario&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Historico Orcamentario&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="Ifes">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.Ifes">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Ifes</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">aprovados_ifes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Aprovados IFES&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;IFES&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;IFES&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="Matriculas">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.Matriculas">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Matriculas</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">serie</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Serie&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">alunos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Alunos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">rematriculados</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Rematriculados&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">nao_rematriculados</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Nao Rematriculados&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">novos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Novos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">particular</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Particular&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">publica</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Publica&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">migrantes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Migrantes&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">iniciantes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Iniciantes&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">capacidade_ideal_alunos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Capacidade Ideal Alunos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">saldo_oocupacao_ideal</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Saldo Oocupacao Ideal&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">vagas_ofertadas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Vagas Ofertadas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">vagas_ociosas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Vagas Ociosas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">capacidade_maxima_alunos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Capacidade Maxima Alunos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">saldo_ocupacao_maxima</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Saldo Ocupacao Maxima&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">aprovados_ifes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Aprovados IFES&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Matriculas&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Matriculas&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="Ofertas">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.Ofertas">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Ofertas</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">serie</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Serie&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ano</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Ano&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">turmas_ofertadas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Turmas Ofertadas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">vagas_ofertadas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Vagas Ofertadas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Ofertas&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Ofertas&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="Parametros">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.Parametros">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Parametros</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">serie</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Serie&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ano</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Ano&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_ideal_alunos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Ideal Alunos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_maximo_alunos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Maximo Alunos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_ideal_turmas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Ideal Turmas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">numero_maximo_turmas</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Numero Maximo Turmas&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">capacidade_ideal_alunos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Capacidade Ideal Alunos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">capacidade_maxima_alunos</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Capacidade Maxima Alunos&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Parametros&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Parametros&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="PrevisaoOrcamentaria">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.PrevisaoOrcamentaria">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">PrevisaoOrcamentaria</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">tipo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Tipo&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">subtipo</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Subtipo&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">categoria</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Categoria&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Item&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">valor</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">observacao</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Observacao&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Previsao_Orcamentaria&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Previsao Orcamentaria&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="ProjecaoFates">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.ProjecaoFates">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProjecaoFates</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Id&#39;</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">projecao_fates</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">FloatField</span><span class="p">(</span>
+        <span class="n">db_column</span><span class="o">=</span><span class="s1">&#39;Projecao_Fates&#39;</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;Projecao_Fates&#39;</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="s1">&#39;Projecao_Fates&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="AuthGroup">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.AuthGroup">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AuthGroup</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;auth_group&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="AuthGroupPermissions">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.AuthGroupPermissions">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AuthGroupPermissions</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">AuthGroup</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DO_NOTHING</span><span class="p">)</span>
+    <span class="n">permission</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;AuthPermission&#39;</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DO_NOTHING</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;auth_group_permissions&#39;</span>
+        <span class="n">unique_together</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;group&#39;</span><span class="p">,</span> <span class="s1">&#39;permission&#39;</span><span class="p">),)</span></div>
+
+
+
+<div class="viewcode-block" id="AuthPermission">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.AuthPermission">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AuthPermission</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">content_type</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;DjangoContentType&#39;</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DO_NOTHING</span><span class="p">)</span>
+    <span class="n">codename</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;auth_permission&#39;</span>
+        <span class="n">unique_together</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;content_type&#39;</span><span class="p">,</span> <span class="s1">&#39;codename&#39;</span><span class="p">),)</span></div>
+
+
+
+<div class="viewcode-block" id="AuthUser">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.AuthUser">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AuthUser</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">last_login</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">is_superuser</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">()</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+    <span class="n">last_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">254</span><span class="p">)</span>
+    <span class="n">is_staff</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">()</span>
+    <span class="n">is_active</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">()</span>
+    <span class="n">date_joined</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">()</span>
+    <span class="n">first_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;auth_user&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="AuthUserGroups">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.AuthUserGroups">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AuthUserGroups</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">AuthUser</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DO_NOTHING</span><span class="p">)</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">AuthGroup</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DO_NOTHING</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;auth_user_groups&#39;</span>
+        <span class="n">unique_together</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;group&#39;</span><span class="p">),)</span></div>
+
+
+
+<div class="viewcode-block" id="AuthUserUserPermissions">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.AuthUserUserPermissions">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AuthUserUserPermissions</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">AuthUser</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DO_NOTHING</span><span class="p">)</span>
+    <span class="n">permission</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">AuthPermission</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DO_NOTHING</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;auth_user_user_permissions&#39;</span>
+        <span class="n">unique_together</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;permission&#39;</span><span class="p">),)</span></div>
+
+
+
+<div class="viewcode-block" id="AuthorsProfile">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.AuthorsProfile">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AuthorsProfile</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">bio</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">OneToOneField</span><span class="p">(</span><span class="n">AuthUser</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DO_NOTHING</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;authors_profile&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="DjangoAdminLog">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.DjangoAdminLog">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DjangoAdminLog</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">object_id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">object_repr</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">action_flag</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveSmallIntegerField</span><span class="p">()</span>
+    <span class="n">change_message</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">content_type</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
+        <span class="s1">&#39;DjangoContentType&#39;</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DO_NOTHING</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">AuthUser</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DO_NOTHING</span><span class="p">)</span>
+    <span class="n">action_time</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;django_admin_log&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="DjangoContentType">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.DjangoContentType">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DjangoContentType</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">app_label</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;django_content_type&#39;</span>
+        <span class="n">unique_together</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;app_label&#39;</span><span class="p">,</span> <span class="s1">&#39;model&#39;</span><span class="p">),)</span></div>
+
+
+
+<div class="viewcode-block" id="DjangoMigrations">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.DjangoMigrations">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DjangoMigrations</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">applied</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;django_migrations&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="DjangoSession">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.DjangoSession">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DjangoSession</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">session_key</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+    <span class="n">session_data</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">expire_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">()</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;django_session&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="TagTag">
+<a class="viewcode-back" href="../../main_app.models.html#main_app.models.TagTag">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">TagTag</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">slug</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <span class="n">object_id</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="n">content_type</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">DjangoContentType</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DO_NOTHING</span><span class="p">)</span>
+
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">managed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">db_table</span> <span class="o">=</span> <span class="s1">&#39;tag_tag&#39;</span></div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Coopesma</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegação</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../instalacao.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../uso.html">Uso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../desenvolvimento.html">Desenvolvimento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">COOPESMA</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Código do módulo</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Wanderley Cardoso Celeste.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{% if user.is_authenticated %}
+    <div class="login-message">
+        You are logged in with 
+        {{ request.user.username }}. 
+        <a href="{% url 'colaborador:dashboard' %}">See your setup</a>, 
+        <a href="{% url 'colaborador:dashboard_setup_new' %}">create a new setup</a> or  
+        {% include 'authors/partials/form_logout.html' %}
+        <a class="colaborador-logout-link" href="#">click here</a> to logout.
+    </div>
+{% endif %}

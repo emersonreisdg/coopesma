@@ -1,0 +1,8 @@
+<form class="inline-form form-logout" action="{% url 'colaborador:logout' %}" method='POST'>
+    {% csrf_token %}
+    <input type="hidden" name="username" value="{{ request.user.username }}">
+
+    {% comment %} <p>
+        <a href="{% url 'colaborador:password_reset' %}">Esqueceu sua senha?</a>
+    </p> {% endcomment %}
+</form>

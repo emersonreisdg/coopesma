@@ -1,0 +1,53 @@
+{% comment %} <div class="form-container">
+    <div class="form-content-fluxo-caixa">
+        <h1>{{ title }}</h1>
+        <form id="excel-upload-form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" id="arquivo" name="arquivo">
+        </form>
+    </div>
+
+    <div class="preview-container preview-content" id="table-container" style="margin-top: 20px; display: none;">
+        <div class="button-container">
+            <button type="button" id="group-button" class="btn btn-primary">Agrupar</button>
+            <button type="button" id="ungroup-button" class="btn btn-secondary" style="display: none;">Desagrupar</button>
+            <button type="submit" id="submit-button" class="btn btn-success" style="display: none;">Enviar</button>
+        </div>
+        <h2>Pré-visualização dos Dados</h2>
+        <div id="original-table-container">
+            {% include "coopesma/partials/table.html" %}
+        </div>
+        <div id="grouped-table-container" style="display: none;">
+            <table id="groupedTable" class="table">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+<div class="form-container">
+    <div class="form-content-fluxo-caixa">
+        <h1>{{ title }}</h1>
+        {% comment %} <form id="excel-upload-form" method="post" enctype="multipart/form-data"> {% endcomment %}
+            <label for="file-upload-input" class="file-upload-label" data-title="Selecione um arquivo Excel">
+                <span class="file-upload-button"></span>
+                <span id="file-name" class="file-upload-name">Nenhum arquivo selecionado</span>
+            </label>
+            {% comment %} {% csrf_token %} {% endcomment %}
+            <input type="file" id="file-upload-input" name="file-name" class="file-upload-input">
+        {% comment %} </form> {% endcomment %}
+    </div>
+
+    <div class="preview-container preview-content" id="table-container" style="margin-top: 20px; display: none;">
+        <div class="button-container">
+            <button type="button" id="group-button" class="btn btn-group">Agrupar</button>
+            <button type="button" id="ungroup-button" class="btn btn-ungroup" style="display: none;">Desagrupar</button>
+            <button type="button" id="submit-button" class="btn btn-send" style="display: none;">Enviar</button>
+        </div>
+        <h2>Pré-visualização dos Dados</h2>
+        {% include "coopesma/partials/table.html" %}
+    </div>
+</div>
+
+

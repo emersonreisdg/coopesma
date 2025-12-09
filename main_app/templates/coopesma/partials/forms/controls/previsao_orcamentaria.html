@@ -1,0 +1,78 @@
+<div class="form-content-previsao-orcamentaria">
+    <h2>Novo Registro de Previsão Orçamentária</h2>
+    <form action="" method="post" class="form-container-previsao-orcamentaria id="previsao-orcamentaria-form">
+        {% csrf_token %}
+        <div class="form-container-previsao-orcamentaria">
+            <!-- Campo de Data -->
+            <label for="data">Data</label>
+            <input type="text" id="data" name="data" class="date-picker" value="{{ form.data.value|default_if_none:'' }}" />
+            {% if form.data.errors %}
+                <div class="error">{{ form.data.errors }}</div>
+            {% endif %}
+        
+            <!-- Campo de Tipo -->
+            <label for="tipo">Tipo</label>
+            <select id="tipo" name="tipo" class="select-add-new" data-placeholder="Selecione ou adicione um novo tipo" data-selected="{{ form.tipo.value }}">
+                <option value="" {% if form.tipo.value == "" %}selected{% endif %}></option>
+                {% for option in tipos %}
+                    <option value="{{ option }}" {% if form.tipo.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.tipo.errors %}
+                <div class="error">{{ form.tipo.errors }}</div>
+            {% endif %}
+        
+            <!-- Campo de Subtipo -->
+            <label for="subtipo">Subtipo</label>
+            <select id="subtipo" name="subtipo" class="select-add-new" data-placeholder="Selecione ou adicione um novo subtipo" data-selected="{{ form.subtipo.value }}">
+                <option value="" {% if form.subtipo.value == "" %}selected{% endif %}></option>
+                {% for option in subtipos %}
+                    <option value="{{ option }}" {% if form.subtipo.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.subtipo.errors %}
+                <div class="error">{{ form.subtipo.errors }}</div>
+            {% endif %}
+
+            <!-- Campo de Categoria -->
+            <label for="categoria">Categoria</label>
+            <select id="categoria" name="categoria" class="select-add-new" data-placeholder="Selecione ou adicione uma nova categoria" data-selected="{{ form.categoria.value }}">
+                <option value="" {% if form.categoria.value == "" %}selected{% endif %}></option>
+                {% for option in categorias %}
+                    <option value="{{ option }}" {% if form.categoria.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.categoria.errors %}
+                <div class="error">{{ form.categoria.errors }}</div>
+            {% endif %}
+        
+            <!-- Campo de Item -->
+            <label for="item">Item</label>
+            <select id="item" name="item" class="select-add-new" data-placeholder="Selecione ou adicione um novo item" data-selected="{{ form.item.value }}">
+                <option value="" {% if form.item.value == "" %}selected{% endif %}></option>
+                {% for option in itens %}
+                    <option value="{{ option }}" {% if form.item.value == option %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select>
+            {% if form.item.errors %}
+                <div class="error">{{ form.item.errors }}</div>
+            {% endif %}
+
+            <!-- Campo de valor -->
+            <label for="valor">Valor</label>
+            <input type="text" id="valor" name="valor" class="form-control" autocomplete="off" placeholder="Digite o valor orçamentário" value="{{ form.valor.value|default_if_none:'' }}" />
+            {% if form.valor.errors %}
+                <div class="error">{{ form.valor.errors }}</div>
+            {% endif %}
+
+
+            <!-- Campo de Observação -->
+            <label for="observacao">Observacao</label>
+            <input type="text" id="observacao" name="observacao" class="form-control" autocomplete="off" placeholder="Adicione uma observação" value="{{ form.observacao.value|default_if_none:'' }}" />
+            {% if form.observacao.errors %}
+                <div class="error">{{ form.observacao.errors }}</div>
+            {% endif %}
+        </div>
+        <button type="submit" id="submit-button" class="btn btn-primary">Enviar</button>
+    </form>
+</div>

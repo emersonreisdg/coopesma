@@ -1,0 +1,77 @@
+@import url('../canvas.css'); 
+@import url('../report.css');
+@import url('../inputs.css'); 
+@import url('../buttons.css');
+@import url('../dash.css');  
+
+
+.dash-controls{
+    margin-top: 2rem !important;
+}
+
+.combo-tree-input.period-control,
+.combo-tree-item-input.period-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-primary);
+}
+
+.combo-tree-input.period-control label,
+.combo-tree-item-input.period-control label {
+    font-size: 1.4rem;
+    color: var(--color-dark-text);
+    white-space: nowrap;
+    font-family: var(--font-headings);
+}
+
+.combo-tree-input.period-control input[type="text"],
+.combo-tree-item-input.period-control input[type="text"] {
+    padding: 0.4rem 0.8rem;
+    font-size: 1.4rem;
+    height: 3rem;
+    border: 1px solid var(--color-gray-2);
+    border-radius: 0.4rem;
+    background-color: var(--color-white);
+    min-width: 12rem;
+    font-family: var(--font-primary);
+    color: var(--color-black);
+    box-sizing: border-box;
+}
+
+.combo-tree-input.period-control input[type="text"]:focus,
+.combo-tree-item-input.period-control input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-primary-light-hover);
+}
+
+
+#canvas-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: var(--color-gray4);
+    padding: 2rem;
+    padding-inline: 2rem; /* espaçamento lateral de 2rem */
+    box-sizing: border-box;
+    width: calc(100% - 4rem); /* 2rem de cada lado */
+    max-width: calc(100vw - 4rem);
+    height: calc(100vh - 40rem); /* usa quase toda altura do viewport */
+    overflow-y: auto;
+    margin: 1rem 2rem;
+}
+
+.canvas-container {
+    max-width: 160rem !important;     
+    background-color: var(--color-white) !important;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 100%; /* ocupa toda altura do wrapper */
+    transition: none !important;
+}
+
+.canvas-container canvas {
+    width: 100% !important;
+    height: 100% !important; /* ocupa toda a altura disponível */
+}

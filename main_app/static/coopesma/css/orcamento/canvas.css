@@ -1,0 +1,67 @@
+/* Canvas */
+.canvas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; /* Ajusta a verticalidade dos itens */
+    /* grid-template-columns: repeat(auto-fit, minmax(80rem, 1fr)); */
+    gap: var(--spacing-gutter-large);
+    /* padding-left: 2rem;
+    padding-right: 2rem; */
+}
+
+.canvas-container {
+    flex: 1 1 auto;
+    margin-top: 30px;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 100%;
+    /* min-height: 40rem; */
+}
+
+.canvas-container canvas {
+    width: 100% !important;  /*Faz com que o canvas ocupe toda a largura do container */
+    height: auto !important; /* Ajusta a altura automaticamente para manter a proporção */
+}
+
+.canvas-container.small {
+    flex: 1 1 40%; /* Faz com que ocupe aproximadamente 40% da largura do contêiner */
+    min-width: 300px; /* Garante que os gráficos não fiquem muito pequenos em telas pequenas */
+    height: auto !important; 
+}
+
+.canvas-container.large {
+    flex: 1 1 80%; /* Ocupa mais espaço (80%) para gráficos maiores */
+    min-width: 600px;
+}
+
+.canvas-container.hidden {
+    display: none;
+}
+
+@media (max-width: 120rem) {
+    .canvas-grid {
+        grid-template-columns: repeat(2, minmax(40rem, 1fr));
+    }
+}
+
+@media (max-width: 80rem) {
+    .canvas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsividade */
+/* @media (max-width: 120rem) {
+    .canvas-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 80rem) {
+    .canvas-grid {
+        flex-direction: column;
+    }
+} */

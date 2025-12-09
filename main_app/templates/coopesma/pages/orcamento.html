@@ -1,0 +1,95 @@
+{% extends 'global/base.html' %}
+
+{% block title %} {{ title }} | {% endblock title %}
+
+{% load static %}
+
+{% include "global/partials/head.html" %}
+
+{% block content %}
+    <div class="main-content main-content-list container">
+        <div class="dashboard-container">
+            <form id="report_form" method="post">
+                {% csrf_token %}
+
+                
+                {% comment %} {% include "coopesma/partials/forms/seletor_formularios.html" %} {% endcomment %}
+                {% comment %} <input type="file" id="excel-file" name="excel_file" accept=".xls, .xlsx" /> {% endcomment %}
+
+                {% if controles_ambiente %}                 
+                    {% include "coopesma/partials/orcamento/controls/"|add:ambiente %}
+                {% endif %}
+                
+            </form>
+
+            {% if tem_cards %}
+                {% include "coopesma/partials/orcamento/cards/"|add:ambiente %}
+            {% endif %}
+
+            
+            {% include "coopesma/partials/table.html" %}
+            
+           <!-- jQuery -->
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> {% endcomment %}
+
+            <!-- Select2 CSS e JS -->
+            <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+                        
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script type="module" src="{% static 'coopesma/js/chartConfig.js' %}"></script>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script> 
+            
+            <!-- Flatpickr CSS e JS -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+            <!-- Inclua o JS do autoNumeric -->
+            <script src="https://cdn.jsdelivr.net/npm/autonumeric@4.5.4"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0/dist/chartjs-plugin-annotation.min.js"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+ 
+            <script id="data_previsao-json" type="application/json">{{ data_previsao|safe }}</script>
+            <script id="data_despesa_receita-json" type="application/json">{{ data_despesa_receita|safe }}</script>
+            <script id="formData-json" type="application/json">{{ form_data|safe }}</script>
+            <script id="filteredData-json" type="application/json">{{ filtered_data|safe }}</script>
+            <script id="groupedData-json" type="application/json">{{ grouped_data|safe }}</script>
+            
+            <script id="monthsByYear-json" type="application/json">{{ months_by_year |safe }}</script>
+            <script id="contasPorBanco-json" type="application/json">{{ contas_por_banco |safe }}</script>
+            <script id="aplicacoesPorBanco-json" type="application/json">{{ aplicacoes_por_banco |safe }}</script>
+            <script id="subtipoPorTipo-json" type="application/json">{{ subtipo_por_tipo |safe }}</script>
+            <script id="categoriaPorSubtipo-json" type="application/json">{{ categoria_por_subtipo |safe }}</script>
+            <script id="itemPorCategoria-json" type="application/json">{{ item_por_categoria |safe }}</script>
+            <script id="itensContabeis-json" type="application/json">{{ i_contabeis | safe }}</script>
+            <script id="indicadores-json" type="application/json">{{ indicadores_financeiros | safe }}</script>
+
+            <script> console.log('Dados do contexto:',{{ data|safe }})</script>
+            
+            <script> console.log('Dados da sessão:',{{ form_data|safe }})</script>
+            
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+            {% comment %} <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script> {% endcomment %}
+            <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+            
+            
+            {% if controles_ambiente %}
+                <script type="module" src="{% static 'coopesma/js/orcamento/'|add:controles_ambiente %}"></script>
+            {% endif %}
+
+
+            {% comment %} <script>
+                console.log("Conteúdo de data no template:", {{ data|safe }}); 
+                console.log('controles_ambiente:', {{ controles_ambiente}});
+                console.log('ambiente:', {{ ambiente}});
+            </script> {% endcomment %}
+            
+        </div>
+    </div>
+{% endblock content %}

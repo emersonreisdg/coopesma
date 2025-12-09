@@ -1,0 +1,929 @@
+Data;Tipo;Subtipo;Categoria;Item;Valor;Observação
+01/01/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/02/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/03/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/04/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/05/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/06/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/07/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/08/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/09/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/10/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/11/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/12/2025;Receita;Receita com Prestação dos Serviços;Ato Cooperado;Rateio mensal;R$ 628.410,06;
+01/01/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/02/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/03/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/04/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/05/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/06/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/07/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/08/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/09/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/10/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/11/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/12/2025;Receita;Receita com Livros;Ato Cooperado;Rateio mensal;R$ 0,00;
+01/01/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/02/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/03/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/04/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/05/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/06/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/07/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/08/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/09/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/10/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/11/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/12/2025;Receita;Reserva FATES;Reversão Contábil;Reversão Contábil FATES;R$ 35.600,00;R$174 mil Aprovado na AGO de 2024
+01/01/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 64.000,00;R$ 235 mil aprovado na AGO de 2024
+01/02/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 107.000,00;R$ 235 mil aprovado na AGO de 2024
+01/03/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 24.000,00;R$ 235 mil aprovado na AGO de 2024
+01/04/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 10.000,00;R$ 235 mil aprovado na AGO de 2024
+01/05/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 2.000,00;R$ 235 mil aprovado na AGO de 2024
+01/06/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 2.000,00;R$ 235 mil aprovado na AGO de 2024
+01/07/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 2.000,00;R$ 235 mil aprovado na AGO de 2024
+01/08/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 2.000,00;R$ 235 mil aprovado na AGO de 2024
+01/09/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 2.000,00;R$ 235 mil aprovado na AGO de 2024
+01/10/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 2.000,00;R$ 235 mil aprovado na AGO de 2024
+01/11/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 2.000,00;R$ 235 mil aprovado na AGO de 2024
+01/12/2025;Receita;Reserva de Investimentos;Reversão Contábil;Reversão Contábil Reserva de Investimentos;R$ 2.000,00;R$ 235 mil aprovado na AGO de 2024
+01/01/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 0,00;Parceria com SESCOOP
+01/02/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 2.237,50;Parceria com SESCOOP
+01/03/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 2.237,50;Parceria com SESCOOP
+01/04/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 2.700,00;Parceria com SESCOOP
+01/05/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 2.237,50;Parceria com SESCOOP
+01/06/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 2.237,50;Parceria com SESCOOP
+01/07/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 2.700,00;Parceria com SESCOOP
+01/08/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 3.000,00;Parceria com SESCOOP
+01/09/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 2.237,50;Parceria com SESCOOP
+01/10/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 2.237,50;Parceria com SESCOOP
+01/11/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 2.237,50;Parceria com SESCOOP
+01/12/2025;Receita;Contrapartida SESCOOP;Fomento;Fomento SESCOOP;R$ 2.237,50;Parceria com SESCOOP
+01/01/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 0,00;
+01/02/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 49.964,79;
+01/03/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 49.964,79;
+01/04/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 49.964,79;
+01/05/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 49.964,79;
+01/06/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 49.964,79;
+01/07/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 49.964,79;
+01/08/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 49.964,79;
+01/09/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 49.964,79;
+01/10/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 49.964,79;
+01/11/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 49.964,79;
+01/12/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Educação Infantil;R$ 49.964,79;
+01/01/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 0,00;
+01/02/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 226.552,32;
+01/03/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 226.552,32;
+01/04/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 226.552,32;
+01/05/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 226.552,32;
+01/06/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 226.552,32;
+01/07/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 226.552,32;
+01/08/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 226.552,32;
+01/09/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 226.552,32;
+01/10/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 226.552,32;
+01/11/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 226.552,32;
+01/12/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Fundamental;R$ 226.552,32;
+01/01/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 0,00;
+01/02/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 27.012,74;
+01/03/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 27.012,74;
+01/04/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 27.012,74;
+01/05/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 27.012,74;
+01/06/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 27.012,74;
+01/07/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 27.012,74;
+01/08/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 27.012,74;
+01/09/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 27.012,74;
+01/10/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 27.012,74;
+01/11/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 27.012,74;
+01/12/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 1ª Série;R$ 27.012,74;
+01/01/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 0,00;
+01/02/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 31.567,15;
+01/03/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 31.567,15;
+01/04/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 31.567,15;
+01/05/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 31.567,15;
+01/06/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 31.567,15;
+01/07/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 31.567,15;
+01/08/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 31.567,15;
+01/09/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 31.567,15;
+01/10/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 31.567,15;
+01/11/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 31.567,15;
+01/12/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 2ª Série;R$ 31.567,15;
+01/01/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 0,00;
+01/02/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 30.722,14;
+01/03/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 30.722,14;
+01/04/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 30.722,14;
+01/05/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 30.722,14;
+01/06/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 30.722,14;
+01/07/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 30.722,14;
+01/08/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 30.722,14;
+01/09/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 30.722,14;
+01/10/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 30.722,14;
+01/11/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 30.722,14;
+01/12/2025;Despesa;Custo Pessoal Direto;Encargos e Salários;Ensino Médio - 3ª Série;R$ 30.722,14;
+01/01/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 0,00;
+01/02/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 91.531,71;
+01/03/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 91.531,71;
+01/04/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 91.531,71;
+01/05/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 91.531,71;
+01/06/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 91.531,71;
+01/07/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 91.531,71;
+01/08/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 91.531,71;
+01/09/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 91.531,71;
+01/10/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 91.531,71;
+01/11/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 91.531,71;
+01/12/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;Staff Pedagógico;R$ 91.531,71;
+01/01/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 90.000,00;
+01/02/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 139.574,42;
+01/03/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 139.574,42;
+01/04/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 139.574,42;
+01/05/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 139.574,42;
+01/06/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 139.574,42;
+01/07/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 139.574,42;
+01/08/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 139.574,42;
+01/09/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 139.574,42;
+01/10/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 139.574,42;
+01/11/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 139.574,42;
+01/12/2025;Despesa;Custo Pessoal Indireto;Encargos e Salários;ADM e Apoio;R$ 139.574,42;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Contribuições e Taxas Diversas;R$ 3.200,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Rotativo;R$ 800,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Fundo Diversos;R$ 750,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Convênio Menores/Estagiários;R$ 550,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 1.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 85.000,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 85.000,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 90.000,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 90.000,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 90.000,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 90.000,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 90.000,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 90.000,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 90.000,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 90.000,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Provisionamentos;R$ 90.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Contábil;R$ 5.175,78;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Administrativas;Acessoria Jurídica;R$ 1.869,33;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Energia, Água, Telefone, Internet;R$ 7.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção do Sistema Acadêmico;R$ 3.073,05;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Outras Despesas Operacionais;R$ 3.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 52,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 156,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 561,60;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 364,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 364,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 364,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 364,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 364,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 364,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 364,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 364,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Copiadora;R$ 364,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Ar Condicionado;R$ 2.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Manutenção de Computadores;R$ 1.300,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Higiene e Limpeza;R$ 2.600,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 2.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 620,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 620,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 620,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 620,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 620,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 620,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 620,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 620,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 620,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 620,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Informática;R$ 620,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 500,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 6.500,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 2.000,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 2.000,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 2.000,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 2.000,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 2.000,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 2.000,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 2.000,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 2.000,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 2.000,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Expediente e Escritório;R$ 2.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 500,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 1.500,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 300,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 300,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 300,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 300,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 300,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 300,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 300,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 300,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 300,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Elétrico e Hidráulico;R$ 300,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 500,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 1.870,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 1.870,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 1.870,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 1.870,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 1.870,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 1.870,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 1.870,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 1.870,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 1.870,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 1.870,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material de Lanche, Água e Café;R$ 1.870,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 5.300,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 1.800,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 1.700,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 1.900,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 1.900,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 1.900,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 1.900,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 1.900,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 1.900,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 1.900,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 1.900,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Material para Uso e Consumo;R$ 1.900,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 24.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 34.000,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 13.000,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 2.000,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 2.000,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 2.000,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 2.000,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 2.000,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 2.000,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 2.000,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 2.000,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Móveis e Utensílios;R$ 2.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 40.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 73.000,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 11.000,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 8.000,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Reforma Geral;R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Ronda e Monitoramento;R$ 300,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 10.400,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 12.500,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 3.100,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 3.100,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 3.100,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 3.100,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 3.100,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 3.100,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 3.100,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 3.100,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 3.100,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Serviços Diversos;R$ 3.100,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 2.700,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 800,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento e Recepção dos Professores (Lanche);R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 1.500,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Recepção dos Alunos;R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 300,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 300,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 300,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 300,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 300,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 300,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 300,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 300,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 300,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 300,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Manutenção da Rádio Pod Cooperar;R$ 300,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 250,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 250,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 250,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 250,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 250,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 250,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 250,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 250,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 250,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 250,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Orientação Profissional: Testes e dinâmicas coletivas para Ensino Médio;R$ 250,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 200,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 200,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 200,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 200,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 200,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 200,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 200,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 200,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 200,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Reuniões OCB em Vitória;R$ 200,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 1.200,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 1.200,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 1.200,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 1.200,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 1.200,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 1.200,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 1.200,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 1.200,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 1.200,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 1.200,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Materiais para execução dos projetos internos diversos desenvolvidos em cada turma a serem planejadas em dezembro;R$ 1.200,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 4.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 2.700,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 800,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Pedagógico Coletivo (Lanche);R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 2.500,00;Custear materiais para realização de atividade em comemoração à data
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 4.000,00;Contrapartida para transporte dos estudantes
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 0,00;Contrapartida para transporte dos estudantes
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 0,00;Contrapartida para transporte dos estudantes
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 0,00;Contrapartida para transporte dos estudantes
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 0,00;Contrapartida para transporte dos estudantes
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 0,00;Contrapartida para transporte dos estudantes
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 0,00;Contrapartida para transporte dos estudantes
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 0,00;Contrapartida para transporte dos estudantes
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 0,00;Contrapartida para transporte dos estudantes
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 0,00;Contrapartida para transporte dos estudantes
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 0,00;Contrapartida para transporte dos estudantes
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Participação Encontro de Cooperativas – Estudantes JOCOOPES;R$ 0,00;Contrapartida para transporte dos estudantes
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 0,00;Contrapartida para transporte dos alunos finalistas
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 0,00;Contrapartida para transporte dos alunos finalistas
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 0,00;Contrapartida para transporte dos alunos finalistas
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 0,00;Contrapartida para transporte dos alunos finalistas
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 0,00;Contrapartida para transporte dos alunos finalistas
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 0,00;Contrapartida para transporte dos alunos finalistas
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 0,00;Contrapartida para transporte dos alunos finalistas
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 2.000,00;Contrapartida para transporte dos alunos finalistas
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 0,00;Contrapartida para transporte dos alunos finalistas
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 0,00;Contrapartida para transporte dos alunos finalistas
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 0,00;Contrapartida para transporte dos alunos finalistas
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Premiação do Concurso de Desenho OCB;R$ 0,00;Contrapartida para transporte dos alunos finalistas
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 2.700,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encontro de Pais de Alunos Especiais;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 2.700,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Seminário de Pais da Escola Alternativa;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 3.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Empreendedorismo - Mostra Bilingue;R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 2.500,00;Custear materiais para realização de atividade em comemoração à data
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 0,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 0,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 0,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 0,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 0,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 0,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 0,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 0,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 0,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 3.000,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 0,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Feira de Ciências;R$ 0,00;Para custear materiais, produtos e locações que se fizerem necessárias
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 2.500,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto Pequenos Autores, Grandes Escritores;R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 8.500,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;ENEM (Camisetas e Kits);R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 5.000,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Professor e Comemoração dos Funcionários;R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Palestras para alunos em temas diversos solicitados pelos professores e Semana de Conversa com Profissionais Ensino Médio;R$ 0,00;Para aquisição de brindes aos palestrantes voluntários
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Palestras para alunos em temas diversos solicitados pelos professores e Semana de Conversa com Profissionais Ensino Médio;R$ 100,00;Para aquisição de brindes aos palestrantes voluntários
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Palestras para alunos em temas diversos solicitados pelos professores e Semana de Conversa com Profissionais Ensino Médio;R$ 100,00;Para aquisição de brindes aos palestrantes voluntários
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Palestras para alunos em temas diversos solicitados pelos professores e Semana de Conversa com Profissionais Ensino Médio;R$ 100,00;Para aquisição de brindes aos palestrantes voluntários
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Palestras para alunos em temas diversos solicitados pelos professores e Semana de Conversa com Profissionais Ensino Médio;R$ 100,00;Para aquisição de brindes aos palestrantes voluntários
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Palestras para alunos em temas diversos solicitados pelos professores e Semana de Conversa com Profissionais Ensino Médio;R$ 100,00;Para aquisição de brindes aos palestrantes voluntários
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Palestras para alunos em temas diversos solicitados pelos professores e Semana de Conversa com Profissionais Ensino Médio;R$ 100,00;Para aquisição de brindes aos palestrantes voluntários
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Palestras para alunos em temas diversos solicitados pelos professores e Semana de Conversa com Profissionais Ensino Médio;R$ 100,00;Para aquisição de brindes aos palestrantes voluntários
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Palestras para alunos em temas diversos solicitados pelos professores e Semana de Conversa com Profissionais Ensino Médio;R$ 100,00;Para aquisição de brindes aos palestrantes voluntários
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Palestras para alunos em temas diversos solicitados pelos professores e Semana de Conversa com Profissionais Ensino Médio;R$ 100,00;Para aquisição de brindes aos palestrantes voluntários
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Palestras para alunos em temas diversos solicitados pelos professores e Semana de Conversa com Profissionais Ensino Médio;R$ 100,00;Para aquisição de brindes aos palestrantes voluntários
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Encerramento Balé e GR;R$ 1.500,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Projeto de encerramento Educação Infantil;R$ 2.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Formatura 3ª série EM;R$ 4.500,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Planejamento Coletivo e Estudo – Professores e Equipe Pedagógica;R$ 1.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 800,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 800,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 800,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 800,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 800,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 800,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 800,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 800,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 800,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 800,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Transporte para Participação em Jogos Escolares - Etapas Municipal e Estadual;R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 9.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Jogos Pedagógicos;R$ 1.500,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 5.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Organização da Escola para Início do ano letivo ( Lonas, adesivos, murais e decoração);R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 10.000,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Material Esportivo;R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 72.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Investimentos;Empenho ou Contigenciamento;R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 2.700,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Palestra);R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 0,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 800,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação aos Funcionários Administrativos (Lanche);R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 2.700,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação para Vigias - Segurança;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Operacionais;Campanha de Matrícula - Marketing,, Agência e Impressos;R$ 0,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 3.500,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Formação Primeiros Socorros;R$ 0,00;Palestra custeada pela e parceria COOPESMA - SESCOOP
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 0,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 0,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 9.000,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 0,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 0,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 0,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 0,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 0,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 0,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 0,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 0,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Despesa do encontro);R$ 0,00;Despesas custeadas pela e parceria COOPESMA - SESCOOP
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 0,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 0,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 5.000,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Integracoop (Transporte);R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas com Formação;Encontro de Formação de Gestores - SAS (Despesas da escola – deslocamento até Vitória);R$ 3.000,00;Passagens podem ser custeadas com a parceria COOPESMA - SESCOOP
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 40%;R$ 7.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 75%;R$ 3.000,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Desconto Funcionário 100%;R$ 2.100,00;
+01/01/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/02/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/03/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/04/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Financeiras;Dedução Plano Cooperar;R$ 23.500,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia do Estudante - Matutino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia das Crianças - Vespertino;R$ 0,00;Custear materiais para realização de atividade em comemoração à data
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Dia C e Festa da Família Cooperativista;R$ 0,00;
+01/05/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/06/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/07/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/08/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/09/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/10/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/11/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;
+01/12/2025;Despesa;Outros Custos Indiretos;Despesas Pedagógicas;Aquisição de Acervo para a Biblioteca;R$ 0,00;

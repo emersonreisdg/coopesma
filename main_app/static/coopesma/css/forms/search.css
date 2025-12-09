@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('colors.css'); 
+
+/* Estilização da caixa de busca */
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form {
+    border: 0.2rem solid var(--color-primary-dark);
+    max-width: 100%;
+    width: 60rem; /* Defini uma largura fixa maior para a busca */
+    height: 4rem; /* Altura aumentada */
+    position: relative;
+    transition: all 300ms ease-in-out;
+    border-radius: 1rem; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden;
+}
+
+.search-input {
+    width: 100%;
+    height: 100%; /* Ajusta a altura da entrada ao tamanho do container */
+    padding: 1.5rem 5rem 1.5rem 2rem; /* Ajustei o padding para aumentar a altura */
+    outline: none;
+    border-radius: 1rem;
+    transition: all 300ms ease-in-out;
+    font-size: 2rem; /* Tamanho do texto aumentado */
+    color: var(--color-primary-dark);
+    background-color: #f1f1f1; /* Cor de fundo suave */
+}
+
+.search-input::placeholder {
+    color: #a9a9a9;
+    font-size: 1.8rem; /* Aumentei o tamanho do placeholder */
+}
+
+.search-button {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    background: var(--color-primary);
+    border: none;
+    color: white;
+    padding: 1.5rem; /* Aumentei o padding para deixar o botão maior */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    font-size: 2.4rem; /* Tamanho do ícone aumentado */
+}
+
+.search-button:hover {
+    background: var(--color-primary-dark);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais forte ao passar o mouse */
+}
+
+.search-form:focus-within {
+    border-color: var(--color-primary);
+    background: var(--color-white);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2); /* Sombra ao focar */
+}
+
+.search-form:focus-within .search-input {
+    background-color: white;
+}
+
+.search-form:focus-within .search-button {
+    background: var(--color-primary-dark); /* Cor mais escura ao focar */
+}

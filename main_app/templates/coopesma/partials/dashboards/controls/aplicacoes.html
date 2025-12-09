@@ -1,0 +1,62 @@
+ <div class="dash-controls">
+    <div class="control-group-left">
+        <div class="form-group period-control">
+            <label for="yearSelector">Ano:</label>
+            <select id="yearSelector" name="year_selector">
+                <option value="">Todos</option>
+                {% for year in years %}
+                    <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group period-control">
+            <label for="mesSelector">Mês:</label>
+            <select id="mesSelector">
+                <option value="">Todos</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="control-group-right">
+        <div class="form-group period-control">
+            <label for="bancoSelector">Instituição:</label>
+            <select id="bancoSelector" >
+                <option value="all">Todas</option>
+                {% for banco in bancos %}
+                    <option value="{{ banco }}">{{ banco }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group period-control">
+            <label for="contaSelector">Conta:</label>
+            <select id="contaSelector">
+                <option value="all">Todas</option>
+                {% for conta in contas %}
+                    <option value="{{ conta }}">{{ conta }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+       <div class="form-group period-control">
+            <label for="aplicacaoSelector">Aplicação:</label>
+            <select id="aplicacaoSelector" >
+                <option value="all">Todas</option>
+                {% for aplicacao in aplicacoes %}
+                    <option value="{{ aplicacao }}">{{ aplicacao }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    <form id="report_form">
+        {% csrf_token %}
+        <!-- Botão para limpar filtros -->
+        <div class="form-group">
+            <button type="button" id="clearFiltersButton">Limpar Filtros</button>
+        </div>
+    </form>
+</div>
+
+

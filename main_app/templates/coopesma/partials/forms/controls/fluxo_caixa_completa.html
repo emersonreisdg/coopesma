@@ -1,0 +1,20 @@
+<div class="form-content-fluxo-completa" >
+    <h2>Enquadre as Novas Entradas</h2>
+    <form action="" method="post" class="form-container-fluxo-completa" id="fluxo-completa-form">
+        {% csrf_token %}
+        <div class="form-container-fluxo-completa" id="fluxo-completa-form">
+            
+        </div>
+        
+        {% if form.tipo.errors %}
+            <div class="error">{{ form.tipo.errors }}</div>
+        {% endif %}
+        {% if form.subtipo.errors %}
+            <div class="error">{{ form.subtipo.errors }}</div>
+        {% endif %}
+
+        <div id="dynamic-table-container"></div> <!-- Adicione este contêiner para a tabela dinâmica -->
+        
+        <button type="submit" id="submit-complete-button" class="btn btn-primary">Enviar</button>
+    </form> 
+</div>

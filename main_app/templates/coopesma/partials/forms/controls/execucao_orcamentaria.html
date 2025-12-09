@@ -1,0 +1,10 @@
+<div class="dash-controls">
+    <div class="period-control">
+        <label for="year_selector">Exercício:</label>
+        <select id="year_selector" name="year_selector">
+            {% for year in years %}
+                <option value="{{ year }}">{{ year }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>

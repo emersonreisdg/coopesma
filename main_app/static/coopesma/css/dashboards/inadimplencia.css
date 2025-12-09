@@ -1,0 +1,30 @@
+@import url('../canvas.css');
+@import url('../report.css');
+@import url('../inputs.css'); 
+@import url('../dash.css'); 
+@import url('../buttons.css');
+
+.dash-controls{
+    margin: 2rem auto !important;
+}
+
+.year-controls{
+    margin-left: 2rem !important;
+}
+
+.canvas-container {
+    flex: 1 1 calc(50.0% - 2rem); 
+    min-width: 300px;
+    max-width: None; /* Limita a largura mesmo que só haja 1 gráfico */
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
+}
+
+.canvas-grid canvas {
+    width: 100% !important;
+    height: 40rem !important;
+ }

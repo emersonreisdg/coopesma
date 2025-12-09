@@ -1,0 +1,63 @@
+Criando models.py a partir de bd.sqlite3
+    Garantir que nomes de abas e cabeçalhos de colunas não contenham caracteres especiais
+    Executar excel_to_sqlite3
+    Excluir todas as migrações
+    Comentar possíveis registros de tabelas sob importação em admin.py
+    Executar python manage.py inspectdb > main_app/models.py
+    Copiar o conteúdo gerado em models.py -> deletar models.py -> criar novo arquivo models.py -> colar conteúdo em models.py
+    Substituir o conteúdo de todas as class Meta por ... 
+    Remover todos os comentários de models.py: crlt + shift + P : remove all comments
+    Adicionar     id = models.AutoField(primary_key=True) em cada classe de models.py
+    Abrir db.slite3 em DB Browser e modificar cada tabela: adicionar id tipo INTEGER PK check mover para o topo
+    Executar  python manage.py makemigrations
+    Executar python manage.py migrate
+    Executar python manage.py createsuperuser
+    Executar python manage.py runserver
+
+Adicionando nova coluna em uma model:
+    models.py: Adicionar novo atributo
+        class Meta:
+            managed = True
+    admin.py: registrar o novo atributo 
+    terminal: python manage.py makemigrations
+               python manage.py migrate
+               python manage.py runserver
+    Adicionar valores manualmente: /admin/tabela
+    models.py: class Meta:
+                    managed = False
+
+Limpando tabela do db.sqlite3 e povoando-a com novos dados armazenados em arquivo csv utf8
+Usando o shell do Django
+
+    python manage.py shell
+
+    # Limpar a tabela
+    PrevisaoOrcamentaria.objects.all().delete()
+
+    import csv
+    from datetime import datetime
+    from your_app.models import PrevisaoOrcamentaria
+
+    # Caminho para o arquivo CSV
+    csv_file_path = 'caminho/para/seu/arquivo/orcamento2025.csv'
+
+    # Função para converter valores monetários
+    def parse_valor(valor_str):
+        return float(valor_str.replace('R$', '').replace('.', '').replace(',', '.').strip())
+
+    # Abrir e ler o arquivo CSV
+    with open(csv_file_path, newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile, delimiter=';')
+        for row in reader:
+            data = datetime.strptime(row['Data'], '%d/%m/%Y')
+            valor = parse_valor(row['Valor'])
+            previsao = PrevisaoOrcamentaria(
+                data=data,
+                tipo=row['Tipo'],
+                subtipo=row['Subtipo'],
+                categoria=row['Categoria'],
+                item=row['Item'],
+                valor=valor,
+                observacao=row['Observação']
+            )
+            previsao.save()

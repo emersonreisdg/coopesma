@@ -1,0 +1,42 @@
+{% load i18n %}
+
+{% if user.is_authenticated %}
+{% comment %} {% if '/coopesma/' in request.path or '/authors/login/' in request.path %} {% endcomment %}
+  <button class="button-show-menu button-show-menu-visible">
+      <i class="fas fa-bars"></i>
+      <span class="hidden-text">{% translate 'Show menu' %}</span>
+    </button>
+    
+    <div class="menu-container menu-hidden">
+      <button class="button-close-menu button-close-menu-visible">
+        <i class="fas fa-times-circle"></i>
+        <span class="hidden-text">{% translate 'Close menu' %}</span>
+      </button>
+
+      
+      <div class="menu-content">
+        <nav class="menu-nav">
+            <a href="{% url 'coopesma:home' %}">{% translate 'Home' %}</a>
+            
+            {% if group.name == 'Administrador' %}
+              <a href="{% url 'admin:index' %}" target="_blank"> Administração </a>
+            {% endif %}
+            
+            {% if group.name == 'Administrador' or group.name == 'Financeiro' or group.name == 'Compras' or group.name == 'Pedagógico' or group.name == 'Direção' or group.name == 'Secretaria' %}
+              <a href="{% url 'coopesma:formularios' %}"> Formulários </a>
+            {% endif %}
+
+            {% if group.name == 'Administrador' or group.name == 'Direção' %}
+              <a href="{% url 'coopesma:orcamento' %}"> Orçamento </a>
+            {% endif %} 
+            
+            <a href="{% url 'coopesma:relatorios' %}"> Relatórios </a>
+
+            <a href="{% url 'coopesma:usina_fotovoltaica' %}"> Usina Fotovoltaica </a>
+
+            <a class="authors-logout-link" href="{% url 'colaborador:logout' %}">{% translate 'Logout' %}</a>
+            {% include 'authors/partials/form_logout.html' %}
+        </nav>
+      </div>
+    </div>
+  {% endif %}

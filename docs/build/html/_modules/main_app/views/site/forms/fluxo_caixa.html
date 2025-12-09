@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>main_app.views.site.forms.fluxo_caixa &#8212; Documentação Coopesma 0.1</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../../../_static/documentation_options.js?v=88519e4e"></script>
+    <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/translations.js?v=71a39b36"></script>
+    <link rel="index" title="Índice" href="../../../../../genindex.html" />
+    <link rel="search" title="Buscar" href="../../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Código-fonte para main_app.views.site.forms.fluxo_caixa</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django</span><span class="w"> </span><span class="kn">import</span> <span class="n">forms</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.core.cache</span><span class="w"> </span><span class="kn">import</span> <span class="n">cache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">....models</span><span class="w"> </span><span class="kn">import</span> <span class="n">DespesaReceita</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.urls</span><span class="w"> </span><span class="kn">import</span> <span class="n">reverse_lazy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.form_base</span><span class="w"> </span><span class="kn">import</span> <span class="n">FormViewBase</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.utils.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">method_decorator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.contrib.auth.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">login_required</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="c1"># from utils.strings import is_negative_number</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils.cache_helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_cached_queryset</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="c1"># from django.http import HttpResponseRedirect</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.http</span><span class="w"> </span><span class="kn">import</span> <span class="n">JsonResponse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.shortcuts</span><span class="w"> </span><span class="kn">import</span> <span class="n">redirect</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">base64</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">django.core.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ValidationError</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mimetypes</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils.coopesma.json_encoder_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">JSONEncoderCustom</span>
+
+
+<div class="viewcode-block" id="normalize_keys">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.normalize_keys">[documentos]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_keys</span><span class="p">(</span><span class="n">item</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Normaliza as chaves de um dicionário contendo dados de fluxo de caixa.</span>
+<span class="sd">    Converte nomes de colunas legíveis (ex: &#39;DATA&#39;) para nomes de campo do</span>
+<span class="sd">    modelo (ex: &#39;data&#39;).</span>
+
+<span class="sd">    Parâmetros:</span>
+<span class="sd">        item (dict): Dicionário com dados a serem normalizados.</span>
+
+<span class="sd">    Retorna:</span>
+<span class="sd">        dict: Novo dicionário com chaves padronizadas.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">key_map</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;DATA&quot;</span><span class="p">:</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;P. DE CONTAS&quot;</span><span class="p">:</span> <span class="s2">&quot;plano_de_contas&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;VALOR&quot;</span><span class="p">:</span> <span class="s2">&quot;valor&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;TIPO&quot;</span><span class="p">:</span> <span class="s2">&quot;tipo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;SUBTIPO&quot;</span><span class="p">:</span> <span class="s2">&quot;subtipo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CATEGORIA&quot;</span><span class="p">:</span> <span class="s2">&quot;categoria&quot;</span>
+    <span class="p">}</span>
+    <span class="c1"># Converte chaves conhecidas</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">key_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span></div>
+
+
+
+<div class="viewcode-block" id="salvar_fluxo_caixa_na_sessao">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.salvar_fluxo_caixa_na_sessao">[documentos]</a>
+<span class="nd">@login_required</span><span class="p">(</span><span class="n">login_url</span><span class="o">=</span><span class="s1">&#39;colaborador:login&#39;</span><span class="p">,</span> <span class="n">redirect_field_name</span><span class="o">=</span><span class="s1">&#39;next&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">salvar_fluxo_caixa_na_sessao</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Armazena dados de fluxo de caixa na sessão do usuário via POST com JSON.</span>
+<span class="sd">    Se um arquivo Excel for enviado codificado em base64, ele também é</span>
+<span class="sd">    decodificado e armazenado na sessão.</span>
+
+<span class="sd">    Retorna:</span>
+<span class="sd">        JsonResponse: Resposta JSON indicando sucesso ou erro.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+
+            <span class="c1"># Decodificar o arquivo Excel, se presente</span>
+            <span class="n">excel_file_base64</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;excel_file&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">excel_file_base64</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="c1"># Decodificar os dados do arquivo</span>
+                    <span class="n">excel_file_bytes</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">excel_file_base64</span><span class="p">)</span>
+
+                    <span class="c1"># Armazenar os dados do arquivo na sessão</span>
+                    <span class="c1"># (ou processar conforme necessário)</span>
+                    <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;excel_file_content&#39;</span><span class="p">]</span> <span class="o">=</span> \
+                        <span class="n">excel_file_bytes</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">base64</span><span class="o">.</span><span class="n">binascii</span><span class="o">.</span><span class="n">Error</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span>
+                        <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Erro ao decodificar o arquivo Excel&#39;</span>
+                    <span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dados sendo salvos na sessão:&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+            <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;form_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;JSON inválido&#39;</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span>
+                         <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Método não permitido&#39;</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">405</span><span class="p">)</span></div>
+
+
+<span class="c1"># Recupera o queryset e o armazena em cache por 15 minutos</span>
+
+
+<div class="viewcode-block" id="FluxoCaixaForm">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FluxoCaixaForm">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FluxoCaixaForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Formulário baseado no modelo DespesaReceita para criação ou edição de</span>
+<span class="sd">    registros de fluxo de caixa. Realiza validações adicionais.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="FluxoCaixaForm.Meta">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FluxoCaixaForm.Meta">[documentos]</a>
+    <span class="k">class</span><span class="w"> </span><span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">DespesaReceita</span>
+        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;plano_de_contas&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;valor&#39;</span><span class="p">,</span> <span class="s1">&#39;tipo&#39;</span><span class="p">,</span> <span class="s1">&#39;subtipo&#39;</span><span class="p">,</span> <span class="s1">&#39;categoria&#39;</span><span class="p">]</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializa o formulário e estrutura para controle de erros.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_my_errors</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+<div class="viewcode-block" id="FluxoCaixaForm.clean">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FluxoCaixaForm.clean">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Valida campos obrigatórios como &#39;tipo&#39; e &#39;subtipo&#39;. Adiciona erros</span>
+<span class="sd">        personalizados se não estiverem preenchidos.</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            dict: Dados limpos do formulário.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cleaned_data</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+
+        <span class="c1"># Validações de campo</span>
+        <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;tipo&#39;</span><span class="p">,</span> <span class="s1">&#39;subtipo&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">cleaned_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">field</span><span class="p">):</span>  <span class="c1"># Verifica se está vazio ou None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_error</span><span class="p">(</span>
+                    <span class="n">field</span><span class="p">,</span> <span class="s1">&#39;O enquadramento de Tipo e Subtipo é obrigatório!&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">cleaned_data</span>
+
+        <span class="k">return</span> <span class="n">cleaned_data</span></div>
+
+
+<div class="viewcode-block" id="FluxoCaixaForm.clean_excel_file">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FluxoCaixaForm.clean_excel_file">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clean_excel_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Valida o campo de upload de arquivo Excel, garantindo que o tipo MIME</span>
+<span class="sd">        seja compatível com planilhas válidas.</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            File: Arquivo validado.</span>
+
+<span class="sd">        Lança:</span>
+<span class="sd">            ValidationError: Se o arquivo não for um Excel válido.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">excel_file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;excel_file&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">excel_file</span><span class="p">:</span>
+            <span class="n">mime_type</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">mimetypes</span><span class="o">.</span><span class="n">guess_type</span><span class="p">(</span><span class="n">excel_file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">mime_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;application/vnd.ms-excel&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&#39;</span><span class="p">]:</span>  <span class="c1"># noqa E503</span>
+                <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;O arquivo deve ser um Excel válido.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">excel_file</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FormFluxoCaixaBaseView">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaBaseView">[documentos]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">FormFluxoCaixaBaseView</span><span class="p">(</span><span class="n">FormViewBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    View base para manipulação de formulários de fluxo de caixa. Permite</span>
+<span class="sd">    criação, edição e upload de dados com integração à sessão do usuário.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">DespesaReceita</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">FluxoCaixaForm</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;coopesma/pages/form.html&#39;</span>
+    <span class="c1"># Redireciona após salvar</span>
+    <span class="n">success_url</span> <span class="o">=</span> <span class="n">reverse_lazy</span><span class="p">(</span><span class="s1">&#39;coopesma:fluxo_caixa_confirmar&#39;</span><span class="p">)</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s1">&#39;fluxo_caixa&#39;</span>
+    <span class="n">tipo_ambiente</span> <span class="o">=</span> <span class="s1">&#39;form&#39;</span>
+    <span class="n">ambiente</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">controles_ambiente</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">estilo_ambiente</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">tem_cards</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">form_data</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="FormFluxoCaixaBaseView.get_queryset">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaBaseView.get_queryset">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Recupera o queryset do modelo com cache aplicado.</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            QuerySet: Conjunto de objetos do modelo DespesaReceita.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">get_cached_queryset</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="s1">&#39;fluxo_caixa_queryset&#39;</span><span class="p">)</span></div>
+
+
+    <span class="c1"># Define `object` como `None` para formulários vazios em requisições GET</span>
+
+<div class="viewcode-block" id="FormFluxoCaixaBaseView.get">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaBaseView.get">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Processa requisições GET e inicializa objeto vazio para formulário.</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            HttpResponse: Resposta com o formulário renderizado.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">object</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FormFluxoCaixaBaseView.get_object">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaBaseView.get_object">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queryset</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retorna o objeto a ser editado com base no parâmetro &#39;pk&#39; da URL.</span>
+<span class="sd">        Se &#39;pk&#39; não for fornecido, retorna None.</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            DespesaReceita | None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pk</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;pk&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">pk</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">DespesaReceita</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">pk</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+
+    <span class="c1"># Salva o formulário no banco de dados quando o envio é válido</span>
+<div class="viewcode-block" id="FormFluxoCaixaBaseView.form_valid">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaBaseView.form_valid">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">form_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Processa dados válidos do formulário. Codifica o conteúdo do arquivo</span>
+<span class="sd">        Excel (se presente) e armazena na sessão. Salva dados limpos.</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            HttpResponseRedirect: Redireciona após sucesso.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FORMULÁRIO VÁLIDO&#39;</span><span class="p">)</span>
+        <span class="c1"># self.object = form.save(commit=False)</span>
+
+        <span class="c1"># Obtém os dados do formulário</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span>
+
+        <span class="c1"># Converte objetos datetime para strings</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+
+        <span class="c1"># Verifica se há um arquivo Excel no formulário</span>
+        <span class="n">excel_file</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;excel_file&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">excel_file</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># Lê o conteúdo do arquivo e converte para Base64</span>
+                <span class="n">excel_file_content</span> <span class="o">=</span> <span class="n">excel_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+                <span class="n">excel_file_base64</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span>
+                    <span class="n">excel_file_content</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+                <span class="c1"># Armazena o arquivo em Base64 na sessão</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;excel_file&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">excel_file_base64</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;success&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;Dados salvos com sucesso!&#39;</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erro ao processar o arquivo Excel: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Armazena os dados do formulário na sessão</span>
+            <span class="c1"># self.request.session[&#39;form_data&#39;] = self.form_data</span>
+            <span class="c1"># # return redirect(self.success_url)</span>
+            <span class="c1"># return HttpResponseRedirect(self.success_url)</span>
+            <span class="c1">#     # Armazena os dados do formulário na sessão</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;form_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">form_data</span>
+            <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">success_url</span><span class="p">)</span></div>
+
+
+    <span class="c1"># Renderiza o template com os dados do formulário preenchidos e os erros</span>
+
+<div class="viewcode-block" id="FormFluxoCaixaBaseView.form_invalid">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaBaseView.form_invalid">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">form_invalid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">form</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Processa formulário inválido. Converte valores datetime para string</span>
+<span class="sd">        e armazena os dados na sessão para reuso e exibição de erro.</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            HttpResponse: Resposta renderizada com erros.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FORMULÁRIO INVÁLIDO&#39;</span><span class="p">)</span>
+        <span class="c1"># Captura os dados do formulário inválido</span>
+        <span class="n">form_data</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">cleaned_data</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;form_invalid.form_data:&#39;</span><span class="p">,</span> <span class="n">form_data</span><span class="p">)</span>
+
+        <span class="c1"># Converte objetos datetime para strings</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">form_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">datetime</span><span class="p">):</span>
+                <span class="n">form_data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;form_invalid.isinstance(value, datetime)==True&#39;</span><span class="p">)</span>
+
+        <span class="c1"># Salva os dados na sessão</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;form_data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">form_data</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;error&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="s1">&#39;Erro ao salvar os dados. Verifique o formulário.&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="c1"># return self.render_to_response(self.get_context_data(form=form))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">render_to_response</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="n">form</span><span class="o">=</span><span class="n">form</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="FormFluxoCaixaBaseView.update_context">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaBaseView.update_context">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Atualiza o contexto com dados da base e dados da sessão (formulário).</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            dict: Contexto atualizado.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ctx</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">update_context</span><span class="p">(</span><span class="n">ctx</span><span class="p">)</span>
+        <span class="n">qs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_queryset</span><span class="p">()</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">qs</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;plano_de_contas&#39;</span><span class="p">,</span> <span class="s1">&#39;valor&#39;</span><span class="p">))</span>
+
+        <span class="c1"># Recupera dados armazenados na sessão</span>
+        <span class="n">form_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;form_data&#39;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dados recuperados da sessão:&quot;</span><span class="p">,</span> <span class="n">form_data</span><span class="p">)</span>  <span class="c1"># Para debug</span>
+
+        <span class="n">ctx</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="n">JSONEncoderCustom</span><span class="p">),</span>
+            <span class="s1">&#39;form_data&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">form_data</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+        <span class="p">})</span>
+
+        <span class="k">return</span> <span class="n">ctx</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FormFluxoCaixaView">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaView">[documentos]</a>
+<span class="nd">@method_decorator</span><span class="p">(</span>
+    <span class="n">login_required</span><span class="p">(</span><span class="n">login_url</span><span class="o">=</span><span class="s1">&#39;colaborador:login&#39;</span><span class="p">,</span> <span class="n">redirect_field_name</span><span class="o">=</span><span class="s1">&#39;next&#39;</span><span class="p">),</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dispatch&#39;</span>
+<span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FormFluxoCaixaView</span><span class="p">(</span><span class="n">FormFluxoCaixaBaseView</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    View responsável por apresentar o formulário para criação de um novo</span>
+<span class="sd">    registro de fluxo de caixa. Limpa a sessão ao iniciar.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Novo Registro de Fluxo de Caixa&#39;</span>
+    <span class="n">ambiente</span> <span class="o">=</span> <span class="s1">&#39;fluxo_caixa.html&#39;</span>
+    <span class="n">controles_ambiente</span> <span class="o">=</span> <span class="s1">&#39;fluxo_caixa.js&#39;</span>
+    <span class="n">estilo_ambiente</span> <span class="o">=</span> <span class="s1">&#39;forms/fluxo_caixa.css&#39;</span>
+
+<div class="viewcode-block" id="FormFluxoCaixaView.dispatch">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaView.dispatch">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove dados de formulário anteriores da sessão antes de continuar.</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            HttpResponse: Requisição processada normalmente.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;form_data&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FormFluxoCaixaListView">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaListView">[documentos]</a>
+<span class="nd">@method_decorator</span><span class="p">(</span>
+    <span class="n">login_required</span><span class="p">(</span><span class="n">login_url</span><span class="o">=</span><span class="s1">&#39;colaborador:login&#39;</span><span class="p">,</span> <span class="n">redirect_field_name</span><span class="o">=</span><span class="s1">&#39;next&#39;</span><span class="p">),</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dispatch&#39;</span>
+<span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FormFluxoCaixaListView</span><span class="p">(</span><span class="n">FormFluxoCaixaBaseView</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    View que permite revisar e confirmar os dados de fluxo de caixa antes</span>
+<span class="sd">    de persistí-los no banco de dados.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Confirmar Registro de Fluxo de Caixa&#39;</span>
+    <span class="n">ambiente</span> <span class="o">=</span> <span class="s1">&#39;fluxo_caixa_list.html&#39;</span>
+    <span class="n">controles_ambiente</span> <span class="o">=</span> <span class="s1">&#39;fluxo_caixa_list.js&#39;</span>
+    <span class="n">estilo_ambiente</span> <span class="o">=</span> <span class="s1">&#39;forms/fluxo_caixa_list.css&#39;</span>
+    <span class="n">form_class</span> <span class="o">=</span> <span class="n">FluxoCaixaForm</span>
+
+    <span class="c1"># def normalize_keys(self, item):</span>
+    <span class="c1">#     key_map = {</span>
+    <span class="c1">#         &quot;DATA&quot;: &quot;data&quot;,</span>
+    <span class="c1">#         &quot;P. DE CONTAS&quot;: &quot;plano_de_contas&quot;,</span>
+    <span class="c1">#         &quot;VALOR&quot;: &quot;valor&quot;,</span>
+    <span class="c1">#         &quot;TIPO&quot;: &quot;tipo&quot;,</span>
+    <span class="c1">#         &quot;SUBTIPO&quot;: &quot;subtipo&quot;,</span>
+    <span class="c1">#         &quot;CATEGORIA&quot;: &quot;categoria&quot;</span>
+    <span class="c1">#     }</span>
+    <span class="c1">#     # Converte chaves conhecidas</span>
+    <span class="c1">#     return {key_map.get(k, k): v for k, v in item.items()}</span>
+
+    <span class="c1"># def post(self, request, *args, **kwargs):</span>
+    <span class="c1">#     try:</span>
+    <span class="c1">#         print(&quot;Recebendo dados da requisição...&quot;)</span>
+    <span class="c1">#         data = json.loads(request.body)</span>
+    <span class="c1">#         print(&quot;Dados recebidos:&quot;, data)</span>
+
+    <span class="c1">#         # Verifica se a lista de dados está vazia</span>
+    <span class="c1">#         if not data or not isinstance(data, list):</span>
+    <span class="c1">#             print(&quot;Lista de dados vazia ou inválida.&quot;)</span>
+    <span class="c1">#             return JsonResponse({&quot;status&quot;: &quot;error&quot;,</span>
+    <span class="c1">#                                  &quot;errors&quot;: &quot;Nenhum dado enviado.&quot;},</span>
+    <span class="c1">#                                 status=400)</span>
+
+    <span class="c1">#         current_time = &#39;00:00:00&#39;</span>
+    <span class="c1">#         errors = {}  # Dicionário para armazenar erros de validação</span>
+
+    <span class="c1">#         if isinstance(data, list):</span>
+    <span class="c1">#             for item in data:</span>
+    <span class="c1">#                 # Converte as chaves para o formato correto</span>
+    <span class="c1">#                 item = normalize_keys(item)</span>
+    <span class="c1">#                 print(&#39;Item normalizado:&#39;, item)</span>
+
+    <span class="c1">#                 # Cria uma instância do formulário com os dados</span>
+    <span class="c1">#                 # normalizados</span>
+    <span class="c1">#                 form = FluxoCaixaForm(data=item)</span>
+
+    <span class="c1">#                 # Valida o formulário</span>
+    <span class="c1">#                 if not form.is_valid():</span>
+    <span class="c1">#                     print(&quot;Erros de validação:&quot;, form.errors)</span>
+    <span class="c1">#                     return JsonResponse({&quot;status&quot;: &quot;error&quot;,</span>
+    <span class="c1">#                                          &quot;errors&quot;: form.errors},</span>
+    <span class="c1">#                                         status=400)</span>
+
+    <span class="c1">#                 print(&#39;Formulário válido!&#39;)</span>
+
+    <span class="c1">#                 # Formata a data para o padrão do banco de dados</span>
+    <span class="c1">#                 item[&quot;data&quot;] = datetime.strptime(</span>
+    <span class="c1">#                     item[&quot;data&quot;], &#39;%d/%m/%Y&#39;).strftime(&#39;%Y-%m-%d&#39;) + &#39; &#39; + current_time  # noqa E503</span>
+
+    <span class="c1">#                 # Salva o registro no banco de dados usando o formulário</span>
+    <span class="c1">#                 fluxo = form.save(commit=False)</span>
+    <span class="c1">#                 fluxo.data = item[&quot;data&quot;]  # Atualiza a data formatada</span>
+    <span class="c1">#                 fluxo.save()</span>
+    <span class="c1">#                 # fluxo = DespesaReceita.objects.create(</span>
+    <span class="c1">#                 #     data=item[&quot;data&quot;],</span>
+    <span class="c1">#                 #     plano_de_contas=item[&quot;plano_de_contas&quot;],</span>
+    <span class="c1">#                 #     valor=item[&quot;valor&quot;],</span>
+    <span class="c1">#                 #     tipo=item[&quot;tipo&quot;],</span>
+    <span class="c1">#                 #     subtipo=item[&quot;subtipo&quot;],</span>
+    <span class="c1">#                 #     categoria=item[&quot;categoria&quot;],</span>
+    <span class="c1">#                 # )</span>
+    <span class="c1">#                 print(&quot;Registro salvo no banco de dados:&quot;, fluxo)</span>
+
+    <span class="c1">#             # 🔥 Limpar apenas os dados recebidos na sessão</span>
+    <span class="c1">#             # for item in data:</span>
+    <span class="c1">#             #     # Normaliza chaves para garantir consistência</span>
+    <span class="c1">#             #     item = normalize_keys(item)</span>
+    <span class="c1">#             #     for key in item.keys():</span>
+    <span class="c1">#             #         if key in request.session:</span>
+    <span class="c1">#             #             # Remove apenas as chaves enviadas no JSON</span>
+    <span class="c1">#             #             del request.session[key]</span>
+
+    <span class="c1">#             return JsonResponse({&quot;status&quot;: &quot;success&quot;}, status=201)</span>
+
+    <span class="c1">#         print(&quot;Formato de dados inválido.&quot;)</span>
+    <span class="c1">#         return JsonResponse({&quot;status&quot;: &quot;error&quot;,</span>
+    <span class="c1">#                             &quot;errors&quot;: &quot;Formato de dados inválido.&quot;},</span>
+    <span class="c1">#                             status=400)</span>
+
+    <span class="c1">#     except json.JSONDecodeError:</span>
+    <span class="c1">#         print(&quot;Erro de decodificação JSON&quot;)</span>
+    <span class="c1">#         return JsonResponse({&quot;status&quot;: &quot;error&quot;,</span>
+    <span class="c1">#                             &quot;errors&quot;: &quot;JSON inválido.&quot;},</span>
+    <span class="c1">#                             status=400)</span>
+
+    <span class="c1">#     except Exception as e:</span>
+    <span class="c1">#         print(&quot;Erro geral:&quot;, str(e))</span>
+    <span class="c1">#         return JsonResponse({&quot;status&quot;: &quot;error&quot;,</span>
+    <span class="c1">#                             &quot;errors&quot;: str(e)},</span>
+    <span class="c1">#                             status=500)</span>
+
+<div class="viewcode-block" id="FormFluxoCaixaListView.post">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaListView.post">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Processa uma lista de registros recebidos via JSON. Valida cada item</span>
+<span class="sd">        usando o formulário. Salva registros válidos e retorna erros em caso</span>
+<span class="sd">        de falhas individuais.</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            JsonResponse: Resposta de sucesso ou erro detalhado por item.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recebendo dados da requisição...&quot;</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dados recebidos:&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+            <span class="c1"># Verifica se a lista de dados está vazia</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Lista de dados vazia ou inválida.&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="s2">&quot;Nenhum dado enviado.&quot;</span><span class="p">},</span>
+                                    <span class="n">status</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+
+            <span class="n">current_time</span> <span class="o">=</span> <span class="s1">&#39;00:00:00&#39;</span>
+            <span class="n">errors</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Dicionário para armazenar erros de validação</span>
+
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+                <span class="c1"># Normaliza as chaves antes de validar</span>
+                <span class="n">item</span> <span class="o">=</span> <span class="n">normalize_keys</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Item normalizado:&#39;</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+
+                <span class="c1"># Cria uma instância do formulário com os dados normalizados</span>
+                <span class="n">form</span> <span class="o">=</span> <span class="n">FluxoCaixaForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">item</span><span class="p">)</span>
+
+                <span class="c1"># Valida o formulário</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erros de validação:&quot;</span><span class="p">,</span> <span class="n">form</span><span class="o">.</span><span class="n">errors</span><span class="p">)</span>
+                    <span class="c1"># Adiciona os erros ao dicionário de erros</span>
+                    <span class="k">for</span> <span class="n">field</span><span class="p">,</span> <span class="n">field_errors</span> <span class="ow">in</span> <span class="n">form</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                        <span class="n">errors</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;item_</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_errors</span>
+                    <span class="k">continue</span>  <span class="c1"># Continua para o próximo item, sem salvar este</span>
+
+                <span class="c1"># Formata a data para o padrão do banco de dados</span>
+                <span class="n">item</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span>
+                    <span class="n">item</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">],</span> <span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">+</span> \
+                    <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">current_time</span>
+
+                <span class="c1"># Salva o registro no banco de dados usando o formulário</span>
+                <span class="n">fluxo</span> <span class="o">=</span> <span class="n">form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">fluxo</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>  <span class="c1"># Atualiza a data formatada</span>
+                <span class="n">fluxo</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Registro salvo no banco de dados:&quot;</span><span class="p">,</span> <span class="n">fluxo</span><span class="p">)</span>
+
+            <span class="c1"># Se houver erros, retorna os erros no formato JSON</span>
+            <span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                                     <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="n">errors</span><span class="p">},</span>
+                                    <span class="n">status</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">201</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erro de decodificação JSON&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                                 <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON inválido.&quot;</span><span class="p">},</span>
+                                <span class="n">status</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erro geral:&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                                 <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)},</span>
+                                <span class="n">status</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="FormFluxoCaixaListView.salvar_fluxo_caixa_na_sessao">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaListView.salvar_fluxo_caixa_na_sessao">[documentos]</a>
+    <span class="nd">@method_decorator</span><span class="p">(</span>
+        <span class="n">login_required</span><span class="p">(</span><span class="n">login_url</span><span class="o">=</span><span class="s1">&#39;colaborador:login&#39;</span><span class="p">,</span>
+                       <span class="n">redirect_field_name</span><span class="o">=</span><span class="s1">&#39;next&#39;</span><span class="p">),</span>
+        <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dispatch&#39;</span>
+    <span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">salvar_fluxo_caixa_na_sessao</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método auxiliar que salva um único registro de fluxo de caixa a</span>
+<span class="sd">        partir dos dados JSON enviados na requisição.</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            JsonResponse: Indica sucesso ou erro da operação.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># Lê os dados enviados no corpo da requisição</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+                <span class="n">fluxo</span> <span class="o">=</span> <span class="n">DespesaReceita</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># Cria uma instância do modelo</span>
+                <span class="n">fluxo</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>  <span class="c1"># Salva no banco de dados</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span>
+                                     <span class="s2">&quot;Registro de Cooperado salvo com sucesso!&quot;</span>
+                                     <span class="p">})</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span> <span class="s2">&quot;message&quot;</span><span class="p">:</span>
+                                     <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)},</span> <span class="n">status</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">JsonResponse</span><span class="p">({</span><span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+                             <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Método não permitido.&quot;</span><span class="p">},</span> <span class="n">status</span><span class="o">=</span><span class="mi">405</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="FormFluxoCaixaEditView">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaEditView">[documentos]</a>
+<span class="nd">@method_decorator</span><span class="p">(</span>
+    <span class="n">login_required</span><span class="p">(</span><span class="n">login_url</span><span class="o">=</span><span class="s1">&#39;colaborador:login&#39;</span><span class="p">,</span> <span class="n">redirect_field_name</span><span class="o">=</span><span class="s1">&#39;next&#39;</span><span class="p">),</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dispatch&#39;</span>
+<span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FormFluxoCaixaEditView</span><span class="p">(</span><span class="n">FormFluxoCaixaBaseView</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    View para edição de registros de fluxo de caixa existentes.</span>
+<span class="sd">    Herda lógica da view base.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Editar Novo Registro de Fluxo de Caixa&#39;</span>
+    <span class="n">ambiente</span> <span class="o">=</span> <span class="s1">&#39;fluxo_caixa.html&#39;</span>
+    <span class="n">controles_ambiente</span> <span class="o">=</span> <span class="s1">&#39;fluxo_caixa.js&#39;</span>
+    <span class="n">estilo_ambiente</span> <span class="o">=</span> <span class="s1">&#39;forms/fluxo_caixa.css&#39;</span></div>
+
+
+
+<div class="viewcode-block" id="FormFluxoCaixaDeleteView">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaDeleteView">[documentos]</a>
+<span class="nd">@method_decorator</span><span class="p">(</span>
+    <span class="n">login_required</span><span class="p">(</span><span class="n">login_url</span><span class="o">=</span><span class="s1">&#39;colaborador:login&#39;</span><span class="p">,</span> <span class="n">redirect_field_name</span><span class="o">=</span><span class="s1">&#39;next&#39;</span><span class="p">),</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dispatch&#39;</span>
+<span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">FormFluxoCaixaDeleteView</span><span class="p">(</span><span class="n">FormFluxoCaixaBaseView</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    View responsável por deletar um registro de fluxo de caixa.</span>
+<span class="sd">    Após exclusão, limpa o cache para garantir consistência.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="FormFluxoCaixaDeleteView.delete">
+<a class="viewcode-back" href="../../../../../main_app.views.site.forms.fluxo_caixa.html#main_app.views.site.forms.fluxo_caixa.FormFluxoCaixaDeleteView.delete">[documentos]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Realiza a exclusão do objeto e limpa o cache relacionado.</span>
+
+<span class="sd">        Retorna:</span>
+<span class="sd">            HttpResponse: Resposta HTTP padrão para exclusão.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c1"># Limpa o cache após a exclusão</span>
+        <span class="n">cache</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s1">&#39;fluxo_caixa_queryset&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">response</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../index.html">Coopesma</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Ir" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navegação</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../introducao.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../instalacao.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../uso.html">Uso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../desenvolvimento.html">Desenvolvimento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../modules.html">COOPESMA</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../index.html">Código do módulo</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Wanderley Cardoso Celeste.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
